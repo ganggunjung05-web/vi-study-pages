@@ -1,0 +1,439 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.08.24</strong> · 1일째</span>
+    </div>
+    <h1>Chính thức giảm 30% thuế cho doanh nghiệp, cá nhân doanh thu dưới ngưỡng 10 tỷ đồng trong hai năm</h1>
+    <p class="h1-ko">매출액 100억 동 이하 기업·개인에 2년간 세금 30% 정식 감면</p>
+    <p class="byline">원문 3,442자 · 읽기 약 4분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>1</b>장 · 단어 <b>20</b>개 · 표현 <b>10</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-08-24.html" aria-current="page"><span class="chip-d">08.24</span><span class="chip-t">Quốc hội</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Quốc hội đã thông qua Nghị quyết giảm 30% thuế thu nhập cá nhân và thuế thu nhập doanh nghiệp cho cá nhân, hộ kinh doanh và doanh nghiệp có doanh thu hằng năm dưới 10 tỷ đồng trong năm 2026 và 2027. Chính sách này có hiệu lực từ 24/8/2026 và dự kiến áp dụng cho khoảng 99,86% cá nhân, hộ kinh doanh và trên 81,11% doanh nghiệp. Bộ trưởng Bộ Tài chính Ngô Văn Tuấn cho biết ngưỡng 10 tỷ đồng nhằm hỗ trợ nhóm nhỏ, siêu nhỏ có khả năng chống chịu hạn chế. Thu ngân sách nhà nước dự kiến giảm hơn 6.700 tỷ đồng trong hai năm. Nghị quyết cũng bổ sung quy định ngăn doanh nghiệp chia, tách để lợi dụng chính sách giảm thuế.</p>
+    <p class="ko">국회는 2026년과 2027년 연간 매출액이 100억 동 미만인 개인, 개인사업자, 기업에 대해 개인소득세와 법인소득세를 30% 감면하는 결의안을 통과시켰다. 이 정책은 2026년 8월 24일부터 효력을 가지며, 약 99.86%의 개인·개인사업자와 81.11% 이상의 기업이 대상이 될 것으로 예상된다. 재정부 장관 응오반뚜언은 100억 동 기준이 회복력이 낮은 소규모·초소규모 사업자를 지원하기 위한 것이라고 밝혔다. 국가예산 수입은 2년간 6,700억 동 이상 감소할 것으로 예상된다. 결의안은 또한 기업이 분할을 통해 정책을 악용하는 것을 막기 위한 규정을 추가했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">Quốc hội</span><span class="v-m">국회</span></li>
+      <li><span class="v-n">02</span><span class="v-w">biểu quyết</span><span class="v-m">표결하다</span></li>
+      <li><span class="v-n">03</span><span class="v-w">Nghị quyết</span><span class="v-m">결의안</span></li>
+      <li><span class="v-n">04</span><span class="v-w">thuế thu nhập cá nhân</span><span class="v-m">개인소득세</span></li>
+      <li><span class="v-n">05</span><span class="v-w">thuế thu nhập doanh nghiệp</span><span class="v-m">법인소득세</span></li>
+      <li><span class="v-n">06</span><span class="v-w">doanh nghiệp</span><span class="v-m">기업</span></li>
+      <li><span class="v-n">07</span><span class="v-w">đại biểu</span><span class="v-m">대표(의원)</span></li>
+      <li><span class="v-n">08</span><span class="v-w">tán thành</span><span class="v-m">찬성하다</span></li>
+      <li><span class="v-n">09</span><span class="v-w">hiệu lực</span><span class="v-m">효력</span></li>
+      <li><span class="v-n">10</span><span class="v-w">kỳ tính thuế</span><span class="v-m">과세기간</span></li>
+      <li><span class="v-n">11</span><span class="v-w">cá nhân cư trú</span><span class="v-m">거주 개인</span></li>
+      <li><span class="v-n">12</span><span class="v-w">doanh thu</span><span class="v-m">매출액</span></li>
+      <li><span class="v-n">13</span><span class="v-w">thành lập</span><span class="v-m">설립하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">chia, tách</span><span class="v-m">분할하다</span></li>
+      <li><span class="v-n">15</span><span class="v-w">Bộ trưởng</span><span class="v-m">장관</span></li>
+      <li><span class="v-n">16</span><span class="v-w">Bộ Tài chính</span><span class="v-m">재정부</span></li>
+      <li><span class="v-n">17</span><span class="v-w">ngưỡng</span><span class="v-m">기준(선)</span></li>
+      <li><span class="v-n">18</span><span class="v-w">hộ kinh doanh</span><span class="v-m">개인사업자</span></li>
+      <li><span class="v-n">19</span><span class="v-w">ngân sách nhà nước</span><span class="v-m">국가예산</span></li>
+      <li><span class="v-n">20</span><span class="v-w">tái cấu trúc</span><span class="v-m">재구조화하다</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">có hiệu lực ngay từ</span>
+        <span class="e-m">~부터 즉시 효력을 갖다</span>
+        <span class="e-ex">Nghị quyết được thông qua và có hiệu lực ngay từ ngày 24/8/2026 và áp dụng cho kỳ tính thuế năm 2026, năm 2027.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">giảm 30% thuế</span>
+        <span class="e-m">세금 30% 감면하다</span>
+        <span class="e-ex">Nghị quyết được thông qua quyết nghị giảm 30% số thuế thu nhập cá nhân phải nộp của kỳ tính thuế năm 2026 và năm 2027 đối với thu nhập từ kinh doanh của cá nhân cư trú có mức doanh thu hằng năm của năm 2026, năm 2027 không quá 10 tỷ đồng.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">doanh thu hằng năm</span>
+        <span class="e-m">연간 매출액</span>
+        <span class="e-ex">Đối với doanh nghiệp, tổ chức được thành lập theo quy định của pháp luật Việt Nam có doanh thu hằng năm không quá 10 tỷ đồng trong năm 2026 và năm 2027 , trừ các doanh nghiệp được hình thành từ việc chia, tách doanh nghiệp sau ngày Nghị quyết này có hiệu lực cũng được giảm 30% số thuế thu nhập doanh nghiệp phải nộp.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">thuộc diện được hưởng</span>
+        <span class="e-m">혜택 대상에 속하다</span>
+        <span class="e-ex">Theo Bộ trưởng, với ngưỡng doanh thu này, khoảng 99,86% cá nhân và hộ kinh doanh, trên 81,11% doanh nghiệp sẽ thuộc diện được hưởng chính sách giảm thuế.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">khả năng chống chịu</span>
+        <span class="e-m">견디는 능력, 회복력</span>
+        <span class="e-ex">Đồng thời, đây cũng là nhóm có khả năng chống chịu còn hạn chế và chịu tác động tương đối lớn trước những khó khăn của hoạt động sản xuất, kinh doanh.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">bảo đảm cân đối ngân sách</span>
+        <span class="e-m">예산 균형을 보장하다</span>
+        <span class="e-ex">Về mức giảm 30%, Bộ trưởng Bộ Tài chính cho biết đây là mức hỗ trợ có ý nghĩa đối với người nộp thuế nhưng vẫn bảo đảm cân đối ngân sách.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">thu ngân sách nhà nước dự kiến giảm</span>
+        <span class="e-m">국가예산 수입이 감소할 것으로 예상되다</span>
+        <span class="e-ex">Theo số liệu từ Bộ Tài chính, khi chính sách giảm thuế được thông qua, thu ngân sách nhà nước dự kiến giảm khoảng 3.191 tỷ đồng trong năm 2026 và 3.510 tỷ đồng trong năm 2027, tương đương tổng mức giảm thu trên 6.700 tỷ đồng trong hai năm.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">hạn chế khả năng lợi dụng chính sách</span>
+        <span class="e-m">정책 악용 가능성을 제한하다</span>
+        <span class="e-ex">Đáng chú ý, trên cơ sở tiếp thu ý kiến của đại biểu Quốc hội, nhằm hạn chế khả năng lợi dụng chính sách thông qua việc tái cấu trúc doanh nghiệp về hình thức, Nghị quyết bổ sung cơ chế ngăn ngừa việc doanh nghiệp chia, tách để đưa doanh thu xuống dưới ngưỡng 10 tỷ đồng nhằm hưởng chính sách.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">không được áp dụng mức giảm thuế</span>
+        <span class="e-m">세금 감면 비율을 적용받을 수 없다</span>
+        <span class="e-ex">Theo đó, doanh nghiệp được hình thành từ việc chia, tách sau ngày Nghị quyết có hiệu lực sẽ không được áp dụng mức giảm thuế thu nhập doanh nghiệp nếu tổng doanh thu của các doanh nghiệp được chia, tách trong năm 2026 hoặc năm 2027 vượt quá 10 tỷ đồng.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">giảm áp lực tài chính</span>
+        <span class="e-m">재정적 압박을 줄이다</span>
+        <span class="e-ex">Chính sách được kỳ vọng góp phần cải thiện dòng tiền, giảm áp lực tài chính cho cá nhân, hộ kinh doanh và doanh nghiệp; tạo điều kiện để các cơ sở kinh doanh duy trì hoạt động, tái đầu tư và mở rộng sản xuất, kinh doanh, Bộ trưởng Bộ Tài chính cho biết.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/chinh-thuc-giam-30-thue-cho-doanh-nghiep-ca-nhan-doanh-thu-duoi-nguong-10-ty-dong-trong-hai-nam.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>

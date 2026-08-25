@@ -1,12 +1,150 @@
-<title>Tiêu Điểm 아침 노트</title>
+<title>Tiêu Điểm 아침 노트 · 지난 자료</title>
 <meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
 <style>
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
-  background:#FBFAF6;color:#17222B;max-width:640px;margin:0 auto;padding:64px 24px;line-height:1.7}
-@media (prefers-color-scheme:dark){body{background:#0F151A;color:#E9EEF2}}
-h1{font-size:20px;margin:0 0 12px}
-p{color:#4C5A66;font-size:15px;margin:0}
-@media (prefers-color-scheme:dark){p{color:#A6B3BD}}
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px;margin-bottom:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(22px,4vw,30px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  margin:16px 0 22px;
+  color:var(--ink);
+}
+
+/* ---------- archive index list ---------- */
+ol.idx-list{
+  list-style:none;margin:0;padding:0;
+}
+ol.idx-list li{
+  border-bottom:1px solid var(--rule);
+}
+ol.idx-list a{
+  display:grid;
+  grid-template-columns:90px 1fr;
+  gap:2px 14px;
+  padding:14px 4px;
+  text-decoration:none;
+  color:inherit;
+}
+ol.idx-list a:hover,ol.idx-list a:focus-visible{background:var(--surface-2)}
+.idx-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:12.5px;font-weight:600;
+  color:var(--jade);
+  font-variant-numeric:tabular-nums;
+  align-self:start;
+}
+.idx-t{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.idx-k{
+  grid-column:2;
+  font-size:12.5px;
+  color:var(--ink-2);
+  line-height:1.5;
+}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
 </style>
-<h1>Tiêu Điểm 아침 노트</h1>
-<p>아직 첫 학습자료가 올라오지 않았습니다. 매일 아침 한 장씩 쌓입니다.</p>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+    </div>
+    <h1>지난 학습자료</h1>
+  </header>
+
+  <ol class="idx-list">
+      <li><a href="2026-08-24.html"><span class="idx-d">2026-08-24</span><span class="idx-t">Chính thức giảm 30% thuế cho doanh nghiệp, cá nhân doanh thu dưới ngưỡng 10 tỷ đồng trong hai năm</span><span class="idx-k">매출액 100억 동 이하 기업·개인에 2년간 세금 30% 정식 감면</span></a></li>
+  </ol>
+
+</div>
