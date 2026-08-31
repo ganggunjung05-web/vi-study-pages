@@ -1,0 +1,445 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.08.30</strong> · 7일째</span>
+    </div>
+    <h1>27 cổ phiếu FTSE và bài toán &quot;khả năng đầu tư&quot; của doanh nghiệp Việt Nam</h1>
+    <p class="h1-ko">FTSE 편입 27개 종목과 베트남 기업의 &#x27;투자 접근성&#x27; 문제</p>
+    <p class="byline">원문 14,933자 · 읽기 약 19분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>7</b>장 · 단어 <b>140</b>개 · 표현 <b>70</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-08-30.html" aria-current="page"><span class="chip-d">08.30</span><span class="chip-t">rà soát</span></a>
+      <a class="chip" href="2026-08-29.html"><span class="chip-d">08.29</span><span class="chip-t">phân tán</span></a>
+      <a class="chip" href="2026-08-28.html"><span class="chip-d">08.28</span><span class="chip-t">tiếp</span></a>
+      <a class="chip" href="2026-08-27.html"><span class="chip-d">08.27</span><span class="chip-t">bộc lộ</span></a>
+      <a class="chip" href="2026-08-26.html"><span class="chip-d">08.26</span><span class="chip-t">chủ trì</span></a>
+      <a class="chip" href="2026-08-25.html"><span class="chip-d">08.25</span><span class="chip-t">Hiệp hội</span></a>
+      <a class="chip" href="2026-08-24.html"><span class="chip-d">08.24</span><span class="chip-t">thông qua</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Ngày 21/8/2026, FTSE Russell công bố 27 cổ phiếu Việt Nam được đưa vào bộ chỉ số vốn cổ phần toàn cầu khi Việt Nam chuyển sang nhóm thị trường mới nổi thứ cấp từ 21/9/2026. Tuy nhiên, vốn hóa lớn không đồng nghĩa với khả năng đầu tư lớn, vì FTSE Russell tính toán dựa trên vốn hóa có thể đầu tư, sau khi điều chỉnh theo tỷ lệ cổ phiếu tự do chuyển nhượng và giới hạn sở hữu nước ngoài. Nhiều doanh nghiệp lớn quen thuộc vẫn không được chọn vì phần sở hữu nước ngoài còn trống gần như cạn kiệt. Việc đưa vào chỉ số diễn ra theo bốn đợt đến tháng 9/2027, và các công ty chứng khoán đưa ra ước tính dòng vốn thụ động rất khác nhau, từ 1,5 đến hơn 4 tỷ USD. Bài viết nhấn mạnh doanh nghiệp Việt Nam cần chủ động cải thiện tỷ lệ cổ phiếu tự do chuyển nhượng, sở hữu nước ngoài, thanh khoản và minh bạch để thu hút dòng vốn chủ động dài hạn.</p>
+    <p class="ko">2026년 8월 21일, FTSE 러셀은 베트남이 2026년 9월 21일부로 프론티어 마켓에서 2차 신흥시장으로 승격됨에 따라 베트남 주식 27개 종목을 글로벌 지수에 편입한다고 발표했다. 그러나 시가총액이 크다고 해서 투자 가능성이 큰 것은 아닌데, FTSE 러셀은 유동주식비율과 외국인 지분 한도를 반영한 &#x27;투자가능 시가총액&#x27;을 기준으로 삼기 때문이다. 국내에서 잘 알려진 대형 우량기업들 중 상당수는 외국인 지분 여유분이 거의 소진되어 이번 명단에서 제외되었다. 지수 편입은 2027년 9월까지 네 차례에 걸쳐 진행되며, 증권사들의 패시브 자금 유입 추정치는 15억 달러에서 43억 달러 이상까지 크게 엇갈린다. 기사는 베트남 기업들이 유동주식비율, 외국인 지분, 유동성, 투명성을 능동적으로 개선해야 장기적인 액티브 자금을 유치할 수 있다고 강조한다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">rà soát</span><span class="v-m">재검토, 점검</span></li>
+      <li><span class="v-n">02</span><span class="v-w">cổ phiếu</span><span class="v-m">주식</span></li>
+      <li><span class="v-n">03</span><span class="v-w">vốn hóa</span><span class="v-m">시가총액</span></li>
+      <li><span class="v-n">04</span><span class="v-w">thị trường cận biên</span><span class="v-m">프론티어 마켓</span></li>
+      <li><span class="v-n">05</span><span class="v-w">thị trường mới nổi</span><span class="v-m">신흥시장</span></li>
+      <li><span class="v-n">06</span><span class="v-w">tỷ trọng</span><span class="v-m">비중</span></li>
+      <li><span class="v-n">07</span><span class="v-w">quỹ đầu tư</span><span class="v-m">투자펀드</span></li>
+      <li><span class="v-n">08</span><span class="v-w">mô phỏng</span><span class="v-m">모방하다, 추종하다</span></li>
+      <li><span class="v-n">09</span><span class="v-w">danh mục</span><span class="v-m">포트폴리오</span></li>
+      <li><span class="v-n">10</span><span class="v-w">thanh khoản</span><span class="v-m">유동성</span></li>
+      <li><span class="v-n">11</span><span class="v-w">cổ phiếu tự do chuyển nhượng</span><span class="v-m">유동주식(자유유통주식)</span></li>
+      <li><span class="v-n">12</span><span class="v-w">giới hạn sở hữu nước ngoài</span><span class="v-m">외국인 지분 한도</span></li>
+      <li><span class="v-n">13</span><span class="v-w">sở hữu nước ngoài</span><span class="v-m">외국인 소유(지분)</span></li>
+      <li><span class="v-n">14</span><span class="v-w">cổ đông</span><span class="v-m">주주</span></li>
+      <li><span class="v-n">15</span><span class="v-w">giải ngân</span><span class="v-m">자금 집행</span></li>
+      <li><span class="v-n">16</span><span class="v-w">mua ròng</span><span class="v-m">순매수</span></li>
+      <li><span class="v-n">17</span><span class="v-w">thoái vốn</span><span class="v-m">지분 매각, 자본 철수</span></li>
+      <li><span class="v-n">18</span><span class="v-w">phát hành</span><span class="v-m">발행하다</span></li>
+      <li><span class="v-n">19</span><span class="v-w">quản trị doanh nghiệp</span><span class="v-m">기업 지배구조</span></li>
+      <li><span class="v-n">20</span><span class="v-w">công bố thông tin</span><span class="v-m">정보 공시</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">nhóm thị trường mới nổi thứ cấp</span>
+        <span class="e-m">2차 신흥시장 그룹</span>
+        <span class="e-ex">thời điểm Việt Nam chính thức chuyển từ nhóm thị trường cận biên sang nhóm thị trường mới nổi thứ cấp</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">vốn hóa lớn không đồng nghĩa với khả năng đầu tư lớn</span>
+        <span class="e-m">시가총액이 크다고 투자 가능성이 큰 것은 아니다</span>
+        <span class="e-ex">Nhưng đằng sau con số 27 là một câu chuyện đáng chú ý hơn: vốn hóa lớn không đồng nghĩa với khả năng đầu tư lớn.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">vốn hóa có thể đầu tư</span>
+        <span class="e-m">투자가능 시가총액</span>
+        <span class="e-ex">đại lượng quyết định tỷ trọng trong chỉ số là vốn hóa có thể đầu tư - phần vốn hóa còn lại sau khi đã điều chỉnh theo tỷ lệ cổ phiếu tự do chuyển nhượng và giới hạn sở hữu nước ngoài.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">phần sở hữu còn trống</span>
+        <span class="e-m">남은 외국인 지분 여유분</span>
+        <span class="e-ex">Một doanh nghiệp có giới hạn sở hữu nước ngoài 49% và nhà đầu tư nước ngoài đã nắm 39% có phần sở hữu còn trống không phải 10% theo số tuyệt đối, mà tương đương khoảng 20,4% theo cách tính tương đối này.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">quỹ mô phỏng chỉ số</span>
+        <span class="e-m">지수추종(패시브) 펀드</span>
+        <span class="e-ex">Một quỹ mô phỏng chỉ số buộc phải tuân theo đúng cấu trúc chỉ số tham chiếu; nếu phần sở hữu còn trống gần như bằng 0, quỹ không thể thực hiện giao dịch để đạt tỷ trọng được phân bổ và do đó cổ phiếu bị loại khỏi vòng xét lần này.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">dòng vốn thụ động</span>
+        <span class="e-m">패시브 자금 흐름</span>
+        <span class="e-ex">Nâng hạng tạo ra dòng vốn thụ động vì các quỹ mô phỏng chỉ số buộc phải điều chỉnh danh mục theo quy tắc của chỉ số.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">dòng vốn chủ động</span>
+        <span class="e-m">액티브 자금 흐름</span>
+        <span class="e-ex">Nhưng quy mô dòng vốn thụ động có giới hạn, và tiềm năng lớn hơn nhiều nằm ở dòng vốn chủ động — loại vốn không bắt buộc phải mua cổ phiếu Việt Nam theo đúng tỷ trọng của chỉ số, mà có thể lựa chọn nắm giữ ít hơn, bằng hoặc nhiều hơn tùy theo đánh giá riêng của từng quỹ.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">tỷ lệ cổ phiếu tự do chuyển nhượng</span>
+        <span class="e-m">유동주식비율</span>
+        <span class="e-ex">Về tỷ lệ cổ phiếu tự do chuyển nhượng, doanh nghiệp cần bắt đầu nhìn đại lượng này như một loại tài sản chiến lược cần quản lý chủ động, tương tự cách quản lý hiệu quả sinh lời hay chính sách cổ tức, thay vì một hệ quả thụ động của cơ cấu sở hữu lịch sử.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">xây dựng hoặc thoái một vị thế</span>
+        <span class="e-m">포지션을 구축하거나 청산하다</span>
+        <span class="e-ex">thước đo phù hợp với nhà đầu tư tổ chức không phải giá trị giao dịch hằng ngày tính bằng tiền đồng, mà là số phiên giao dịch cần thiết để một quỹ quy mô hàng chục triệu USD xây dựng hoặc thoái một vị thế mà không chiếm quá một tỷ lệ nhất định trong giá trị giao dịch mỗi phiên.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">hoạt động quan hệ nhà đầu tư</span>
+        <span class="e-m">IR(투자자 관계) 활동</span>
+        <span class="e-ex">các yếu tố như công bố thông tin bằng tiếng Anh kịp thời, hoạt động quan hệ nhà đầu tư chuyên nghiệp, minh bạch trong các giao dịch với bên liên quan, chất lượng báo cáo tài chính và chính sách phân bổ vốn rõ ràng là điều kiện để chuyển hóa việc đủ tiêu chuẩn kỹ thuật vào chỉ số thành việc thực sự được các quỹ đầu tư chủ động lựa chọn nắm giữ lâu dài.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/27-co-phieu-ftse-va-bai-toan-kha-nang-dau-tu-cua-doanh-nghiep-viet-nam.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
