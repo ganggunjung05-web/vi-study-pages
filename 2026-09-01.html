@@ -1,0 +1,447 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.01</strong> · 9일째</span>
+    </div>
+    <h1>Xuất khẩu rau quả bứt tốc nhờ sầu riêng và các mặt hàng chủ lực</h1>
+    <p class="h1-ko">두리안과 주요 품목 덕분에 채소·과일 수출이 속도를 내다</p>
+    <p class="byline">원문 5,389자 · 읽기 약 7분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>9</b>장 · 단어 <b>180</b>개 · 표현 <b>90</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-01.html" aria-current="page"><span class="chip-d">09.01</span><span class="chip-t">rau quả</span></a>
+      <a class="chip" href="2026-08-31.html"><span class="chip-d">08.31</span><span class="chip-t">lãi</span></a>
+      <a class="chip" href="2026-08-30.html"><span class="chip-d">08.30</span><span class="chip-t">rà soát</span></a>
+      <a class="chip" href="2026-08-29.html"><span class="chip-d">08.29</span><span class="chip-t">phân tán</span></a>
+      <a class="chip" href="2026-08-28.html"><span class="chip-d">08.28</span><span class="chip-t">tiếp</span></a>
+      <a class="chip" href="2026-08-27.html"><span class="chip-d">08.27</span><span class="chip-t">bộc lộ</span></a>
+      <a class="chip" href="2026-08-26.html"><span class="chip-d">08.26</span><span class="chip-t">chủ trì</span></a>
+      <a class="chip" href="2026-08-25.html"><span class="chip-d">08.25</span><span class="chip-t">Hiệp hội</span></a>
+      <a class="chip" href="2026-08-24.html"><span class="chip-d">08.24</span><span class="chip-t">thông qua</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Trong tháng 8/2026, kim ngạch xuất khẩu rau quả đạt khoảng 1,1 tỷ USD, tăng 14,6% so với cùng kỳ năm trước, đưa tổng kim ngạch 8 tháng lên gần 5,87 tỷ USD. Sầu riêng tiếp tục là động lực chính nhờ các vùng trồng ở Tây Nguyên bước vào thu hoạch rộ, đạt 1,77 tỷ USD trong 7 tháng và chiếm gần 37% tổng kim ngạch ngành. Trung Quốc đã phê duyệt 401 vùng trồng và 166 cơ sở đóng gói sầu riêng của Việt Nam, đồng thời Việt Nam triển khai thí điểm hệ thống truy xuất nguồn gốc để nâng cao tính minh bạch. Nhiều mặt hàng khác như dừa, hạt dẻ cười, thanh long, chanh leo cũng tăng trưởng mạnh, trong khi Trung Quốc vẫn là thị trường lớn nhất và Ấn Độ vừa mở cửa cho sầu riêng tươi Việt Nam. Ngành rau quả kỳ vọng đạt kim ngạch 9,5-10 tỷ USD trong năm 2026 nhờ chính vụ sầu riêng và nhu cầu tiêu thụ dịp lễ cuối năm.</p>
+    <p class="ko">2026년 8월 채소·과일 수출액은 약 11억 달러로 전년 동기 대비 14.6% 증가했으며, 8개월 누적 수출액은 약 58억 7천만 달러에 달했다. 두리안은 여전히 주요 동력으로, 서부 고원 지역 재배지가 대량 수확기에 접어들면서 7개월간 17억 7천만 달러를 기록해 전체 채소·과일 수출액의 약 37%를 차지했다. 중국은 베트남 두리안 재배지 401곳과 포장 시설 166곳을 승인했으며, 베트남은 투명성 제고를 위해 원산지 추적 시스템을 시범 운영했다. 코코넛, 피스타치오, 용과, 패션프루트 등 다른 품목들도 큰 폭으로 성장했으며, 중국은 여전히 최대 시장이고 인도는 최근 베트남산 신선 두리안 시장을 개방했다. 채소·과일 업계는 두리안 성수기와 연말 명절 수요에 힘입어 2026년 95억~100억 달러의 수출액을 기대하고 있다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">rau quả</span><span class="v-m">채소와 과일</span></li>
+      <li><span class="v-n">02</span><span class="v-w">mốc</span><span class="v-m">기준점, 이정표</span></li>
+      <li><span class="v-n">03</span><span class="v-w">sầu riêng</span><span class="v-m">두리안</span></li>
+      <li><span class="v-n">04</span><span class="v-w">vùng trồng</span><span class="v-m">재배 지역</span></li>
+      <li><span class="v-n">05</span><span class="v-w">thu hoạch</span><span class="v-m">수확하다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">dồi dào</span><span class="v-m">풍부한</span></li>
+      <li><span class="v-n">07</span><span class="v-w">diện tích</span><span class="v-m">면적</span></li>
+      <li><span class="v-n">08</span><span class="v-w">đóng gói</span><span class="v-m">포장(하다)</span></li>
+      <li><span class="v-n">09</span><span class="v-w">phê duyệt</span><span class="v-m">승인하다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">truy xuất nguồn gốc</span><span class="v-m">원산지 추적</span></li>
+      <li><span class="v-n">11</span><span class="v-w">tem nhãn</span><span class="v-m">라벨, 상표</span></li>
+      <li><span class="v-n">12</span><span class="v-w">khắt khe</span><span class="v-m">까다로운</span></li>
+      <li><span class="v-n">13</span><span class="v-w">hữu cơ</span><span class="v-m">유기농</span></li>
+      <li><span class="v-n">14</span><span class="v-w">hạt dẻ cười</span><span class="v-m">피스타치오</span></li>
+      <li><span class="v-n">15</span><span class="v-w">thanh long</span><span class="v-m">용과</span></li>
+      <li><span class="v-n">16</span><span class="v-w">chanh leo</span><span class="v-m">패션프루트</span></li>
+      <li><span class="v-n">17</span><span class="v-w">mít</span><span class="v-m">잭프루트</span></li>
+      <li><span class="v-n">18</span><span class="v-w">dứa</span><span class="v-m">파인애플</span></li>
+      <li><span class="v-n">19</span><span class="v-w">chính vụ</span><span class="v-m">성수기</span></li>
+      <li><span class="v-n">20</span><span class="v-w">kiểm dịch</span><span class="v-m">검역</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">so với cùng kỳ năm</span>
+        <span class="e-m">전년 동기 대비</span>
+        <span class="e-ex">tăng 1,3% so với tháng trước và tăng 14,6% so với cùng kỳ năm 2025.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">vượt mốc</span>
+        <span class="e-m">기준점을 넘다</span>
+        <span class="e-ex">Đây là tháng thứ hai liên tiếp ngành hàng này ghi nhận kim ngạch vượt mốc 1 tỷ USD.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">thu hoạch rộ</span>
+        <span class="e-m">대량 수확기에 접어들다</span>
+        <span class="e-ex">Việc các vùng trồng trọng điểm tại Tây Nguyên như Đắk Lắk và Lâm Đồng bước vào giai đoạn thu hoạch rộ đã giúp nguồn cung dồi dào, đáp ứng nhu cầu của các thị trường nhập khẩu.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">mở rộng quy mô sản xuất</span>
+        <span class="e-m">생산 규모를 확대하다</span>
+        <span class="e-ex">Không chỉ tăng trưởng về kim ngạch, ngành sầu riêng còn ghi nhận sự mở rộng mạnh mẽ về quy mô sản xuất.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">làm việc với</span>
+        <span class="e-m">~와 협의하다</span>
+        <span class="e-ex">đoàn công tác Bộ Nông nghiệp và Môi trường đã làm việc với Tổng cục Hải quan Trung Quốc (GACC).</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">thí điểm</span>
+        <span class="e-m">시범 운영하다</span>
+        <span class="e-ex">Bộ Nông nghiệp và Môi trường đã triển khai thí điểm hệ thống truy xuất nguồn gốc sầu riêng trong 6 tháng đầu năm 2026, cho phép người mua kiểm tra thông tin sản phẩm thông qua mã xác thực trên tem nhãn.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">khả quan</span>
+        <span class="e-m">긍정적인, 양호한</span>
+        <span class="e-ex">Ngoài sầu riêng, nhiều loại trái cây và sản phẩm rau quả khác cũng ghi nhận kết quả khả quan.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">tận dụng lợi thế</span>
+        <span class="e-m">이점을 활용하다</span>
+        <span class="e-ex">Các mặt hàng như dừa, chanh leo, mít, ớt, dứa và bưởi tiếp tục tận dụng tốt lợi thế nguồn cung trong nước cũng như nhu cầu gia tăng từ các thị trường nhập khẩu để mở rộng xuất khẩu.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">mở cửa thị trường</span>
+        <span class="e-m">시장을 개방하다</span>
+        <span class="e-ex">Một tín hiệu tích cực khác là việc Ấn Độ chính thức mở cửa thị trường đối với sầu riêng tươi của Việt Nam từ giữa tháng 7/2026.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">lợi thế cạnh tranh</span>
+        <span class="e-m">경쟁 우위</span>
+        <span class="e-ex">tạo lợi thế cạnh tranh đáng kể cho sản phẩm của Việt Nam trên thị trường quốc tế.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/xuat-khau-rau-qua-but-toc-nho-sau-rieng-va-cac-mat-hang-chu-luc.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
