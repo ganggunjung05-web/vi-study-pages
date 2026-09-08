@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.08</strong> · 16일째</span>
+    </div>
+    <h1>Tái cấu trúc thị trường nhà ở để tăng nguồn cung nhà có giá phù hợp</h1>
+    <p class="h1-ko">적정 가격 주택 공급 확대를 위한 주택 시장 재구조화</p>
+    <p class="byline">원문 2,727자 · 읽기 약 3분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>16</b>장 · 단어 <b>320</b>개 · 표현 <b>160</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-08.html" aria-current="page"><span class="chip-d">09.08</span><span class="chip-t">nguồn cung</span></a>
+      <a class="chip" href="2026-09-07.html"><span class="chip-d">09.07</span><span class="chip-t">tỷ giá</span></a>
+      <a class="chip" href="2026-09-06.html"><span class="chip-d">09.06</span><span class="chip-t">kim ngạch thương mại</span></a>
+      <a class="chip" href="2026-09-05.html"><span class="chip-d">09.05</span><span class="chip-t">tiến sát</span></a>
+      <a class="chip" href="2026-09-04.html"><span class="chip-d">09.04</span><span class="chip-t">ngân sách nhà nước</span></a>
+      <a class="chip" href="2026-09-03.html"><span class="chip-d">09.03</span><span class="chip-t">giá tiêu dùng</span></a>
+      <a class="chip" href="2026-09-02.html"><span class="chip-d">09.02</span><span class="chip-t">thuộc địa</span></a>
+      <a class="chip" href="2026-09-01.html"><span class="chip-d">09.01</span><span class="chip-t">rau quả</span></a>
+      <a class="chip" href="2026-08-31.html"><span class="chip-d">08.31</span><span class="chip-t">lãi</span></a>
+      <a class="chip" href="2026-08-30.html"><span class="chip-d">08.30</span><span class="chip-t">rà soát</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Thị trường bất động sản Việt Nam đang thiếu nguồn cung do nhiều dự án bị đóng băng và vướng pháp lý. Nguồn cung hiện có chủ yếu là nhà ở cao cấp, trong khi phân khúc phù hợp với túi tiền người dân lại thiếu vắng. Tình trạng đầu cơ khiến nhà trở thành tài sản tích lũy thay vì để sử dụng, đẩy giá nhà tăng cao. Theo GS. TS Hoàng Văn Cường, khơi thông thị trường bất động sản sẽ tạo tác động lan tỏa đến nhiều ngành kinh tế khác và giúp tái cấu trúc thị trường nhà ở theo hướng phù hợp hơn với nhu cầu thực tế.</p>
+    <p class="ko">베트남 부동산 시장은 많은 프로젝트가 동결되고 법적 문제에 얽혀 공급 부족을 겪고 있다. 현재 공급되는 주택은 대부분 고급 주택이며, 서민이 감당할 수 있는 가격대의 주택은 부족하다. 투기로 인해 주택이 실사용 자산이 아닌 축적 자산으로 변질되면서 집값이 계속 오르고 있다. 호앙반끄엉 교수에 따르면, 부동산 시장을 활성화하면 다른 여러 산업 분야로 파급 효과를 낼 수 있으며, 이를 통해 실제 수요에 더 부합하는 방향으로 주택 시장을 재구조화할 수 있다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">nguồn cung</span><span class="v-m">공급원</span></li>
+      <li><span class="v-n">02</span><span class="v-w">đóng băng</span><span class="v-m">동결되다, 얼어붙다</span></li>
+      <li><span class="v-n">03</span><span class="v-w">khởi công</span><span class="v-m">착공하다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">vướng</span><span class="v-m">걸리다, 얽매이다</span></li>
+      <li><span class="v-n">05</span><span class="v-w">cơ chế</span><span class="v-m">제도, 메커니즘</span></li>
+      <li><span class="v-n">06</span><span class="v-w">pháp lý</span><span class="v-m">법적인</span></li>
+      <li><span class="v-n">07</span><span class="v-w">đầu tư</span><span class="v-m">투자하다</span></li>
+      <li><span class="v-n">08</span><span class="v-w">khai thác</span><span class="v-m">가동하다, 활용하다</span></li>
+      <li><span class="v-n">09</span><span class="v-w">mất cân đối</span><span class="v-m">불균형하다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">phân khúc</span><span class="v-m">(시장) 세그먼트, 부문</span></li>
+      <li><span class="v-n">11</span><span class="v-w">túi tiền</span><span class="v-m">지갑, 자금 사정</span></li>
+      <li><span class="v-n">12</span><span class="v-w">đầu cơ</span><span class="v-m">투기하다</span></li>
+      <li><span class="v-n">13</span><span class="v-w">tích lũy</span><span class="v-m">축적하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">trụ cột</span><span class="v-m">기둥, 핵심축</span></li>
+      <li><span class="v-n">15</span><span class="v-w">lan tỏa</span><span class="v-m">파급되다, 확산되다</span></li>
+      <li><span class="v-n">16</span><span class="v-w">vật liệu</span><span class="v-m">자재</span></li>
+      <li><span class="v-n">17</span><span class="v-w">hàng tiêu dùng</span><span class="v-m">소비재</span></li>
+      <li><span class="v-n">18</span><span class="v-w">khơi thông</span><span class="v-m">막힌 것을 뚫다, 활성화하다</span></li>
+      <li><span class="v-n">19</span><span class="v-w">đất đai</span><span class="v-m">토지</span></li>
+      <li><span class="v-n">20</span><span class="v-w">tái cấu trúc</span><span class="v-m">재구조화하다</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">mất nguồn cung kéo dài</span>
+        <span class="e-m">장기간 지속되는 공급 부족</span>
+        <span class="e-ex">Tình trạng mất nguồn cung kéo dài trong suốt thời gian qua khi các dự án bất động sản gần như bị đóng băng , không có n hiều dự án mới được khởi công.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">vướng cơ chế, chính sách, pháp lý</span>
+        <span class="e-m">제도·정책·법적 문제에 얽히다</span>
+        <span class="e-ex">Trong khi rất nhiều dự án cũ đang triển khai thì vướng cơ chế, chính sách, pháp lý hoặc nhà đầu tư có vấn đề nên không đưa vào khai thác.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">khan hiếm, mất cân đối nguồn cung</span>
+        <span class="e-m">공급이 부족하고 불균형하다</span>
+        <span class="e-ex">Trong bối cảnh thị trường khan hiếm , mất cân đối nguồn cung thì cơ cấu nguồn cung về nhà ở cũng không cân đối.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">mua chờ tăng giá rồi bán</span>
+        <span class="e-m">가격 상승을 기다렸다가 되파는 것(투기)</span>
+        <span class="e-ex">GS. TS Hoàng Văn Cường - Đại biểu Quốc hội khóa XIV, XV; Phó Chủ tịch Hội Khoa học Kinh tế Việt Nam cho rằng, còn có tình trạng đầu cơ, mua chờ tăng giá rồi bán.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">nhà trở thành tài sản tích lũy</span>
+        <span class="e-m">주택이 축적 자산이 되다</span>
+        <span class="e-ex">Khi giá bất động sản tăng cao thì không chỉ đơn thuần là đầu cơ mà còn khiến nhà không còn là tài sản sử dụng, nhà trở thành tài sản tích lũy.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">đẩy giá nhà tăng liên tục</span>
+        <span class="e-m">집값을 계속 밀어올리다</span>
+        <span class="e-ex">Chính những yếu tố này đẩy giá nhà tăng liên tục, tăng gấp nhiều lần so với khả năng thanh toán của người dân.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">lấy con người làm yếu tố trung tâm</span>
+        <span class="e-m">사람을 중심 요소로 삼다</span>
+        <span class="e-ex">Theo định hướng của Đảng và Nhà nước, mô hình phát triển mới phải là mô hình phát triển toàn diện trên các trụ cột , lấy con người làm yếu tố t rung tâm .</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">tạo tác động lan tỏa</span>
+        <span class="e-m">파급 효과를 만들다</span>
+        <span class="e-ex">N ếu phát triển tốt thị trường nhà ở nói riêng và thị trường bất động sản nói chung thì sẽ tạo tác động lan tỏa đến các lĩnh vực, các ngành khác của nền kinh tế.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">khơi thông lĩnh vực đất đai</span>
+        <span class="e-m">토지 분야를 활성화하다</span>
+        <span class="e-ex">T heo các chuyên gia, giai đoạn hiện nay tăng trưởng vẫn phải dựa vào yếu tố đầu tư , trong đó có khơi thông lĩnh vực đất đai .</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">tái cấu trúc lại thị trường nhà ở</span>
+        <span class="e-m">주택 시장을 재구조화하다</span>
+        <span class="e-ex">Từ đó, sẽ tái cấu trúc lại thị trường nhà ở để c ó thể có những phân khúc nhà ở phù hợp hơn , đáp ứng được nhu cầu sử dụng , chứ không phải chỉ như hiện nay là những phân khúc nhà ở cao cấp mang tính chất đ ầu cơ hoặc chỉ dành cho những người nhiều tiền.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/tai-cau-truc-thi-truong-nha-o-de-tang-nguon-cung-nha-co-gia-phu-hop.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
