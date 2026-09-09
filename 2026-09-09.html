@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.09</strong> · 17일째</span>
+    </div>
+    <h1>Sửa đồng bộ 3 luật để khơi thông nguồn lực đất đai, nhà ở, bất động sản</h1>
+    <p class="h1-ko">토지·주택·부동산 자원의 물꼬를 트기 위한 3개 법률 동시 개정</p>
+    <p class="byline">원문 5,218자 · 읽기 약 7분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>17</b>장 · 단어 <b>340</b>개 · 표현 <b>170</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-09.html" aria-current="page"><span class="chip-d">09.09</span><span class="chip-t">chủ trì</span></a>
+      <a class="chip" href="2026-09-08.html"><span class="chip-d">09.08</span><span class="chip-t">nguồn cung</span></a>
+      <a class="chip" href="2026-09-07.html"><span class="chip-d">09.07</span><span class="chip-t">tỷ giá</span></a>
+      <a class="chip" href="2026-09-06.html"><span class="chip-d">09.06</span><span class="chip-t">kim ngạch thương mại</span></a>
+      <a class="chip" href="2026-09-05.html"><span class="chip-d">09.05</span><span class="chip-t">tiến sát</span></a>
+      <a class="chip" href="2026-09-04.html"><span class="chip-d">09.04</span><span class="chip-t">ngân sách nhà nước</span></a>
+      <a class="chip" href="2026-09-03.html"><span class="chip-d">09.03</span><span class="chip-t">giá tiêu dùng</span></a>
+      <a class="chip" href="2026-09-02.html"><span class="chip-d">09.02</span><span class="chip-t">thuộc địa</span></a>
+      <a class="chip" href="2026-09-01.html"><span class="chip-d">09.01</span><span class="chip-t">rau quả</span></a>
+      <a class="chip" href="2026-08-31.html"><span class="chip-d">08.31</span><span class="chip-t">lãi</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Sáng 9/9, Thủ tướng Lê Minh Hưng chủ trì cuộc họp về dự án Luật Đất đai, Luật Nhà ở và Luật Kinh doanh bất động sản (sửa đổi) trước khi trình Chính phủ, Quốc hội xem xét. Việc sửa đổi đồng bộ 3 luật nhằm tháo gỡ điểm nghẽn, khơi thông nguồn lực cho phát triển, thực hiện chủ trương của Trung ương tại Nghị quyết số 21-NQ/TW. Ba dự án luật sẽ được trình Chính phủ tại phiên họp chuyên đề tháng 9, sau đó trình Quốc hội thông qua vào cuối năm 2026. Thủ tướng yêu cầu các bộ bảo đảm tính đồng bộ giữa 3 luật, tuân thủ nguyên tắc kiểm soát quyền lực trong xây dựng pháp luật, và thực chất cắt giảm thủ tục hành chính.</p>
+    <p class="ko">9월 9일 아침, 레민흥 총리는 토지법, 주택법, 부동산사업법(개정안)에 대해 정부와 국회 심의에 앞서 관련 부처들과 회의를 주재했다. 3개 법률을 동시에 개정하는 것은 걸림돌을 해소하고 발전을 위한 자원의 물꼬를 트기 위한 것으로, 중앙당 제21-NQ/TW호 결의의 방침을 이행하는 것이다. 3개 법안은 9월 전문 회의에서 정부에 제출된 후 2026년 말 국회에서 통과될 예정이다. 총리는 각 부처에 3개 법률 간의 일관성을 보장하고, 입법 과정에서 권력통제 원칙을 준수하며, 실질적으로 행정절차를 축소할 것을 요구했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">chủ trì</span><span class="v-m">주재하다</span></li>
+      <li><span class="v-n">02</span><span class="v-w">soạn thảo</span><span class="v-m">초안을 작성하다</span></li>
+      <li><span class="v-n">03</span><span class="v-w">thông qua</span><span class="v-m">통과시키다, 의결하다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">điểm nghẽn</span><span class="v-m">병목, 걸림돌</span></li>
+      <li><span class="v-n">05</span><span class="v-w">khơi thông</span><span class="v-m">물꼬를 트다, 원활히 하다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">hiến pháp</span><span class="v-m">헌법</span></li>
+      <li><span class="v-n">07</span><span class="v-w">định hướng</span><span class="v-m">방향, 지향</span></li>
+      <li><span class="v-n">08</span><span class="v-w">trọng tâm</span><span class="v-m">핵심, 중점</span></li>
+      <li><span class="v-n">09</span><span class="v-w">thể chế</span><span class="v-m">제도, 체제</span></li>
+      <li><span class="v-n">10</span><span class="v-w">chỉ đạo</span><span class="v-m">지도하다, 지시하다</span></li>
+      <li><span class="v-n">11</span><span class="v-w">tiếp thu</span><span class="v-m">수용하다, 받아들이다</span></li>
+      <li><span class="v-n">12</span><span class="v-w">giải trình</span><span class="v-m">해명하다, 설명하다</span></li>
+      <li><span class="v-n">13</span><span class="v-w">thẩm định</span><span class="v-m">심사하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">khẩn trương</span><span class="v-m">신속히, 서둘러</span></li>
+      <li><span class="v-n">15</span><span class="v-w">mật thiết</span><span class="v-m">밀접한</span></li>
+      <li><span class="v-n">16</span><span class="v-w">tác động</span><span class="v-m">영향</span></li>
+      <li><span class="v-n">17</span><span class="v-w">cắt giảm</span><span class="v-m">삭감하다</span></li>
+      <li><span class="v-n">18</span><span class="v-w">đơn giản hóa</span><span class="v-m">간소화하다</span></li>
+      <li><span class="v-n">19</span><span class="v-w">thủ tục hành chính</span><span class="v-m">행정절차</span></li>
+      <li><span class="v-n">20</span><span class="v-w">rào cản</span><span class="v-m">장벽</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">chủ trì cuộc họp với các bộ, ngành liên quan</span>
+        <span class="e-m">관련 부처들과 회의를 주재하다</span>
+        <span class="e-ex">Sáng 9/9, Thủ tướng Lê Minh Hưng chủ trì cuộc họp với các bộ, ngành liên quan về dự án Luật Đất đai (sửa đổi), Luật Nhà ở (sửa đổi) và Luật Kinh doanh bất động sản (sửa đổi), trước khi các cơ quan chủ trì soạn thảo hoàn thiện hồ sơ trình Chính phủ, Quốc hội xem xét, thông qua.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">tháo gỡ các điểm nghẽn, khơi thông nguồn lực</span>
+        <span class="e-m">병목을 해소하고 자원의 물꼬를 트다</span>
+        <span class="e-ex">Việc sửa đổi đồng bộ 3 luật nhằm tháo gỡ các điểm nghẽn, khơi thông nguồn lực đất đai, nhà ở, bất động sản cho phát triển, đáp ứng yêu cầu tăng trưởng hai con số và bảo đảm quyền có nơi ở hợp pháp của công dân theo quy định của Hiến pháp.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">hoàn thiện thể chế, chính sách quản lý, sử dụng đất</span>
+        <span class="e-m">토지 관리·이용 제도와 정책을 완비하다</span>
+        <span class="e-ex">Tại Hội nghị lần thứ ba, Ban Chấp hành Trung ương Đảng khóa XIV đã ban hành Nghị quyết số 21-NQ/TW ngày 28/7/2026 về quan điểm, định hướng sửa đổi Luật Đất đai và các luật có liên quan, xác định nhiệm vụ trọng tâm là hoàn thiện thể chế, chính sách quản lý, sử dụng đất đồng bộ với thể chế kinh tế thị trường định hướng xã hội chủ nghĩa.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">trình Quốc hội cho ý kiến về định hướng sửa đổi</span>
+        <span class="e-m">개정 방향에 대해 국회에 의견을 제출하다</span>
+        <span class="e-ex">Chính phủ đã thông qua chính sách của cả 3 dự án luật và trình Quốc hội cho ý kiến về định hướng sửa đổi.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">tiếp thu, giải trình, hoàn thiện hồ sơ để... thẩm định</span>
+        <span class="e-m">자료를 수용·설명하여 완비해 심사를 받도록 하다</span>
+        <span class="e-ex">Trên cơ sở ý kiến của Ủy ban Thường vụ Quốc hội, các cơ quan của Quốc hội, đại biểu Quốc hội, bộ, ngành và địa phương, các cơ quan chủ trì soạn thảo đã tiếp thu, giải trình, hoàn thiện hồ sơ để Bộ Tư pháp thẩm định.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">đánh giá cao tinh thần khẩn trương</span>
+        <span class="e-m">신속한 자세를 높이 평가하다</span>
+        <span class="e-ex">Kết luận cuộc họp, Thủ tướng Lê Minh Hưng đánh giá cao tinh thần khẩn trương của các bộ, cơ quan trong tổng kết Nghị quyết số 18-NQ/TW, xây dựng Nghị quyết số 21-NQ/TW của Trung ương và chuẩn bị các dự án luật.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">có quan hệ mật thiết, giữ vai trò rất quan trọng</span>
+        <span class="e-m">밀접한 관계를 가지며 매우 중요한 역할을 하다</span>
+        <span class="e-ex">Thủ tướng nhấn mạnh đây là 3 luật có quan hệ mật thiết, giữ vai trò rất quan trọng trong khơi thông các nguồn lực cho phát triển, đồng thời tác động lớn tới người dân, tổ chức, nhà đầu tư, nền kinh tế, an ninh, quốc phòng.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">bảo đảm tính đồng bộ giữa 3 dự án luật</span>
+        <span class="e-m">3개 법안 간의 일관성을 보장하다</span>
+        <span class="e-ex">Để bảo đảm tiến độ và chất lượng các dự thảo luật, Thủ tướng yêu cầu Bộ Nông nghiệp và Môi trường, Bộ Xây dựng tiếp thu đầy đủ ý kiến tại cuộc họp, phối hợp với các cơ quan liên quan tiếp tục rà soát, bảo đảm tính đồng bộ giữa 3 dự án luật và các luật có liên quan như Luật Đầu tư, Luật Quy hoạch, Luật Thuế.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">tuân thủ nghiêm nguyên tắc, quy định kiểm soát quyền lực</span>
+        <span class="e-m">권력통제 원칙과 규정을 엄격히 준수하다</span>
+        <span class="e-ex">Thủ tướng đặc biệt lưu ý phải tuân thủ trình tự, thủ tục xây dựng, trình dự thảo luật theo đúng quy định của Luật Ban hành văn bản quy phạm pháp luật, đặc biệt tuân thủ nghiêm nguyên tắc, quy định kiểm soát quyền lực trong xây dựng pháp luật.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">thực chất cắt giảm, đơn giản hóa thủ tục hành chính</span>
+        <span class="e-m">실질적으로 행정절차를 삭감·간소화하다</span>
+        <span class="e-ex">Đặc biệt, việc sửa luật phải đi đôi với thực chất cắt giảm, đơn giản hóa thủ tục hành chính, điều kiện kinh doanh, tránh tình trạng trên bộ giảm nhưng dưới địa phương tăng, gây ra những điểm nghẽn, rào cản đối với phát triển.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/sua-dong-bo-3-luat-de-khoi-thong-nguon-luc-dat-dai-nha-o-bat-dong-san.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
