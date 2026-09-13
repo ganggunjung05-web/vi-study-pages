@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.13</strong> · 21일째</span>
+    </div>
+    <h1>Việt Nam - Ấn Độ hướng tới mục tiêu thương mại 25 tỷ USD, tăng kết nối hai nền kinh tế</h1>
+    <p class="h1-ko">베트남 - 인도, 무역 250억 달러 목표를 향해 두 경제 간 연결 강화</p>
+    <p class="byline">원문 6,066자 · 읽기 약 8분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>21</b>장 · 단어 <b>420</b>개 · 표현 <b>210</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-13.html" aria-current="page"><span class="chip-d">09.13</span><span class="chip-t">hội nghị thượng đỉnh</span></a>
+      <a class="chip" href="2026-09-12.html"><span class="chip-d">09.12</span><span class="chip-t">hệ thống phân phối</span></a>
+      <a class="chip" href="2026-09-11.html"><span class="chip-d">09.11</span><span class="chip-t">trọng thể</span></a>
+      <a class="chip" href="2026-09-10.html"><span class="chip-d">09.10</span><span class="chip-t">đáy</span></a>
+      <a class="chip" href="2026-09-09.html"><span class="chip-d">09.09</span><span class="chip-t">chủ trì</span></a>
+      <a class="chip" href="2026-09-08.html"><span class="chip-d">09.08</span><span class="chip-t">nguồn cung</span></a>
+      <a class="chip" href="2026-09-07.html"><span class="chip-d">09.07</span><span class="chip-t">tỷ giá</span></a>
+      <a class="chip" href="2026-09-06.html"><span class="chip-d">09.06</span><span class="chip-t">kim ngạch thương mại</span></a>
+      <a class="chip" href="2026-09-05.html"><span class="chip-d">09.05</span><span class="chip-t">tiến sát</span></a>
+      <a class="chip" href="2026-09-04.html"><span class="chip-d">09.04</span><span class="chip-t">ngân sách nhà nước</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Ngày 12/9, tại New Delhi, Thủ tướng Lê Minh Hưng đã hội đàm với Thủ tướng Ấn Độ Narendra Modi nhân dịp dự Hội nghị Thượng đỉnh BRICS lần thứ 18. Hai bên khẳng định quan hệ Đối tác Chiến lược Toàn diện Tăng cường đang phát triển sâu sắc và nhất trí đưa thương mại hai chiều đạt 25 tỷ USD. Hai Thủ tướng cũng thảo luận việc xây dựng hành lang kết nối Nam Á - Đông Nam Á, hợp tác quốc phòng - an ninh, công nghệ AI, 5G/6G, cũng như văn hóa và giao lưu nhân dân. Việt Nam đề nghị Ấn Độ tiếp tục ủng hộ lập trường của ASEAN về Biển Đông.</p>
+    <p class="ko">9월 12일 뉴델리에서 레민흥 총리는 제18차 브릭스 정상회의 참석을 계기로 나렌드라 모디 인도 총리와 회담했다. 양측은 포괄적 전략동반자관계가 심화되고 있음을 확인하고 양국 교역액을 250억 달러까지 늘리기로 합의했다. 두 총리는 남아시아-동남아시아 연결 회랑 구축, 국방·안보 협력, AI 및 5G/6G 기술, 그리고 문화·인적 교류에 대해서도 논의했다. 베트남은 인도가 남중국해 문제에 대한 아세안의 입장을 계속 지지해 줄 것을 요청했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">hội nghị thượng đỉnh</span><span class="v-m">정상회의</span></li>
+      <li><span class="v-n">02</span><span class="v-w">tin tưởng</span><span class="v-m">신뢰하다, 확신하다</span></li>
+      <li><span class="v-n">03</span><span class="v-w">tầm nhìn</span><span class="v-m">비전</span></li>
+      <li><span class="v-n">04</span><span class="v-w">thương mại</span><span class="v-m">무역, 상업</span></li>
+      <li><span class="v-n">05</span><span class="v-w">kết nối</span><span class="v-m">연결하다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">sáng kiến</span><span class="v-m">이니셔티브, 발의</span></li>
+      <li><span class="v-n">07</span><span class="v-w">chuyển đổi số</span><span class="v-m">디지털 전환</span></li>
+      <li><span class="v-n">08</span><span class="v-w">năng lượng sạch</span><span class="v-m">청정에너지</span></li>
+      <li><span class="v-n">09</span><span class="v-w">phát triển bền vững</span><span class="v-m">지속가능한 발전</span></li>
+      <li><span class="v-n">10</span><span class="v-w">biến động</span><span class="v-m">변동, 격변</span></li>
+      <li><span class="v-n">11</span><span class="v-w">kiên định</span><span class="v-m">확고한, 일관된</span></li>
+      <li><span class="v-n">12</span><span class="v-w">đối tác chiến lược toàn diện</span><span class="v-m">포괄적 전략동반자</span></li>
+      <li><span class="v-n">13</span><span class="v-w">chín muồi</span><span class="v-m">무르익다, 성숙하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">hội tụ lợi ích</span><span class="v-m">이익의 수렴</span></li>
+      <li><span class="v-n">15</span><span class="v-w">đồng hành</span><span class="v-m">동행하다</span></li>
+      <li><span class="v-n">16</span><span class="v-w">tăng trưởng nhanh</span><span class="v-m">빠르게 성장하다</span></li>
+      <li><span class="v-n">17</span><span class="v-w">bổ trợ</span><span class="v-m">상호 보완적인</span></li>
+      <li><span class="v-n">18</span><span class="v-w">dược phẩm</span><span class="v-m">의약품</span></li>
+      <li><span class="v-n">19</span><span class="v-w">nông sản</span><span class="v-m">농산물</span></li>
+      <li><span class="v-n">20</span><span class="v-w">chuỗi cung ứng</span><span class="v-m">공급망</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">Đối tác Chiến lược Toàn diện Tăng cường</span>
+        <span class="e-m">강화된 포괄적 전략동반자관계</span>
+        <span class="e-ex">Quan hệ hai nước được nâng lên Đối tác Chiến lược Toàn diện Tăng cường nhân chuyến thăm của Tổng Bí thư, Chủ tịch nước Tô Lâm tháng 5/2026, thể hiện tầm mức sâu sắc của quan hệ song phương, sự chín muồi của lòng tin chính trị, chia sẻ tầm nhìn và hội tụ lợi ích chiến lược, mở ra nhiều cơ hội hợp tác trong tương lai.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">chính sách Hành động hướng Đông</span>
+        <span class="e-m">동방정책 (인도의 대외정책)</span>
+        <span class="e-ex">Thủ tướng Narendra Modi khẳng định Việt Nam là một trụ cột quan trọng trong chính sách Hành động hướng Đông của Ấn Độ.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">đưa thương mại hai chiều đạt 25 tỷ USD</span>
+        <span class="e-m">양방향 무역을 250억 달러 달성으로 이끌다</span>
+        <span class="e-ex">quyết tâm đẩy mạnh các biện pháp nhằm sớm đưa thương mại hai chiều đạt 25 tỷ USD, đồng thời tạo điều kiện tiếp cận thị trường cho các sản phẩm của hai nước, đặc biệt là dược phẩm, nông sản, sản phẩm ngư nghiệp và chăn nuôi.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">khởi động đàm phán Hiệp định Thương mại Tự do song phương</span>
+        <span class="e-m">양자 자유무역협정 협상을 개시하다</span>
+        <span class="e-ex">Thủ tướng Lê Minh Hưng đề nghị hai bên thiết lập hành lang kinh tế và chuỗi cung ứng nhằm gia tăng kết nối hai nền kinh tế; xem xét khởi động đàm phán Hiệp định Thương mại Tự do song phương; đồng thời tích cực phối hợp với các nước ASEAN thúc đẩy sớm hoàn tất việc rà soát Hiệp định Thương mại Hàng hóa ASEAN - Ấn Độ (AITIGA).</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">hình thành hành lang kết nối Nam Á - Đông Nam Á</span>
+        <span class="e-m">남아시아-동남아시아 연결 회랑을 형성하다</span>
+        <span class="e-ex">nhất trí nghiên cứu thúc đẩy các dự án kết nối đường sắt, hình thành hành lang kết nối Nam Á - Đông Nam Á, cũng như kết nối giữa các cảng biển hai nước gắn với tuyến hàng hải Á - Âu.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">tăng tần suất các chuyến bay thẳng</span>
+        <span class="e-m">직항편 운항 횟수를 늘리다</span>
+        <span class="e-ex">Thủ tướng Lê Minh Hưng đề nghị Ấn Độ tiếp tục tăng tần suất các chuyến bay thẳng kết nối giữa các thành phố lớn của hai nước.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">Đối thoại Ngoại giao - Quốc phòng</span>
+        <span class="e-m">외교·국방 대화(체제)</span>
+        <span class="e-ex">nhất trí đẩy mạnh hợp tác công nghiệp quốc phòng và thương mại quân sự, đào tạo và cung cấp tín dụng ưu đãi; sớm tổ chức cuộc họp đầu tiên của cơ chế Đối thoại Ngoại giao - Quốc phòng.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">ngành mũi nhọn</span>
+        <span class="e-m">핵심 산업 분야</span>
+        <span class="e-ex">Thủ tướng Lê Minh Hưng đề nghị hai bên sớm hình thành chiến lược kết nối công nghệ Việt Nam - Ấn Độ, tập trung vào các ngành mũi nhọn như trí tuệ nhân tạo (AI), công nghệ mạng di động 5G/6G;</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">giao lưu nhân dân</span>
+        <span class="e-m">국민 간 교류</span>
+        <span class="e-ex">mong muốn phát huy những lợi thế này để mở rộng hơn nữa hợp tác du lịch, văn hóa, bảo tồn và phát huy các giá trị văn hóa, giao lưu nhân dân, góp phần củng cố vững chắc nền tảng hữu nghị.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">lập trường của ASEAN về Biển Đông</span>
+        <span class="e-m">남중국해에 대한 아세안의 입장</span>
+        <span class="e-ex">Thủ tướng Lê Minh Hưng nhấn mạnh Việt Nam ủng hộ Ấn Độ đóng vai trò lớn hơn trong các thể chế đa phương, sẵn sàng hỗ trợ Ấn Độ tăng cường hợp tác với ASEAN và mong Ấn Độ tiếp tục ủng hộ mạnh mẽ lập trường của ASEAN về Biển Đông.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/viet-nam-an-do-huong-toi-muc-tieu-thuong-mai-25-ty-usd-tang-ket-noi-hai-nen-kinh-te.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
