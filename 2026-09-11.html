@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.11</strong> · 20일째</span>
+    </div>
+    <h1>Việt Nam - Pháp đưa khoa học công nghệ thành trụ cột mới, thúc đẩy liên kết chuỗi giá trị</h1>
+    <p class="h1-ko">베트남 - 프랑스, 과학기술을 새로운 축으로 삼아 가치사슬 연계 촉진</p>
+    <p class="byline">원문 7,195자 · 읽기 약 9분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>20</b>장 · 단어 <b>400</b>개 · 표현 <b>200</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip" href="2026-09-12.html"><span class="chip-d">09.12</span><span class="chip-t">hệ thống phân phối</span></a>
+      <a class="chip is-current" href="2026-09-11.html" aria-current="page"><span class="chip-d">09.11</span><span class="chip-t">trọng thể</span></a>
+      <a class="chip" href="2026-09-10.html"><span class="chip-d">09.10</span><span class="chip-t">đáy</span></a>
+      <a class="chip" href="2026-09-09.html"><span class="chip-d">09.09</span><span class="chip-t">chủ trì</span></a>
+      <a class="chip" href="2026-09-08.html"><span class="chip-d">09.08</span><span class="chip-t">nguồn cung</span></a>
+      <a class="chip" href="2026-09-07.html"><span class="chip-d">09.07</span><span class="chip-t">tỷ giá</span></a>
+      <a class="chip" href="2026-09-06.html"><span class="chip-d">09.06</span><span class="chip-t">kim ngạch thương mại</span></a>
+      <a class="chip" href="2026-09-05.html"><span class="chip-d">09.05</span><span class="chip-t">tiến sát</span></a>
+      <a class="chip" href="2026-09-04.html"><span class="chip-d">09.04</span><span class="chip-t">ngân sách nhà nước</span></a>
+      <a class="chip" href="2026-09-03.html"><span class="chip-d">09.03</span><span class="chip-t">giá tiêu dùng</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Chiều 10/9, Tổng Bí thư, Chủ tịch nước Tô Lâm đã hội đàm với Tổng thống Pháp Emmanuel Macron tại Điện Élysée. Hai nhà lãnh đạo nhất trí thúc đẩy quan hệ Đối tác chiến lược toàn diện Việt Nam - Pháp, đặc biệt là mô hình liên kết chuỗi giá trị “Công nghệ Pháp - Sản xuất Việt Nam - Cung ứng khu vực và toàn cầu”. Hai bên chính thức đưa hợp tác khoa học - công nghệ trở thành trụ cột mới, tập trung vào hàng không vũ trụ, khoáng sản thiết yếu, công nghệ lượng tử và năng lượng sạch. Hai nước cũng mở rộng hợp tác về giáo dục, văn hóa, y tế và giao lưu nhân dân. Về vấn đề Biển Đông, hai bên khẳng định tầm quan trọng của việc giải quyết tranh chấp bằng biện pháp hòa bình trên cơ sở luật pháp quốc tế.</p>
+    <p class="ko">9월 10일 오후, 또 럼 서기장 겸 국가주석은 엘리제궁에서 프랑스 마크롱 대통령과 회담을 가졌다. 두 지도자는 베트남-프랑스 포괄적 전략 동반자 관계를 발전시키기로 하고, 특히 &#x27;프랑스 기술 - 베트남 생산 - 지역 및 세계 공급&#x27;이라는 가치사슬 연계 모델을 추진하기로 합의했다. 양측은 과학기술 협력을 새로운 핵심 축으로 공식화하고 항공우주, 필수 광물, 양자기술, 청정에너지 분야에 집중하기로 했다. 양국은 또한 교육, 문화, 보건 및 국민 교류 협력을 확대하기로 했다. 동해(남중국해) 문제에 대해서는 국제법에 근거한 평화적 분쟁 해결의 중요성을 재확인했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">trọng thể</span><span class="v-m">성대한</span></li>
+      <li><span class="v-n">02</span><span class="v-w">hội đàm</span><span class="v-m">회담</span></li>
+      <li><span class="v-n">03</span><span class="v-w">thành tựu</span><span class="v-m">성과</span></li>
+      <li><span class="v-n">04</span><span class="v-w">gắn bó</span><span class="v-m">유대, 결속</span></li>
+      <li><span class="v-n">05</span><span class="v-w">đồng hành</span><span class="v-m">동행하다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">kỷ nguyên</span><span class="v-m">시대</span></li>
+      <li><span class="v-n">07</span><span class="v-w">khuôn khổ</span><span class="v-m">틀, 체제</span></li>
+      <li><span class="v-n">08</span><span class="v-w">song phương</span><span class="v-m">양자의</span></li>
+      <li><span class="v-n">09</span><span class="v-w">nâng cấp</span><span class="v-m">격상시키다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">quân y</span><span class="v-m">군의</span></li>
+      <li><span class="v-n">11</span><span class="v-w">xuyên quốc gia</span><span class="v-m">초국가적</span></li>
+      <li><span class="v-n">12</span><span class="v-w">khắc phục hậu quả chiến tranh</span><span class="v-m">전쟁 후유증 극복</span></li>
+      <li><span class="v-n">13</span><span class="v-w">quân nhân</span><span class="v-m">군인</span></li>
+      <li><span class="v-n">14</span><span class="v-w">kỷ vật</span><span class="v-m">유품, 기념품</span></li>
+      <li><span class="v-n">15</span><span class="v-w">lan tỏa</span><span class="v-m">파급되다</span></li>
+      <li><span class="v-n">16</span><span class="v-w">văn kiện</span><span class="v-m">문서</span></li>
+      <li><span class="v-n">17</span><span class="v-w">phê chuẩn</span><span class="v-m">비준하다</span></li>
+      <li><span class="v-n">18</span><span class="v-w">động lực</span><span class="v-m">동력</span></li>
+      <li><span class="v-n">19</span><span class="v-w">cường quốc</span><span class="v-m">강국</span></li>
+      <li><span class="v-n">20</span><span class="v-w">chuyển giao</span><span class="v-m">이전(기술 이전)</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">Đối tác chiến lược toàn diện</span>
+        <span class="e-m">포괄적 전략 동반자 관계</span>
+        <span class="e-ex">Tổng Bí thư, Chủ tịch nước khẳng định việc Việt Nam coi trọng và chọn Pháp là nước đầu tiên trong Liên minh châu Âu (EU) thiết lập khuôn khổ Đối tác chiến lược toàn diện là minh chứng cho sự tin cậy chính trị và quyết tâm đưa quan hệ hai nước lên tầm cao mới.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">phối hợp đấu tranh và chia sẻ thông tin về tội phạm</span>
+        <span class="e-m">범죄 관련 공조 및 정보 공유</span>
+        <span class="e-ex">hai bên nhất trí tiếp tục mở rộng hợp tác đào tạo quân y, phối hợp đấu tranh và chia sẻ thông tin về tội phạm, nhất là tội phạm có tổ chức, xuyên quốc gia.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">liên kết chuỗi giá trị</span>
+        <span class="e-m">가치사슬 연계</span>
+        <span class="e-ex">Hai bên đặc biệt nhất trí thúc đẩy mô hình liên kết chuỗi giá trị theo hướng “Công nghệ Pháp - Sản xuất Việt Nam - Cung ứng khu vực và toàn cầu”, qua đó đưa các sản phẩm thế mạnh của hai nước như công nghiệp chế biến, chế tạo và nông sản thực phẩm tham gia chuỗi cung ứng toàn cầu.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">gỡ bỏ &quot;thẻ vàng&quot; IUU</span>
+        <span class="e-m">IUU &#x27;옐로카드&#x27; 해제</span>
+        <span class="e-ex">đồng thời thúc đẩy Ủy ban châu Âu (EC) sớm gỡ bỏ “thẻ vàng” IUU, hỗ trợ Việt Nam phát triển nghề cá bền vững.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">hợp tác khoa học - công nghệ</span>
+        <span class="e-m">과학기술 협력</span>
+        <span class="e-ex">Chia sẻ tầm nhìn hướng tới tương lai, hai nhà lãnh đạo nhất trí phát huy tối đa lợi thế của Pháp là cường quốc khoa học hàng đầu châu Âu, chính thức đưa hợp tác khoa học - công nghệ trở thành trụ cột mới, then chốt trong quan hệ song phương.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">trụ cột mới</span>
+        <span class="e-m">새로운 축/기둥</span>
+        <span class="e-ex">chính thức đưa hợp tác khoa học - công nghệ trở thành trụ cột mới, then chốt trong quan hệ song phương.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">nguồn nhân lực chất lượng cao</span>
+        <span class="e-m">고급 인력</span>
+        <span class="e-ex">Tổng Bí thư, Chủ tịch nước đề nghị mở rộng hợp tác nguồn nhân lực chất lượng cao sang các ngành nghề phù hợp với yêu cầu thực tiễn và chiến lược hiện nay như bán dẫn, năng lượng mới, đường sắt.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">chủ nghĩa đa phương</span>
+        <span class="e-m">다자주의</span>
+        <span class="e-ex">Tổng thống Emmanuel Macron đánh giá cao và chia sẻ với những nhận định sâu sắc của Tổng Bí thư, Chủ tịch nước Tô Lâm tại Hội nghị Đối thoại Shangri-La vừa qua về việc đề cao luật pháp quốc tế và phát huy chủ nghĩa đa phương.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">quyền qua lại vô hại</span>
+        <span class="e-m">무해통항권</span>
+        <span class="e-ex">hai bên tái khẳng định tầm quan trọng của việc duy trì hòa bình, ổn định, an ninh, an toàn, tự do hàng hải, hàng không, thương mại không bị cản trở, cũng như quyền qua lại vô hại ở Biển Đông và trên toàn thế giới;</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">giải quyết các tranh chấp bằng biện pháp hòa bình</span>
+        <span class="e-m">평화적 방법으로 분쟁 해결</span>
+        <span class="e-ex">giải quyết các tranh chấp bằng biện pháp hòa bình trên cơ sở tôn trọng luật pháp quốc tế, đặc biệt là Công ước Liên hợp quốc về Luật Biển (UNCLOS) năm 1982.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/viet-nam-phap-dua-khoa-hoc-cong-nghe-thanh-tru-cot-moi-thuc-day-lien-ket-chuoi-gia-tri.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
