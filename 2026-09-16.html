@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.16</strong> · 24일째</span>
+    </div>
+    <h1>Kinh tế Trung Quốc đang tăng trưởng theo hình chữ K</h1>
+    <p class="h1-ko">중국 경제, K자형 성장 양상을 보이고 있다</p>
+    <p class="byline">원문 4,624자 · 읽기 약 6분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>24</b>장 · 단어 <b>480</b>개 · 표현 <b>240</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-16.html" aria-current="page"><span class="chip-d">09.16</span><span class="chip-t">đầu tư tài sản cố định</span></a>
+      <a class="chip" href="2026-09-15.html"><span class="chip-d">09.15</span><span class="chip-t">nâng</span></a>
+      <a class="chip" href="2026-09-14.html"><span class="chip-d">09.14</span><span class="chip-t">tấn công</span></a>
+      <a class="chip" href="2026-09-13.html"><span class="chip-d">09.13</span><span class="chip-t">hội nghị thượng đỉnh</span></a>
+      <a class="chip" href="2026-09-12.html"><span class="chip-d">09.12</span><span class="chip-t">hệ thống phân phối</span></a>
+      <a class="chip" href="2026-09-11.html"><span class="chip-d">09.11</span><span class="chip-t">trọng thể</span></a>
+      <a class="chip" href="2026-09-10.html"><span class="chip-d">09.10</span><span class="chip-t">đáy</span></a>
+      <a class="chip" href="2026-09-09.html"><span class="chip-d">09.09</span><span class="chip-t">chủ trì</span></a>
+      <a class="chip" href="2026-09-08.html"><span class="chip-d">09.08</span><span class="chip-t">nguồn cung</span></a>
+      <a class="chip" href="2026-09-07.html"><span class="chip-d">09.07</span><span class="chip-t">tỷ giá</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Đầu tư tài sản cố định của Trung Quốc tiếp tục giảm sâu trong 8 tháng đầu năm, chủ yếu do khủng hoảng bất động sản kéo dài. Doanh thu bán lẻ tăng chậm lại, cho thấy tiêu dùng trong nước còn yếu, trong khi sản xuất công nghiệp lại có sự tăng trưởng đáng ngạc nhiên nhờ nhu cầu xuất khẩu mạnh. Xu hướng này tạo ra một mô hình tăng trưởng hình chữ K, khi nhu cầu bên ngoài vượt trội so với nhu cầu trong nước. Lạm phát tăng nhẹ chủ yếu do cú sốc về nguồn cung năng lượng chứ không phải do nhu cầu nội địa phục hồi. Các nhà kinh tế cho rằng Bắc Kinh có thể phải tăng cường các biện pháp kích thích nếu đà suy giảm đầu tư và tiêu dùng tiếp diễn.</p>
+    <p class="ko">중국의 고정자산투자는 부동산 위기 장기화로 인해 올해 1~8월 계속 큰 폭으로 감소했다. 소매판매 증가세는 둔화되어 내수가 여전히 약함을 보여주는 반면, 산업생산은 강한 수출 수요 덕분에 예상외로 증가했다. 이러한 흐름은 대외 수요가 내수를 압도하는 K자형 성장 패턴을 만들어내고 있다. 물가는 내수 회복이 아니라 에너지 공급 충격으로 인해 소폭 상승했다. 이코노미스트들은 투자와 소비 위축이 계속되면 베이징이 부양책을 강화해야 할 수 있다고 본다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">đầu tư tài sản cố định</span><span class="v-m">고정자산투자</span></li>
+      <li><span class="v-n">02</span><span class="v-w">cùng kỳ</span><span class="v-m">동기(같은 기간)</span></li>
+      <li><span class="v-n">03</span><span class="v-w">khủng hoảng</span><span class="v-m">위기</span></li>
+      <li><span class="v-n">04</span><span class="v-w">suy thoái</span><span class="v-m">침체</span></li>
+      <li><span class="v-n">05</span><span class="v-w">doanh thu bán lẻ</span><span class="v-m">소매 매출</span></li>
+      <li><span class="v-n">06</span><span class="v-w">sản xuất công nghiệp</span><span class="v-m">산업 생산</span></li>
+      <li><span class="v-n">07</span><span class="v-w">khảo sát</span><span class="v-m">조사</span></li>
+      <li><span class="v-n">08</span><span class="v-w">nhu cầu</span><span class="v-m">수요</span></li>
+      <li><span class="v-n">09</span><span class="v-w">pin lithium-ion</span><span class="v-m">리튬이온 배터리</span></li>
+      <li><span class="v-n">10</span><span class="v-w">robot công nghiệp</span><span class="v-m">산업용 로봇</span></li>
+      <li><span class="v-n">11</span><span class="v-w">không đồng nhất</span><span class="v-m">일관되지 않은, 엇갈린</span></li>
+      <li><span class="v-n">12</span><span class="v-w">hình chữ K</span><span class="v-m">K자형</span></li>
+      <li><span class="v-n">13</span><span class="v-w">giá xuất xưởng</span><span class="v-m">출고가(공장 출하가)</span></li>
+      <li><span class="v-n">14</span><span class="v-w">chỉ số giá tiêu dùng</span><span class="v-m">소비자물가지수</span></li>
+      <li><span class="v-n">15</span><span class="v-w">chỉ số giá nhà sản xuất</span><span class="v-m">생산자물가지수</span></li>
+      <li><span class="v-n">16</span><span class="v-w">hàng hóa tiêu dùng lâu bền</span><span class="v-m">내구소비재</span></li>
+      <li><span class="v-n">17</span><span class="v-w">biên lợi nhuận</span><span class="v-m">이윤 마진</span></li>
+      <li><span class="v-n">18</span><span class="v-w">hạ nguồn</span><span class="v-m">하류(산업)</span></li>
+      <li><span class="v-n">19</span><span class="v-w">thặng dư thương mại</span><span class="v-m">무역흑자</span></li>
+      <li><span class="v-n">20</span><span class="v-w">tỷ lệ thất nghiệp</span><span class="v-m">실업률</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">kéo lùi đà tăng trưởng</span>
+        <span class="e-m">성장세를 끌어내리다</span>
+        <span class="e-ex">Một trong những nguyên nhân chính kéo lùi đà tăng trưởng kinh tế Trung Quốc hiện nay là cuộc khủng hoảng bất động sản kéo dài.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">giữ vai trò</span>
+        <span class="e-m">역할을 하다</span>
+        <span class="e-ex">Trước khi rơi vào giai đoạn suy thoái này, bất động sản giữ vai trò là một trong những động lực tăng trưởng chính của kinh tế Trung Quốc.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">không mấy khả quan</span>
+        <span class="e-m">그다지 낙관적이지 않은</span>
+        <span class="e-ex">Tiêu dùng trong nước cũng không mấy khả quan, phản ánh qua việc doanh thu bán lẻ - một chỉ số quan trọng của tiêu dùng nội địa - chỉ tăng 0,4% trong tháng 8 so với cùng kỳ năm ngoái, thấp hơn so với mức tăng 0,6% trong tháng 7 và mức tăng 0,8% mà các nhà kinh tế dự báo.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">tăng trưởng đáng ngạc nhiên</span>
+        <span class="e-m">놀라운 성장</span>
+        <span class="e-ex">Tuy nhiên, sản xuất công nghiệp của Trung Quốc lại có sự tăng trưởng đáng ngạc nhiên, với mức tăng 5,2% trong tháng 8 so với cùng kỳ năm trước, cao hơn mức tăng 4,5% ghi nhận trong tháng 7 và mức dự báo tăng 4,7% mà các nhà kinh tế đưa ra trong một cuộc khảo sát của tờ báo Wall Street Journal.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">thúc đẩy bởi</span>
+        <span class="e-m">~에 의해 촉진되다</span>
+        <span class="e-ex">Sự tăng trưởng sản xuất này được thúc đẩy bởi nhu cầu mạnh mẽ từ nước ngoài, đặc biệt là trong các lĩnh vực như sản xuất pin lithium-ion, robot công nghiệp và thiết bị in 3D, với mức tăng lần lượt là 57,2%, 34,6% và 29,9% so với cùng kỳ năm trước trong tháng 8.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">ngày càng rõ nét</span>
+        <span class="e-m">점점 더 뚜렷해지다</span>
+        <span class="e-ex">Dữ liệu kinh tế không đồng nhất này, kết hợp với các số liệu về lạm phát và thương mại được công bố trước đó trong tháng 9, cho thấy một mô hình tăng trưởng hình chữ K đang ngày càng rõ nét ở nền kinh tế lớn thứ hai thế giới, với nhu cầu từ bên ngoài vượt trội so với nhu cầu trong nước.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">cú sốc về nguồn cung</span>
+        <span class="e-m">공급 충격</span>
+        <span class="e-ex">Mặc dù giá tiêu dùng và giá xuất xưởng của nhà máy đều tăng trong tháng 8, nhưng những mức tăng này chủ yếu do các cú sốc về nguồn cung, bao gồm giá năng lượng tăng cao trong bối cảnh căng thẳng mới ở Trung Đông.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">lạm phát do chi phí đẩy</span>
+        <span class="e-m">비용 상승에 의한 인플레이션</span>
+        <span class="e-ex">Báo cáo của Citi cho rằng lạm phát do chi phí đẩy có thể tạo ra rủi ro về việc siết chặt biên lợi nhuận ở một số ngành hạ nguồn.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">lập kỷ lục mới</span>
+        <span class="e-m">새로운 기록을 세우다</span>
+        <span class="e-ex">Xuất khẩu của Trung Quốc đã tăng mạnh hơn 20% trong tháng 8 nhờ nhu cầu toàn cầu mạnh mẽ đối với các sản phẩm công nghệ, dẫn tới dự báo rằng thặng dư thương mại của nước này có thể lập kỷ lục mới trong năm nay.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">tăng cường các biện pháp kích thích</span>
+        <span class="e-m">부양책을 강화하다</span>
+        <span class="e-ex">Hiện vẫn chưa rõ liệu trong ngắn hạn, Bắc Kinh có tăng cường các biện pháp kích thích để hỗ trợ tăng trưởng kinh tế hay không, hay chỉ tập trung vào việc thực hiện các chính sách hiện có.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/kinh-te-trung-quoc-dang-tang-truong-theo-hinh-chu-k.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
