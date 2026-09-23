@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.23</strong> · 31일째</span>
+    </div>
+    <h1>ADB nâng dự báo tăng trưởng 2026 lên 7,8% đi kèm lạm phát 4,3%</h1>
+    <p class="h1-ko">ADB, 2026년 성장률 전망 7.8%로 상향, 인플레이션은 4.3%로 동반 상승</p>
+    <p class="byline">원문 4,919자 · 읽기 약 6분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>31</b>장 · 단어 <b>620</b>개 · 표현 <b>310</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-23.html" aria-current="page"><span class="chip-d">09.23</span><span class="chip-t">tăng trưởng</span></a>
+      <a class="chip" href="2026-09-22.html"><span class="chip-d">09.22</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-09-21.html"><span class="chip-d">09.21</span><span class="chip-t">đóng cửa</span></a>
+      <a class="chip" href="2026-09-20.html"><span class="chip-d">09.20</span><span class="chip-t">mua ròng</span></a>
+      <a class="chip" href="2026-09-19.html"><span class="chip-d">09.19</span><span class="chip-t">yếu kém</span></a>
+      <a class="chip" href="2026-09-18.html"><span class="chip-d">09.18</span><span class="chip-t">ghi nhận</span></a>
+      <a class="chip" href="2026-09-17.html"><span class="chip-d">09.17</span><span class="chip-t">phối hợp</span></a>
+      <a class="chip" href="2026-09-16.html"><span class="chip-d">09.16</span><span class="chip-t">đầu tư tài sản cố định</span></a>
+      <a class="chip" href="2026-09-15.html"><span class="chip-d">09.15</span><span class="chip-t">nâng</span></a>
+      <a class="chip" href="2026-09-14.html"><span class="chip-d">09.14</span><span class="chip-t">tấn công</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">ADB nâng dự báo tăng trưởng kinh tế Việt Nam năm 2026 lên 7,8% và năm 2027 lên 7,6%, nhờ kết quả GDP nửa đầu năm 2026 tăng 8,2%, vượt kỳ vọng. Tuy nhiên, ADB cũng nâng dự báo lạm phát bình quân năm 2026 lên 4,3% do lạm phát cơ bản tăng mạnh và áp lực giá lan rộng. ADB cảnh báo rủi ro nghiêng về phía bất lợi do nhu cầu toàn cầu suy yếu, giá năng lượng cao và điều kiện tài chính toàn cầu thắt chặt hơn. Sự phụ thuộc ngày càng lớn vào tín dụng ngân hàng cùng cán cân vãng lai suy yếu đang thu hẹp dư địa chính sách của Việt Nam. Doanh nghiệp nhỏ và vừa vẫn gặp khó khăn trong tiếp cận vốn dù có các chương trình tín dụng ưu đãi.</p>
+    <p class="ko">ADB는 2026년 상반기 GDP가 8.2% 성장해 기대를 뛰어넘은 결과를 반영해 베트남의 2026년 경제성장률 전망을 7.8%로, 2027년은 7.6%로 상향했다. 그러나 근원 인플레이션이 크게 오르고 물가 압박이 광범위하게 확산되면서 2026년 평균 인플레이션 전망치도 4.3%로 함께 상향했다. ADB는 세계 수요 둔화, 고유가, 세계 금융여건 긴축 등으로 리스크가 불리한 쪽으로 기울어 있다고 경고했다. 은행 신용에 대한 의존도 심화와 경상수지 약화로 베트남의 정책 여력이 축소되고 있다. 중소기업은 우대신용 프로그램에도 불구하고 여전히 자금 조달에 어려움을 겪고 있다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">tăng trưởng</span><span class="v-m">성장</span></li>
+      <li><span class="v-n">02</span><span class="v-w">công nghiệp chế biến, chế tạo</span><span class="v-m">제조가공업</span></li>
+      <li><span class="v-n">03</span><span class="v-w">tiêu dùng</span><span class="v-m">소비</span></li>
+      <li><span class="v-n">04</span><span class="v-w">đầu tư trực tiếp nước ngoài</span><span class="v-m">외국인직접투자</span></li>
+      <li><span class="v-n">05</span><span class="v-w">nhu cầu</span><span class="v-m">수요</span></li>
+      <li><span class="v-n">06</span><span class="v-w">tiến độ</span><span class="v-m">진척, 진행 속도</span></li>
+      <li><span class="v-n">07</span><span class="v-w">khả năng chống chịu</span><span class="v-m">회복력</span></li>
+      <li><span class="v-n">08</span><span class="v-w">tiềm năng</span><span class="v-m">잠재력</span></li>
+      <li><span class="v-n">09</span><span class="v-w">điều hành</span><span class="v-m">운영, 관리</span></li>
+      <li><span class="v-n">10</span><span class="v-w">thận trọng</span><span class="v-m">신중한</span></li>
+      <li><span class="v-n">11</span><span class="v-w">kiểm soát</span><span class="v-m">통제</span></li>
+      <li><span class="v-n">12</span><span class="v-w">lạm phát</span><span class="v-m">인플레이션</span></li>
+      <li><span class="v-n">13</span><span class="v-w">ổn định tài chính</span><span class="v-m">재정 안정</span></li>
+      <li><span class="v-n">14</span><span class="v-w">năng suất</span><span class="v-m">생산성</span></li>
+      <li><span class="v-n">15</span><span class="v-w">cường độ</span><span class="v-m">강도</span></li>
+      <li><span class="v-n">16</span><span class="v-w">bất lợi</span><span class="v-m">불리한</span></li>
+      <li><span class="v-n">17</span><span class="v-w">tài trợ</span><span class="v-m">자금 조달, 지원</span></li>
+      <li><span class="v-n">18</span><span class="v-w">thanh khoản</span><span class="v-m">유동성</span></li>
+      <li><span class="v-n">19</span><span class="v-w">cán cân vãng lai</span><span class="v-m">경상수지</span></li>
+      <li><span class="v-n">20</span><span class="v-w">dư địa chính sách</span><span class="v-m">정책 여력</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">nâng dự báo tăng trưởng</span>
+        <span class="e-m">성장 전망치를 상향하다</span>
+        <span class="e-ex">Ngân hàng Phát triển Châu Á (ADB) công bố báo cáo Triển vọng Phát triển châu Á tháng 9/2026 , trong đó nâng dự báo tăng trưởng kinh tế Việt Nam lên 7,8% trong năm 2026 và 7,6% trong năm 2027.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">vượt kỳ vọng</span>
+        <span class="e-m">기대를 뛰어넘다</span>
+        <span class="e-ex">việc điều chỉnh dự báo phản ánh kết quả tăng trưởng vượt kỳ vọng trong nửa đầu năm khi t ổng sản phẩm trong nước (GDP) của Việt Nam tăng 8,2% trong 6 tháng đầu năm 2026, cao hơn mức 7,5% cùng kỳ năm 2025.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">duy trì đà tăng trưởng</span>
+        <span class="e-m">성장세를 유지하다</span>
+        <span class="e-ex">Kết quả trong nửa đầu năm cho thấy khả năng chống chịu và tiềm năng duy trì đà tăng trưởng của nền kinh tế Việt Nam.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">kiểm soát lạm phát</span>
+        <span class="e-m">인플레이션을 통제하다</span>
+        <span class="e-ex">Việt Nam cần tiếp tục điều hành kinh tế vĩ mô thận trọng, kiểm soát lạm phát, bảo đảm ổn định tài chính và đẩy nhanh cải cách cơ cấu.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">lạm phát cơ bản</span>
+        <span class="e-m">근원 인플레이션</span>
+        <span class="e-ex">Đáng chú ý, lạm phát cơ bản tăng từ 3,2% lên 4,1%, cho thấy áp lực giá không còn chỉ tập trung ở một số nhóm hàng hóa mà đã lan rộng hơn trong nền kinh tế.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">tạo áp lực lên mặt bằng giá</span>
+        <span class="e-m">물가 수준에 압박을 가하다</span>
+        <span class="e-ex">Theo ADB, sức cầu tiếp tục tạo áp lực lên mặt bằng giá trong khi chi phí năng lượng và chi phí nhập khẩu tăng cao.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">rủi ro đang nghiêng về phía bất lợi</span>
+        <span class="e-m">리스크가 불리한 쪽으로 기울다</span>
+        <span class="e-ex">Mặc dù t riển vọng tăng trưởng ngắn hạn của Việt Nam vẫn được đánh giá tích cực, nhưng rủi ro đang nghiêng về phía bất lợi.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">điều kiện tài chính toàn cầu thắt chặt hơn</span>
+        <span class="e-m">세계 금융여건이 더욱 긴축되다</span>
+        <span class="e-ex">giá năng lượng cao và điều kiện tài chính toàn cầu thắt chặt hơn tạo thêm áp lực lên lạm phát và tỷ giá.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">phụ thuộc ngày càng lớn vào tín dụng ngân hàng</span>
+        <span class="e-m">은행 신용에 대한 의존도가 갈수록 커지다</span>
+        <span class="e-ex">Một rủi ro khác nằm ở mức độ phụ thuộc ngày càng lớn vào tín dụng ngân hàng để tài trợ cho các dự án đầu tư quy mô lớn.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">thu hẹp dư địa chính sách</span>
+        <span class="e-m">정책 여력을 축소시키다</span>
+        <span class="e-ex">sự phụ thuộc ngày càng nhiều vào tín dụng ngân hàng, cán cân vãng lai suy yếu và xu hướng lạm phát tăng đang thu hẹp dư địa chính sách.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/adb-nang-du-bao-tang-truong-2026-len-78-di-kem-lam-phat-43.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
