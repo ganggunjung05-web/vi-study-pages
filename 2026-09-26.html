@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.26</strong> · 34일째</span>
+    </div>
+    <h1>Thủ tướng Lê Minh Hưng: Kiên định mục tiêu tăng trưởng 2 con số, giải ngân 100% vốn đầu tư công</h1>
+    <p class="h1-ko">레민흥 총리: 두 자릿수 성장 목표 견지, 공공투자 자본 100% 집행</p>
+    <p class="byline">원문 5,712자 · 읽기 약 7분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>34</b>장 · 단어 <b>680</b>개 · 표현 <b>340</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-26.html" aria-current="page"><span class="chip-d">09.26</span><span class="chip-t">cử tri</span></a>
+      <a class="chip" href="2026-09-25.html"><span class="chip-d">09.25</span><span class="chip-t">thể chế chính trị</span></a>
+      <a class="chip" href="2026-09-24.html"><span class="chip-d">09.24</span><span class="chip-t">vinh danh</span></a>
+      <a class="chip" href="2026-09-23.html"><span class="chip-d">09.23</span><span class="chip-t">tăng trưởng</span></a>
+      <a class="chip" href="2026-09-22.html"><span class="chip-d">09.22</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-09-21.html"><span class="chip-d">09.21</span><span class="chip-t">đóng cửa</span></a>
+      <a class="chip" href="2026-09-20.html"><span class="chip-d">09.20</span><span class="chip-t">mua ròng</span></a>
+      <a class="chip" href="2026-09-19.html"><span class="chip-d">09.19</span><span class="chip-t">yếu kém</span></a>
+      <a class="chip" href="2026-09-18.html"><span class="chip-d">09.18</span><span class="chip-t">ghi nhận</span></a>
+      <a class="chip" href="2026-09-17.html"><span class="chip-d">09.17</span><span class="chip-t">phối hợp</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Chiều 24/9, Thủ tướng Lê Minh Hưng tiếp xúc cử tri Hải Phòng và khẳng định Chính phủ tiếp tục kiên định mục tiêu tăng trưởng 2 con số trong năm 2026-2027. Kỳ họp thứ 2 Quốc hội sẽ xem xét 44 luật, nghị quyết cùng kế hoạch kinh tế - xã hội, ngân sách năm 2027. Thủ tướng báo cáo GDP 6 tháng tăng 8,18%, kim ngạch xuất nhập khẩu đạt 770,14 tỷ USD, đồng thời cho biết đã tháo gỡ được 3.241 trong hơn 4.000 dự án tồn đọng. Chính phủ đặt mục tiêu giải ngân 100% vốn đầu tư công và tiếp tục hỗ trợ doanh nghiệp, hộ kinh doanh thông qua giảm thuế.</p>
+    <p class="ko">9월 24일 오후, 레민흥 총리는 하이퐁 유권자와의 접촉에서 정부가 2026~2027년 두 자릿수 성장 목표를 계속 견지할 것이라고 밝혔다. 국회 2차 회기에서는 44개 법률·결의안과 2027년 경제·사회 계획, 예산이 심의될 예정이다. 총리는 상반기 GDP가 8.18% 성장했고 수출입 총액이 770.14억 달러에 달했다고 보고했으며, 4천여 개 지연 프로젝트 중 3,241건을 해결했다고 밝혔다. 정부는 공공투자 자본 100% 집행을 목표로 하며 세금 감면을 통해 기업과 개인사업자를 계속 지원할 방침이다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">cử tri</span><span class="v-m">유권자</span></li>
+      <li><span class="v-n">02</span><span class="v-w">kỳ họp</span><span class="v-m">회기, 회의</span></li>
+      <li><span class="v-n">03</span><span class="v-w">điểm nghẽn</span><span class="v-m">병목, 걸림돌</span></li>
+      <li><span class="v-n">04</span><span class="v-w">động lực</span><span class="v-m">동력, 원동력</span></li>
+      <li><span class="v-n">05</span><span class="v-w">kiến nghị</span><span class="v-m">건의, 제안</span></li>
+      <li><span class="v-n">06</span><span class="v-w">hộ kinh doanh</span><span class="v-m">개인사업자, 자영업 가구</span></li>
+      <li><span class="v-n">07</span><span class="v-w">thu hồi đất</span><span class="v-m">토지 수용</span></li>
+      <li><span class="v-n">08</span><span class="v-w">tái định cư</span><span class="v-m">재정착</span></li>
+      <li><span class="v-n">09</span><span class="v-w">di dời</span><span class="v-m">이전, 이설</span></li>
+      <li><span class="v-n">10</span><span class="v-w">chuyển đổi số</span><span class="v-m">디지털 전환</span></li>
+      <li><span class="v-n">11</span><span class="v-w">trí tuệ nhân tạo</span><span class="v-m">인공지능</span></li>
+      <li><span class="v-n">12</span><span class="v-w">nguồn nhân lực</span><span class="v-m">인적 자원</span></li>
+      <li><span class="v-n">13</span><span class="v-w">cụ thể hóa</span><span class="v-m">구체화하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">liên ngành</span><span class="v-m">다부처 간, 부문 간</span></li>
+      <li><span class="v-n">15</span><span class="v-w">cân đối lớn</span><span class="v-m">주요 균형(거시경제)</span></li>
+      <li><span class="v-n">16</span><span class="v-w">bứt phá</span><span class="v-m">도약, 돌파</span></li>
+      <li><span class="v-n">17</span><span class="v-w">kim ngạch xuất nhập khẩu</span><span class="v-m">수출입 총액</span></li>
+      <li><span class="v-n">18</span><span class="v-w">miễn, giảm, gia hạn</span><span class="v-m">면제, 감면, 연장</span></li>
+      <li><span class="v-n">19</span><span class="v-w">đa dạng hóa</span><span class="v-m">다변화하다</span></li>
+      <li><span class="v-n">20</span><span class="v-w">tồn đọng</span><span class="v-m">적체된, 지연된</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">kiên định mục tiêu tăng trưởng 2 con số</span>
+        <span class="e-m">두 자릿수 성장 목표를 견지하다</span>
+        <span class="e-ex">Chính phủ tiếp tục kiên định mục tiêu tăng trưởng 2 con số trong thời gian còn lại của năm 2026 và năm 2027, đồng thời quyết liệt tháo gỡ điểm nghẽn thể chế, đẩy mạnh đầu tư và thúc đẩy các động lực tăng trưởng mới.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">đạt tỷ lệ 100%</span>
+        <span class="e-m">100% 비율을 달성하다</span>
+        <span class="e-ex">trả lời 48/48 kiến nghị của cử tri, đạt tỷ lệ 100%.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">xác định giá đất làm căn cứ bồi thường</span>
+        <span class="e-m">보상 근거로 토지 가격을 산정하다</span>
+        <span class="e-ex">xác định giá đất làm căn cứ bồi thường khi Nhà nước thu hồi đất và tính tiền sử dụng đất tại nơi tái định cư;</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">trình Quốc hội 44 luật, nghị quyết</span>
+        <span class="e-m">국회에 44개 법률·결의안을 상정하다</span>
+        <span class="e-ex">Chính phủ dự kiến trình Quốc hội 44 luật, nghị quyết tại kỳ họp, trong đó có nhiều nội dung quan trọng,</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">năm nền tảng, tạo đà, tạo thế, tạo lực</span>
+        <span class="e-m">기반을 다지고 추진력·위치·힘을 만드는 해</span>
+        <span class="e-ex">Thủ tướng cho biết năm 2026 là năm nền tảng, tạo đà, tạo thế, tạo lực và năm 2027 là năm bứt phá để thực hiện các mục tiêu phát triển của cả nhiệm kỳ.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">vượt ít nhất 10% so với thực hiện năm 2025</span>
+        <span class="e-m">2025년 실적 대비 최소 10% 초과하다</span>
+        <span class="e-ex">Thu ngân sách nhà nước năm 2026 được đặt mục tiêu vượt ít nhất 10% so với thực hiện năm 2025, trong khi dự kiến miễn, giảm, gia hạn gần 345 nghìn tỷ đồng thuế, phí.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">giảm 30% số thuế phải nộp</span>
+        <span class="e-m">납부해야 할 세금의 30%를 감면하다</span>
+        <span class="e-ex">Chính phủ đã trình Quốc hội giảm 30% số thuế phải nộp trong kỳ tính thuế năm 2026, 2027 đối với hộ kinh doanh, doanh nghiệp có tổng doanh thu không quá 10 tỷ đồng.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">tháo gỡ được 3.241 dự án</span>
+        <span class="e-m">3,241개 프로젝트를 해결하다</span>
+        <span class="e-ex">trong hơn 4.000 dự án tồn đọng, kéo dài, với tổng vốn hàng triệu tỷ đồng, đến nay đã tháo gỡ được 3.241 dự án.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">hoàn thành thêm 395 km đường bộ cao tốc</span>
+        <span class="e-m">고속도로 395km를 추가로 완공하다</span>
+        <span class="e-ex">cả nước hoàn thành thêm 395 km đường bộ cao tốc, khởi công 5 tuyến đường sắt đô thị và triển khai nhiều dự án giao thông, năng lượng quan trọng,</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">giải ngân 100% kế hoạch đầu tư công</span>
+        <span class="e-m">공공투자 계획을 100% 집행하다</span>
+        <span class="e-ex">giải ngân 100% kế hoạch đầu tư công được giao; hoàn thành các dự án trọng điểm;</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/thu-tuong-le-minh-hung-kien-dinh-muc-tieu-tang-truong-2-con-so-giai-ngan-100-von-dau-tu-cong.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
