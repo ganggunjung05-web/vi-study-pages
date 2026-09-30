@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.09.30</strong> · 38일째</span>
+    </div>
+    <h1>Khả năng Việt Nam trở lại với trái phiếu Chính phủ bằng USD</h1>
+    <p class="h1-ko">베트남의 달러화 정부채권 시장 복귀 가능성</p>
+    <p class="byline">원문 2,910자 · 읽기 약 4분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>38</b>장 · 단어 <b>760</b>개 · 표현 <b>380</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-09-30.html" aria-current="page"><span class="chip-d">09.30</span><span class="chip-t">trái phiếu Chính phủ</span></a>
+      <a class="chip" href="2026-09-29.html"><span class="chip-d">09.29</span><span class="chip-t">bất động sản công nghiệp</span></a>
+      <a class="chip" href="2026-09-28.html"><span class="chip-d">09.28</span><span class="chip-t">chính sách thuế</span></a>
+      <a class="chip" href="2026-09-27.html"><span class="chip-d">09.27</span><span class="chip-t">kỳ vọng</span></a>
+      <a class="chip" href="2026-09-26.html"><span class="chip-d">09.26</span><span class="chip-t">cử tri</span></a>
+      <a class="chip" href="2026-09-25.html"><span class="chip-d">09.25</span><span class="chip-t">thể chế chính trị</span></a>
+      <a class="chip" href="2026-09-24.html"><span class="chip-d">09.24</span><span class="chip-t">vinh danh</span></a>
+      <a class="chip" href="2026-09-23.html"><span class="chip-d">09.23</span><span class="chip-t">tăng trưởng</span></a>
+      <a class="chip" href="2026-09-22.html"><span class="chip-d">09.22</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-09-21.html"><span class="chip-d">09.21</span><span class="chip-t">đóng cửa</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Việt Nam đang xem xét khả năng phát hành trở lại trái phiếu Chính phủ bằng USD nhằm huy động vốn và tái thiết lập đường cong lợi suất chuẩn. Nếu thành công, đợt phát hành có thể mở rộng cơ sở nhà đầu tư quốc tế và tạo tham chiếu cho doanh nghiệp trong nước khi vay vốn nước ngoài. Tuy nhiên, chi phí vốn USD hiện không thấp do lợi suất trái phiếu Chính phủ Mỹ đã tiến sát 5%/năm, nên tín nhiệm quốc gia và sự minh bạch thông tin rất quan trọng. Việt Nam cần chuẩn bị kỹ về quy mô, kỳ hạn, cấu trúc giao dịch, thời điểm phát hành và lựa chọn tổ chức bảo lãnh phù hợp.</p>
+    <p class="ko">베트남은 자본 조달과 기준 수익률 곡선 재정립을 위해 달러화 정부채권을 다시 발행하는 방안을 검토하고 있다. 성공적으로 발행될 경우 국제 투자자 기반을 확대하고 국내 기업이 해외에서 자금을 조달할 때 참고할 기준을 마련할 수 있다. 다만 미국 국채 10년물 수익률이 5%에 근접하면서 달러 자금 조달 비용이 낮지 않은 상황이라 국가 신용도와 정보 투명성이 중요하다. 베트남은 발행 규모, 만기, 거래 구조, 시점 및 적절한 인수기관 선정 등을 면밀히 준비해야 한다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">trái phiếu Chính phủ</span><span class="v-m">국채(정부채권)</span></li>
+      <li><span class="v-n">02</span><span class="v-w">đợt phát hành</span><span class="v-m">발행 회차</span></li>
+      <li><span class="v-n">03</span><span class="v-w">tái thiết lập</span><span class="v-m">재정립하다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">đường cong lợi suất chuẩn</span><span class="v-m">기준 수익률 곡선</span></li>
+      <li><span class="v-n">05</span><span class="v-w">cơ sở nhà đầu tư</span><span class="v-m">투자자 기반</span></li>
+      <li><span class="v-n">06</span><span class="v-w">thị trường vốn quốc tế</span><span class="v-m">국제 자본시장</span></li>
+      <li><span class="v-n">07</span><span class="v-w">kỳ hạn</span><span class="v-m">만기</span></li>
+      <li><span class="v-n">08</span><span class="v-w">thanh khoản</span><span class="v-m">유동성</span></li>
+      <li><span class="v-n">09</span><span class="v-w">định giá</span><span class="v-m">가격을 산정하다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">khoản vay</span><span class="v-m">대출금</span></li>
+      <li><span class="v-n">11</span><span class="v-w">đề án phát hành</span><span class="v-m">발행 계획안</span></li>
+      <li><span class="v-n">12</span><span class="v-w">tỷ giá</span><span class="v-m">환율</span></li>
+      <li><span class="v-n">13</span><span class="v-w">chi phí phát hành</span><span class="v-m">발행 비용</span></li>
+      <li><span class="v-n">14</span><span class="v-w">tín nhiệm quốc gia</span><span class="v-m">국가 신용도</span></li>
+      <li><span class="v-n">15</span><span class="v-w">minh bạch thông tin</span><span class="v-m">정보 투명성</span></li>
+      <li><span class="v-n">16</span><span class="v-w">thiết kế giao dịch</span><span class="v-m">거래 구조 설계</span></li>
+      <li><span class="v-n">17</span><span class="v-w">thời điểm</span><span class="v-m">시점</span></li>
+      <li><span class="v-n">18</span><span class="v-w">nhà đầu tư dài hạn</span><span class="v-m">장기 투자자</span></li>
+      <li><span class="v-n">19</span><span class="v-w">tổ chức bảo lãnh</span><span class="v-m">인수(보증) 기관</span></li>
+      <li><span class="v-n">20</span><span class="v-w">chất lượng nhà đầu tư</span><span class="v-m">투자자의 질</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">không chỉ là câu chuyện huy động thêm vốn</span>
+        <span class="e-m">단순히 추가 자본 조달 문제만이 아니다</span>
+        <span class="e-ex">Khả năng trở lại với trái phiếu Chính phủ bằng USD không chỉ là câu chuyện huy động thêm vốn.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">tạo tham chiếu cho doanh nghiệp trong nước</span>
+        <span class="e-m">국내 기업을 위한 참조 기준을 만들다</span>
+        <span class="e-ex">Nếu được triển khai phù hợp, một đợt phát hành mới còn có thể giúp Việt Nam tái thiết lập đường cong lợi suất chuẩn, mở rộng cơ sở nhà đầu tư quốc tế và tạo tham chiếu cho doanh nghiệp trong nước khi huy động vốn ở nước ngoài.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">trở lại thị trường vốn quốc tế</span>
+        <span class="e-m">국제 자본시장에 복귀하다</span>
+        <span class="e-ex">Vậy Việt Nam cần chuẩn bị gì để trở lại thị trường vốn quốc tế?</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">góp phần hình thành đường cong lợi suất chuẩn bằng USD</span>
+        <span class="e-m">달러 기준 수익률 곡선 형성에 기여하다</span>
+        <span class="e-ex">Nếu có quy mô đủ lớn, kỳ hạn phù hợp và thanh khoản tốt, trái phiếu có thể trở thành điểm tham chiếu trên thị trường quốc tế, góp phần hình thành đường cong lợi suất chuẩn bằng USD.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">vừa huy động vốn, vừa tạo benchmark cho thị trường</span>
+        <span class="e-m">자본도 조달하고 시장 벤치마크도 만들다</span>
+        <span class="e-ex">Kinh nghiệm từ Mexico, Malaysia và Philippines cho thấy, các đợt phát hành quốc tế có thể được thiết kế để vừa huy động vốn, vừa tạo benchmark cho thị trường.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">cửa vốn USD hiện không có chi phí thấp</span>
+        <span class="e-m">현재 달러 자금 조달 통로의 비용이 낮지 않다</span>
+        <span class="e-ex">Tuy nhiên, “cửa vốn” USD hiện không có chi phí thấp.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">tiến sát 5%/năm</span>
+        <span class="e-m">연 5%에 근접하다</span>
+        <span class="e-ex">Lợi suất trái phiếu Chính phủ Mỹ kỳ hạn 10 năm trong tháng 9/2026 đã tiến sát 5%/năm.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">thu hút nhà đầu tư dài hạn</span>
+        <span class="e-m">장기 투자자를 유치하다</span>
+        <span class="e-ex">Bài toán tiếp theo là thiết kế giao dịch: quy mô, kỳ hạn, cấu trúc và thời điểm phải được tính toán để thu hút nhà đầu tư dài hạn, tạo thanh khoản và từng bước hình thành đường cong lợi suất.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">lựa chọn tổ chức bảo lãnh có khả năng phân phối rộng</span>
+        <span class="e-m">폭넓은 유통 능력을 가진 인수기관을 선정하다</span>
+        <span class="e-ex">Việt Nam cũng cần duy trì quan hệ thường xuyên với nhà đầu tư quốc tế, lựa chọn tổ chức bảo lãnh có khả năng phân phối rộng và chuẩn bị sẵn sàng trước khi điều kiện thị trường trở nên thuận lợi.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">mở thêm một kênh kết nối</span>
+        <span class="e-m">또 하나의 연결 채널을 열다</span>
+        <span class="e-ex">Nếu được triển khai phù hợp, trái phiếu Chính phủ bằng USD có thể mở thêm một kênh kết nối giữa thị trường vốn Việt Nam và các nhà đầu tư toàn cầu, đồng thời tạo nền tảng tham chiếu cho khu vực doanh nghiệp.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/kha-nang-viet-nam-tro-lai-voi-trai-phieu-chinh-phu-bang-usd.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
