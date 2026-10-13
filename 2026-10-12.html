@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.10.12</strong> · 48일째</span>
+    </div>
+    <h1>Thủ tướng đề nghị Luxembourg tăng cường kết nối dòng vốn châu Âu vào Việt Nam</h1>
+    <p class="h1-ko">총리, 룩셈부르크에 유럽 자본의 베트남 유입 연결 강화 요청</p>
+    <p class="byline">원문 5,320자 · 읽기 약 7분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>48</b>장 · 단어 <b>960</b>개 · 표현 <b>480</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-10-12.html" aria-current="page"><span class="chip-d">10.12</span><span class="chip-t">trụ sở</span></a>
+      <a class="chip" href="2026-10-11.html"><span class="chip-d">10.11</span><span class="chip-t">kịch bản</span></a>
+      <a class="chip" href="2026-10-10.html"><span class="chip-d">10.10</span><span class="chip-t">giải ngân</span></a>
+      <a class="chip" href="2026-10-09.html"><span class="chip-d">10.09</span><span class="chip-t">xếp hạng tín nhiệm</span></a>
+      <a class="chip" href="2026-10-08.html"><span class="chip-d">10.08</span><span class="chip-t">bán lẻ</span></a>
+      <a class="chip" href="2026-10-07.html"><span class="chip-d">10.07</span><span class="chip-t">dư địa</span></a>
+      <a class="chip" href="2026-10-06.html"><span class="chip-d">10.06</span><span class="chip-t">thành tích</span></a>
+      <a class="chip" href="2026-10-05.html"><span class="chip-d">10.05</span><span class="chip-t">bối cảnh</span></a>
+      <a class="chip" href="2026-10-04.html"><span class="chip-d">10.04</span><span class="chip-t">quy mô đầu tư</span></a>
+      <a class="chip" href="2026-10-03.html"><span class="chip-d">10.03</span><span class="chip-t">ước tính</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Sáng 12/10, Thủ tướng Lê Minh Hưng đã tiếp Bộ trưởng Tài chính Luxembourg Gilles Roth. Hai bên đánh giá cao việc Bộ Tài chính hai nước ký kết Biên bản ghi nhớ hợp tác kinh tế - tài chính, làm sâu sắc khuôn khổ Đối tác chiến lược về tài chính xanh năm 2023. Thủ tướng đề nghị tăng cường kết nối dòng vốn từ Luxembourg và châu Âu vào Việt Nam, đặc biệt trong các lĩnh vực hạ tầng chiến lược, năng lượng tái tạo, công nghệ và tài chính xanh. Thủ tướng cũng đề nghị Luxembourg hỗ trợ Việt Nam xây dựng Trung tâm Tài chính quốc tế và thúc đẩy các thành viên EU phê chuẩn Hiệp định EVIPA. Bộ trưởng Gilles Roth khẳng định sẽ thúc đẩy hợp tác trong lĩnh vực chứng khoán, trái phiếu, tài chính số và công nghệ blockchain.</p>
+    <p class="ko">10월 12일 아침, 레민흥(Lê Minh Hưng) 총리는 룩셈부르크 질 로트(Gilles Roth) 재무장관을 접견했다. 양측은 양국 재무부가 경제·금융 협력 양해각서를 체결하여 2023년 수립된 녹색금융 전략적 파트너십 틀을 심화시킨 것을 높이 평가했다. 총리는 룩셈부르크와 유럽으로부터의 자본 흐름을 베트남에 연결하는 것을 강화할 것을 제안했으며, 특히 전략 인프라, 재생에너지, 기술, 녹색금융 분야를 강조했다. 총리는 또한 룩셈부르크가 베트남의 국제금융센터 구축을 지원하고 EU 회원국들의 EVIPA 비준을 촉진해줄 것을 요청했다. 질 로트 장관은 증권, 채권, 디지털금융, 블록체인 기술 분야의 협력을 추진하겠다고 밝혔다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">trụ sở</span><span class="v-m">본부, 청사</span></li>
+      <li><span class="v-n">02</span><span class="v-w">tiếp</span><span class="v-m">접견하다</span></li>
+      <li><span class="v-n">03</span><span class="v-w">sâu sắc</span><span class="v-m">심화시키다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">khuôn khổ</span><span class="v-m">틀, 프레임워크</span></li>
+      <li><span class="v-n">05</span><span class="v-w">thế mạnh</span><span class="v-m">강점</span></li>
+      <li><span class="v-n">06</span><span class="v-w">khiêm tốn</span><span class="v-m">소박한, 적은</span></li>
+      <li><span class="v-n">07</span><span class="v-w">công nghiệp chế biến, chế tạo</span><span class="v-m">가공제조업</span></li>
+      <li><span class="v-n">08</span><span class="v-w">đà tăng trưởng</span><span class="v-m">성장세</span></li>
+      <li><span class="v-n">09</span><span class="v-w">huy động</span><span class="v-m">동원하다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">năng suất</span><span class="v-m">생산성</span></li>
+      <li><span class="v-n">11</span><span class="v-w">sức cạnh tranh</span><span class="v-m">경쟁력</span></li>
+      <li><span class="v-n">12</span><span class="v-w">niềm tin</span><span class="v-m">신뢰</span></li>
+      <li><span class="v-n">13</span><span class="v-w">song phương</span><span class="v-m">양자(간)</span></li>
+      <li><span class="v-n">14</span><span class="v-w">chương trình hành động</span><span class="v-m">행동계획</span></li>
+      <li><span class="v-n">15</span><span class="v-w">khuyến khích</span><span class="v-m">장려하다</span></li>
+      <li><span class="v-n">16</span><span class="v-w">năng lượng tái tạo</span><span class="v-m">재생에너지</span></li>
+      <li><span class="v-n">17</span><span class="v-w">tài sản mã hóa</span><span class="v-m">암호자산</span></li>
+      <li><span class="v-n">18</span><span class="v-w">hệ sinh thái</span><span class="v-m">생태계</span></li>
+      <li><span class="v-n">19</span><span class="v-w">xúc tiến đầu tư</span><span class="v-m">투자유치</span></li>
+      <li><span class="v-n">20</span><span class="v-w">phê chuẩn</span><span class="v-m">비준하다</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">tiếp nối các cuộc tiếp xúc cấp cao</span>
+        <span class="e-m">고위급 접촉을 이어가다</span>
+        <span class="e-ex">Thủ tướng hoan nghênh chuyến thăm, đánh giá đây là hoạt động tiếp nối các cuộc tiếp xúc cấp cao và giữa các thành viên Chính phủ hai nước, góp phần thúc đẩy quan hệ hợp tác kinh tế, thương mại và đầu tư Việt Nam - Luxembourg.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">hoàn tất đàm phán và chính thức ký kết</span>
+        <span class="e-m">협상을 완료하고 공식 서명하다</span>
+        <span class="e-ex">Thủ tướng đánh giá cao việc Bộ Tài chính hai nước hoàn tất đàm phán và chính thức ký kết Biên bản ghi nhớ hợp tác trong lĩnh vực kinh tế - tài chính, qua đó tiếp tục làm sâu sắc khuôn khổ Đối tác chiến lược về tài chính xanh được thiết lập năm 2023.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">tăng trưởng hai con số</span>
+        <span class="e-m">두 자릿수 성장</span>
+        <span class="e-ex">Thủ tướng cho biết Việt Nam đang duy trì đà tăng trưởng mạnh mẽ, hướng tới mục tiêu tăng trưởng hai con số trên nền tảng kinh tế vĩ mô vững chắc.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">hoàn thiện khuôn khổ pháp luật theo thông lệ quốc tế</span>
+        <span class="e-m">국제 관행에 따라 법적 틀을 완비하다</span>
+        <span class="e-ex">Việt Nam sẽ tiếp tục hoàn thiện khuôn khổ pháp luật theo thông lệ quốc tế, bảo đảm công khai, minh bạch, có khả năng dự báo nhằm củng cố niềm tin của các nhà đầu tư nước ngoài, trong đó có các nhà đầu tư Luxembourg.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">đi vào chiều sâu</span>
+        <span class="e-m">심화 단계로 들어가다</span>
+        <span class="e-ex">Để đưa hợp tác song phương đi vào chiều sâu, Thủ tướng đề nghị hai bên triển khai thực chất khuôn khổ Đối tác chiến lược về tài chính xanh năm 2023, Biên bản ghi nhớ hợp tác giữa hai Bộ Tài chính vừa ký kết và Nghị định thư hợp tác tài chính - ngân hàng năm 2020.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">cụ thể hóa bằng chương trình hành động</span>
+        <span class="e-m">행동계획으로 구체화하다</span>
+        <span class="e-ex">Các thỏa thuận cần được cụ thể hóa bằng chương trình hành động, ưu tiên tài chính bền vững, thị trường vốn, quản lý quỹ, công nghệ tài chính (fintech), đào tạo nhân lực và nâng cao năng lực quản lý, giám sát khu vực tài chính - ngân hàng.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">tăng cường kết nối dòng vốn</span>
+        <span class="e-m">자금 흐름 연결을 강화하다</span>
+        <span class="e-ex">Đặc biệt, Thủ tướng đề nghị tăng cường kết nối dòng vốn từ Luxembourg và châu Âu vào Việt Nam; khuyến khích các quỹ đầu tư, định chế tài chính và doanh nghiệp tăng phân bổ nguồn vốn dài hạn, nhất là trong các lĩnh vực hạ tầng chiến lược thiết yếu, năng lượng tái tạo, công nghệ, logistics, fintech, tài sản mã hóa, đổi mới sáng tạo, kinh tế xanh và đô thị xanh.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">tham gia ngay từ giai đoạn đầu vận hành</span>
+        <span class="e-m">운영 초기 단계부터 참여하다</span>
+        <span class="e-ex">hỗ trợ đào tạo nguồn nhân lực và kết nối các định chế tài chính Luxembourg với hệ sinh thái Trung tâm Tài chính quốc tế Việt Nam, khuyến khích các tổ chức tham gia ngay từ giai đoạn đầu vận hành.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">làm cầu nối thúc đẩy quan hệ</span>
+        <span class="e-m">관계 촉진의 다리 역할을 하다</span>
+        <span class="e-ex">Thủ tướng khẳng định Việt Nam sẵn sàng làm cầu nối thúc đẩy quan hệ Luxembourg với ASEAN, đồng thời mong muốn Luxembourg tiếp tục ủng hộ tăng cường quan hệ Việt Nam - EU và EU - ASEAN.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">đứng thứ 19 trong số 154 quốc gia</span>
+        <span class="e-m">154개국 중 19위를 차지하다</span>
+        <span class="e-ex">với tổng vốn đăng ký khoảng 2,79 tỷ USD, đứng thứ 19 trong số 154 quốc gia, vùng lãnh thổ đầu tư vào Việt Nam và đứng thứ tư trong EU.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/thu-tuong-de-nghi-luxembourg-tang-cuong-ket-noi-dong-von-chau-au-vao-viet-nam.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
