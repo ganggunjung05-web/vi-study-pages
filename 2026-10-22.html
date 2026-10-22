@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.10.22</strong> · 58일째</span>
+    </div>
+    <h1>Phó Thủ tướng yêu cầu Trung tâm Tài chính quốc tế phấn đấu có giao dịch thực tế trong tháng tới</h1>
+    <p class="h1-ko">부총리, 국제금융센터에 다음 달 실제 거래 발생을 목표로 노력할 것을 요구</p>
+    <p class="byline">원문 3,937자 · 읽기 약 5분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>58</b>장 · 단어 <b>1160</b>개 · 표현 <b>580</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-10-22.html" aria-current="page"><span class="chip-d">10.22</span><span class="chip-t">kiện toàn</span></a>
+      <a class="chip" href="2026-10-21.html"><span class="chip-d">10.21</span><span class="chip-t">phân cấp</span></a>
+      <a class="chip" href="2026-10-20.html"><span class="chip-d">10.20</span><span class="chip-t">điểm phần trăm</span></a>
+      <a class="chip" href="2026-10-19.html"><span class="chip-d">10.19</span><span class="chip-t">thống đốc</span></a>
+      <a class="chip" href="2026-10-18.html"><span class="chip-d">10.18</span><span class="chip-t">chứng kiến</span></a>
+      <a class="chip" href="2026-10-17.html"><span class="chip-d">10.17</span><span class="chip-t">khai mạc</span></a>
+      <a class="chip" href="2026-10-16.html"><span class="chip-d">10.16</span><span class="chip-t">họp báo</span></a>
+      <a class="chip" href="2026-10-15.html"><span class="chip-d">10.15</span><span class="chip-t">quy mô</span></a>
+      <a class="chip" href="2026-10-14.html"><span class="chip-d">10.14</span><span class="chip-t">sản xuất công nghiệp</span></a>
+      <a class="chip" href="2026-10-13.html"><span class="chip-d">10.13</span><span class="chip-t">dự thảo</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Bộ Tài chính đã phối hợp kiện toàn Hội đồng điều hành và ban hành Kế hoạch phát triển Trung tâm Tài chính quốc tế. TP.HCM và Đà Nẵng đã chuẩn bị nguồn lực, nhiều ngân hàng và nhà đầu tư đã ký biên bản ghi nhớ tham gia. Phó Thủ tướng yêu cầu cơ quan giám sát phải hoạt động trước khi phát sinh giao dịch thực chất, đồng thời thúc đẩy trung tâm trọng tài và tòa án chuyên biệt. Mục tiêu là phát sinh giao dịch thực tế vào tháng 11/2026, với trọng tâm là các sản phẩm huy động vốn trung, dài hạn. Bộ Tài chính phải rà soát các quy định liên quan để tránh vướng mắc về thể chế.</p>
+    <p class="ko">재정부는 운영위원회를 정비하고 국제금융센터 발전 계획을 공포하기 위해 협력했다. 호찌민시와 다낭시는 자원을 준비했고, 많은 은행과 투자자들이 참여 양해각서를 체결했다. 부총리는 실제 거래가 발생하기 전에 감독 기관이 운영되어야 하며, 동시에 중재센터와 전문 법원을 추진해야 한다고 요구했다. 목표는 2026년 11월에 실제 거래를 발생시키는 것이며, 중장기 자금 조달 상품에 중점을 둔다. 재정부는 제도적 걸림돌을 피하기 위해 관련 규정을 검토해야 한다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">kiện toàn</span><span class="v-m">정비하다/강화하다</span></li>
+      <li><span class="v-n">02</span><span class="v-w">Hội đồng điều hành</span><span class="v-m">운영위원회</span></li>
+      <li><span class="v-n">03</span><span class="v-w">biên chế</span><span class="v-m">정원(인력)</span></li>
+      <li><span class="v-n">04</span><span class="v-w">biên bản ghi nhớ</span><span class="v-m">양해각서</span></li>
+      <li><span class="v-n">05</span><span class="v-w">cam kết</span><span class="v-m">약속하다/서약하다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">cơ chế giám sát</span><span class="v-m">감독 체계</span></li>
+      <li><span class="v-n">07</span><span class="v-w">thẩm quyền</span><span class="v-m">권한</span></li>
+      <li><span class="v-n">08</span><span class="v-w">thanh tra</span><span class="v-m">감찰하다</span></li>
+      <li><span class="v-n">09</span><span class="v-w">chồng chéo</span><span class="v-m">중복되다/겹치다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">trọng tài</span><span class="v-m">중재</span></li>
+      <li><span class="v-n">11</span><span class="v-w">tòa án chuyên biệt</span><span class="v-m">전문 법원</span></li>
+      <li><span class="v-n">12</span><span class="v-w">ổn định</span><span class="v-m">안정적인</span></li>
+      <li><span class="v-n">13</span><span class="v-w">huy động</span><span class="v-m">(자금을) 조달하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">trung, dài hạn</span><span class="v-m">중장기</span></li>
+      <li><span class="v-n">15</span><span class="v-w">văn bản hướng dẫn</span><span class="v-m">지침 문서</span></li>
+      <li><span class="v-n">16</span><span class="v-w">rà soát</span><span class="v-m">검토하다</span></li>
+      <li><span class="v-n">17</span><span class="v-w">rút gọn</span><span class="v-m">간소화하다</span></li>
+      <li><span class="v-n">18</span><span class="v-w">vướng mắc</span><span class="v-m">걸림돌/장애</span></li>
+      <li><span class="v-n">19</span><span class="v-w">thể chế</span><span class="v-m">제도</span></li>
+      <li><span class="v-n">20</span><span class="v-w">khung pháp lý</span><span class="v-m">법적 틀</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">phối hợp với các cơ quan liên quan</span>
+        <span class="e-m">관련 기관과 협력하다</span>
+        <span class="e-ex">bộ này đã phối hợp với các cơ quan liên quan báo cáo Thủ tướng Chính phủ, Phó Thủ tướng Chính phủ về việc kiện toàn Hội đồng điều hành, ban hành Kế hoạch phát triển Trung tâm Tài chính quốc tế đến năm 2035 và Quy chế hoạt động của Trung tâm.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">phê duyệt vị trí việc làm</span>
+        <span class="e-m">직위를 승인하다</span>
+        <span class="e-ex">Thành phố Hồ Chí Minh và Đà Nẵng đã phê duyệt vị trí việc làm, bố trí biên chế, kinh phí, trụ sở và hạ tầng công nghệ.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">ký biên bản ghi nhớ</span>
+        <span class="e-m">양해각서를 체결하다</span>
+        <span class="e-ex">nhiều ngân hàng, công ty chứng khoán, tổ chức quản lý tài sản và nhà đầu tư đã ký biên bản ghi nhớ, cam kết hoặc nộp hồ sơ tham gia.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">có khả năng triển khai sớm</span>
+        <span class="e-m">조기 시행이 가능하다</span>
+        <span class="e-ex">lãnh đạo Bộ Tài chính đã trực tiếp làm việc với một số ngân hàng thương mại và định chế tài chính nhằm lựa chọn những giao dịch có khả năng triển khai sớm.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">không trùng lặp hoặc chồng chéo</span>
+        <span class="e-m">중복되거나 겹치지 않다</span>
+        <span class="e-ex">bảo đảm hoạt động thanh tra, kiểm tra, giám sát có hiệu lực, hiệu quả, không trùng lặp hoặc chồng chéo</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">trước khi phát sinh các giao dịch thực chất</span>
+        <span class="e-m">실제 거래가 발생하기 전에</span>
+        <span class="e-ex">Phó Thủ tướng Nguyễn Văn Thắng yêu cầu cơ quan giám sát phải sớm được đưa vào hoạt động và hoàn thành trước khi phát sinh các giao dịch thực chất tại Trung tâm Tài chính quốc tế.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">cập nhật tiến độ</span>
+        <span class="e-m">진행 상황을 업데이트하다</span>
+        <span class="e-ex">Bộ Tài chính cũng cần cập nhật tiến độ thành lập trung tâm trọng tài và tòa án chuyên biệt, đồng thời thúc đẩy các thiết chế này sớm hoạt động ổn định.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">phù hợp với thực tiễn</span>
+        <span class="e-m">실정에 부합하다</span>
+        <span class="e-ex">các sản phẩm đang được giao dịch tại những trung tâm tài chính trên thế giới có thể được xem xét triển khai tại Việt Nam nếu phù hợp với thực tiễn, năng lực quản lý và khả năng kiểm soát rủi ro.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">theo trình tự, thủ tục rút gọn</span>
+        <span class="e-m">간소화된 절차에 따라</span>
+        <span class="e-ex">Trường hợp đáp ứng đủ điều kiện theo quy định, việc sửa đổi, bổ sung có thể được thực hiện theo trình tự, thủ tục rút gọn.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">vướng mắc về thể chế</span>
+        <span class="e-m">제도적 걸림돌</span>
+        <span class="e-ex">Không để xảy ra tình trạng sản phẩm đã sẵn sàng nhưng chưa thể triển khai do vướng mắc về thể chế.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/pho-thu-tuong-yeu-cau-trung-tam-tai-chinh-quoc-te-phan-dau-co-giao-dich-thuc-te-trong-thang-toi.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
