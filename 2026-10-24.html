@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.10.24</strong> · 60일째</span>
+    </div>
+    <h1>Xuất khẩu tăng hơn 12%, Việt Nam xuất siêu hai kỳ liên tiếp</h1>
+    <p class="h1-ko">수출 12% 이상 증가, 베트남 2기 연속 무역흑자</p>
+    <p class="byline">원문 5,277자 · 읽기 약 7분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>60</b>장 · 단어 <b>1200</b>개 · 표현 <b>600</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-10-24.html" aria-current="page"><span class="chip-d">10.24</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-10-23.html"><span class="chip-d">10.23</span><span class="chip-t">phối hợp</span></a>
+      <a class="chip" href="2026-10-22.html"><span class="chip-d">10.22</span><span class="chip-t">kiện toàn</span></a>
+      <a class="chip" href="2026-10-21.html"><span class="chip-d">10.21</span><span class="chip-t">phân cấp</span></a>
+      <a class="chip" href="2026-10-20.html"><span class="chip-d">10.20</span><span class="chip-t">điểm phần trăm</span></a>
+      <a class="chip" href="2026-10-19.html"><span class="chip-d">10.19</span><span class="chip-t">thống đốc</span></a>
+      <a class="chip" href="2026-10-18.html"><span class="chip-d">10.18</span><span class="chip-t">chứng kiến</span></a>
+      <a class="chip" href="2026-10-17.html"><span class="chip-d">10.17</span><span class="chip-t">khai mạc</span></a>
+      <a class="chip" href="2026-10-16.html"><span class="chip-d">10.16</span><span class="chip-t">họp báo</span></a>
+      <a class="chip" href="2026-10-15.html"><span class="chip-d">10.15</span><span class="chip-t">quy mô</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Theo Cục Hải quan, nửa đầu tháng 10/2026, tổng kim ngạch xuất nhập khẩu đạt 56,68 tỷ USD, trong đó xuất khẩu tăng 12,41% còn nhập khẩu giảm 4,9%. Máy vi tính, sản phẩm điện tử và linh kiện dẫn dắt đà tăng xuất khẩu, trong khi điện thoại và linh kiện giảm cả xuất lẫn nhập. Khối FDI xuất siêu khoảng 3,75 tỷ USD, bù đắp phần nhập siêu của doanh nghiệp trong nước và tạo ra mức xuất siêu chung 1,82 tỷ USD. Đây là kỳ xuất siêu thứ hai liên tiếp, nhưng chất lượng tăng trưởng còn phụ thuộc vào mức độ doanh nghiệp nội địa tham gia chuỗi cung ứng.</p>
+    <p class="ko">관세청에 따르면 2026년 10월 상반기 베트남의 총 수출입액은 566.8억 달러로, 이 중 수출은 12.41% 증가했지만 수입은 4.9% 감소했다. 컴퓨터·전자제품 및 부품이 수출 증가를 주도한 반면, 휴대폰 및 부품은 수출입 모두 감소했다. FDI 부문은 약 37.5억 달러의 무역흑자를 기록해 국내기업의 무역적자를 메우고 전체 18.2억 달러의 흑자를 만들어냈다. 이는 2기 연속 무역흑자이지만, 성장의 질은 국내기업이 공급망에 얼마나 참여하느냐에 달려 있다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">kim ngạch</span><span class="v-m">(수출입) 금액</span></li>
+      <li><span class="v-n">02</span><span class="v-w">xuất nhập khẩu</span><span class="v-m">수출입</span></li>
+      <li><span class="v-n">03</span><span class="v-w">lũy kế</span><span class="v-m">누계</span></li>
+      <li><span class="v-n">04</span><span class="v-w">cùng kỳ</span><span class="v-m">동기간</span></li>
+      <li><span class="v-n">05</span><span class="v-w">lan tỏa</span><span class="v-m">확산되다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">dẫn dắt</span><span class="v-m">이끌다, 주도하다</span></li>
+      <li><span class="v-n">07</span><span class="v-w">tương ứng</span><span class="v-m">상응하다</span></li>
+      <li><span class="v-n">08</span><span class="v-w">phụ tùng</span><span class="v-m">부품</span></li>
+      <li><span class="v-n">09</span><span class="v-w">điểm trừ</span><span class="v-m">감점 요인, 약점</span></li>
+      <li><span class="v-n">10</span><span class="v-w">trái chiều</span><span class="v-m">상반되다</span></li>
+      <li><span class="v-n">11</span><span class="v-w">giá trị gia tăng</span><span class="v-m">부가가치</span></li>
+      <li><span class="v-n">12</span><span class="v-w">nội địa</span><span class="v-m">국내(의)</span></li>
+      <li><span class="v-n">13</span><span class="v-w">lắp ráp</span><span class="v-m">조립</span></li>
+      <li><span class="v-n">14</span><span class="v-w">suy giảm</span><span class="v-m">감소하다, 하락하다</span></li>
+      <li><span class="v-n">15</span><span class="v-w">mắt xích</span><span class="v-m">연결고리</span></li>
+      <li><span class="v-n">16</span><span class="v-w">xuất siêu</span><span class="v-m">무역흑자</span></li>
+      <li><span class="v-n">17</span><span class="v-w">nhập siêu</span><span class="v-m">무역적자</span></li>
+      <li><span class="v-n">18</span><span class="v-w">thặng dư</span><span class="v-m">흑자, 잉여</span></li>
+      <li><span class="v-n">19</span><span class="v-w">cán cân thương mại</span><span class="v-m">무역수지</span></li>
+      <li><span class="v-n">20</span><span class="v-w">gia công</span><span class="v-m">가공, 하청생산</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">so với cùng kỳ năm trước</span>
+        <span class="e-m">전년 동기 대비</span>
+        <span class="e-ex">Lũy kế đến hết ngày 15/10, tổng kim ngạch xuất nhập khẩu đạt 945,07 tỷ USD, tăng 31,43% so với cùng kỳ năm trước.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">giữ vai trò dẫn dắt</span>
+        <span class="e-m">주도적 역할을 하다</span>
+        <span class="e-ex">Máy vi tính, sản phẩm điện tử và linh kiện tiếp tục giữ vai trò dẫn dắt khi đạt khoảng 11,59 tỷ USD, tăng 21,17%, tương ứng tăng hơn 2,03 tỷ USD so với kỳ trước.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">diễn biến trái chiều</span>
+        <span class="e-m">상반된 흐름</span>
+        <span class="e-ex">Diễn biến trái chiều giữa máy vi tính, sản phẩm điện tử và linh kiện với điện thoại cho thấy đà tăng của nhóm hàng công nghệ chưa đồng đều, đồng thời khiến tăng trưởng xuất khẩu vẫn phụ thuộc đáng kể vào một số ngành hàn g gắn với khu vực FDI.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">nâng cao giá trị gia tăng nội địa</span>
+        <span class="e-m">국내 부가가치를 높이다</span>
+        <span class="e-ex">Nếu xuất khẩu tiếp tục tăng trong khi nhập khẩu đầu vào giảm qua nhiều kỳ, đây sẽ là dấu hiệu cho thấy khả năng nâng cao giá trị gia tăng nội địa.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">mắt xích của chuỗi cung ứng</span>
+        <span class="e-m">공급망의 연결고리</span>
+        <span class="e-ex">Khi cả đầu vào nhập khẩu và đầu ra xuất khẩu cùng suy giảm, diễn biến này có thể phản ánh hoạt động sản xuất hoặc đơn hàng đang chậm lại tại một số mắt xích của chuỗi cung ứng.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">khối FDI xuất siêu</span>
+        <span class="e-m">FDI 부문이 무역흑자를 내다</span>
+        <span class="e-ex">Kết quả là khối FDI xuất siêu khoảng 3,75 tỷ USD, trong khi khu vực doanh nghiệp trong nước vẫn nhập siêu khoảng 1,92 tỷ USD.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">bù đắp phần nhập siêu</span>
+        <span class="e-m">적자분을 메우다</span>
+        <span class="e-ex">Trong kỳ, xuất siêu của khối FDI không chỉ bù đắp phần nhập siêu của khu vực doanh nghiệp trong nước mà còn tạo ra mức xuất siêu chung khoảng 1,82 tỷ USD.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">củng cố cán cân thương mại</span>
+        <span class="e-m">무역수지를 강화하다</span>
+        <span class="e-ex">Điều này giúp củng cố cán cân thương mại và nguồn thu ngoại tệ từ xuất khẩu.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">mức độ lan tỏa</span>
+        <span class="e-m">확산 정도</span>
+        <span class="e-ex">V ấn đề quan trọng hơn là mức độ lan tỏa của hoạt động xuất khẩu sang doanh nghiệp trong nước.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">xuất siêu kỳ thứ hai liên tiếp</span>
+        <span class="e-m">2기 연속 무역흑자</span>
+        <span class="e-ex">Chênh lệch này đưa cán cân thương mại trong nửa đầu tháng 10 tiếp tục duy trì trạng thái xuất siêu kỳ thứ hai liên tiếp với giá trị khoảng 1,82 tỷ USD.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/xuat-khau-tang-hon-12-viet-nam-xuat-sieu-hai-ky-lien-tiep.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
