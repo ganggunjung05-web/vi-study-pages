@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.10.27</strong> · 63일째</span>
+    </div>
+    <h1>Loạt ngân hàng báo lãi lớn trong 9 tháng đầu năm 2026</h1>
+    <p class="h1-ko">2026년 9개월간 다수 은행들의 대규모 이익 발표</p>
+    <p class="byline">원문 10,689자 · 읽기 약 13분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>63</b>장 · 단어 <b>1260</b>개 · 표현 <b>630</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-10-27.html" aria-current="page"><span class="chip-d">10.27</span><span class="chip-t">cùng kỳ</span></a>
+      <a class="chip" href="2026-10-26.html"><span class="chip-d">10.26</span><span class="chip-t">hội đàm</span></a>
+      <a class="chip" href="2026-10-25.html"><span class="chip-d">10.25</span><span class="chip-t">cùng kỳ</span></a>
+      <a class="chip" href="2026-10-24.html"><span class="chip-d">10.24</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-10-23.html"><span class="chip-d">10.23</span><span class="chip-t">phối hợp</span></a>
+      <a class="chip" href="2026-10-22.html"><span class="chip-d">10.22</span><span class="chip-t">kiện toàn</span></a>
+      <a class="chip" href="2026-10-21.html"><span class="chip-d">10.21</span><span class="chip-t">phân cấp</span></a>
+      <a class="chip" href="2026-10-20.html"><span class="chip-d">10.20</span><span class="chip-t">điểm phần trăm</span></a>
+      <a class="chip" href="2026-10-19.html"><span class="chip-d">10.19</span><span class="chip-t">thống đốc</span></a>
+      <a class="chip" href="2026-10-18.html"><span class="chip-d">10.18</span><span class="chip-t">chứng kiến</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Trong 9 tháng đầu năm 2026, nhiều ngân hàng Việt Nam ghi nhận lợi nhuận trước thuế tăng mạnh so với cùng kỳ năm trước, nhờ thu nhập lãi thuần, nguồn thu ngoài lãi và tăng trưởng tín dụng. LPBank, Techcombank, VPBank, ABBank và SHB đều có lợi nhuận và tổng tài sản tăng đáng kể. Nhiều ngân hàng như ACB, OCB, BVBank và Vietbank cũng công bố kết quả kinh doanh khả quan với tỷ lệ nợ xấu được kiểm soát. Các chỉ số như tổng tài sản, dư nợ cho vay khách hàng và tiền gửi khách hàng của hầu hết ngân hàng đều tăng so với đầu năm.</p>
+    <p class="ko">2026년 9개월 동안 베트남의 여러 은행들은 전년 동기 대비 세전 이익이 크게 증가했는데, 이는 순이자수익, 이자 외 수익원, 신용 성장 덕분이다. LPBank, Techcombank, VPBank, ABBank, SHB는 모두 이익과 총자산이 상당히 증가했다. ACB, OCB, BVBank, Vietbank 등 여러 은행도 부실채권 비율을 관리하며 양호한 경영 실적을 발표했다. 대부분 은행의 총자산, 고객 대출 잔액, 고객 예금 등의 지표도 연초 대비 증가했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">cùng kỳ</span><span class="v-m">동기간</span></li>
+      <li><span class="v-n">02</span><span class="v-w">thu nhập lãi thuần</span><span class="v-m">순이자수익</span></li>
+      <li><span class="v-n">03</span><span class="v-w">báo cáo tài chính</span><span class="v-m">재무보고서</span></li>
+      <li><span class="v-n">04</span><span class="v-w">lợi nhuận trước thuế</span><span class="v-m">세전 이익</span></li>
+      <li><span class="v-n">05</span><span class="v-w">lũy kế</span><span class="v-m">누계</span></li>
+      <li><span class="v-n">06</span><span class="v-w">kế hoạch</span><span class="v-m">계획</span></li>
+      <li><span class="v-n">07</span><span class="v-w">tổng thu nhập hoạt động</span><span class="v-m">총영업수익</span></li>
+      <li><span class="v-n">08</span><span class="v-w">tổng tài sản</span><span class="v-m">총자산</span></li>
+      <li><span class="v-n">09</span><span class="v-w">tiền gửi khách hàng</span><span class="v-m">고객 예금</span></li>
+      <li><span class="v-n">10</span><span class="v-w">dư nợ cho vay</span><span class="v-m">대출 잔액</span></li>
+      <li><span class="v-n">11</span><span class="v-w">vốn chủ sở hữu</span><span class="v-m">자기자본</span></li>
+      <li><span class="v-n">12</span><span class="v-w">tăng trưởng tín dụng</span><span class="v-m">신용 성장</span></li>
+      <li><span class="v-n">13</span><span class="v-w">kinh doanh ngoại hối</span><span class="v-m">외환 거래</span></li>
+      <li><span class="v-n">14</span><span class="v-w">tiền gửi không kỳ hạn (CASA)</span><span class="v-m">요구불예금</span></li>
+      <li><span class="v-n">15</span><span class="v-w">vốn điều lệ</span><span class="v-m">법정자본금</span></li>
+      <li><span class="v-n">16</span><span class="v-w">cổ đông</span><span class="v-m">주주</span></li>
+      <li><span class="v-n">17</span><span class="v-w">tỷ lệ an toàn vốn (CAR)</span><span class="v-m">자기자본비율</span></li>
+      <li><span class="v-n">18</span><span class="v-w">giấy tờ có giá</span><span class="v-m">유가증권</span></li>
+      <li><span class="v-n">19</span><span class="v-w">chứng khoán đầu tư</span><span class="v-m">투자증권</span></li>
+      <li><span class="v-n">20</span><span class="v-w">huy động vốn</span><span class="v-m">자금 조달</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">so với cùng kỳ</span>
+        <span class="e-m">전년 동기 대비</span>
+        <span class="e-ex">với lợi nhuận trước thuế đạt 4.448 tỷ đồng, tăng 29% so với cùng kỳ năm 2025.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">hoàn thành ... kế hoạch năm</span>
+        <span class="e-m">연간 계획을 달성하다</span>
+        <span class="e-ex">Lũy kế 9 tháng, lợi nhuận trước thuế đạt 10.421 tỷ đồng, tăng gần 9% và hoàn thành khoảng 70% kế hoạch năm.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">đặt mục tiêu</span>
+        <span class="e-m">목표를 설정하다</span>
+        <span class="e-ex">Năm 2026, LPBank đặt mục tiêu lợi nhuận trước thuế đạt 14.982 tỷ đồng, tăng 5% so với năm 2025.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">chiếm ... tổng thu nhập hoạt động</span>
+        <span class="e-m">총영업수익 중 비중을 차지하다</span>
+        <span class="e-ex">Trong đó, thu thuần ngoài lãi đạt 7.489 tỷ đồng, chiếm 39% tổng thu nhập hoạt động.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">tăng ... so với đầu năm</span>
+        <span class="e-m">연초 대비 증가하다</span>
+        <span class="e-ex">Tiền gửi khách hàng và các nguồn vốn huy động trên thị trường 1 đạt 520.976 tỷ đồng, tăng 30% so với đầu năm và 34% so với cùng kỳ.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">tỷ lệ chi phí trên thu nhập (CIR)</span>
+        <span class="e-m">비용 대 수익 비율(CIR)</span>
+        <span class="e-ex">Tỷ lệ chi phí trên thu nhập (CIR) trong 9 tháng ở mức 27,83%, giảm khoảng 0,5 điểm phần trăm so với cùng kỳ.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">cao gần gấp đôi</span>
+        <span class="e-m">거의 두 배에 달하다</span>
+        <span class="e-ex">mức lợi nhuận này cao gần gấp đôi cùng kỳ năm 2025.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">mức cao nhất ... trong lịch sử hoạt động</span>
+        <span class="e-m">역대 최고치</span>
+        <span class="e-ex">Riêng quý 3, lợi nhuận trước thuế của VPBank đạt hơn 11.000 tỷ đồng, mức cao nhất theo quý trong lịch sử hoạt động của ngân hàng.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">điểm phần trăm</span>
+        <span class="e-m">퍼센트포인트</span>
+        <span class="e-ex">Tỷ lệ an toàn vốn (CAR) đạt 11,3%, tăng 0,2 điểm phần trăm so với cuối năm 2025 và cao hơn mức tối thiểu 8% theo quy định.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">tiệm cận</span>
+        <span class="e-m">~에 근접하다</span>
+        <span class="e-ex">Về quy mô hoạt động, tổng tài sản của Nam A Bank tiệm cận 465.000 tỷ đồng.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/loat-ngan-hang-bao-lai-lon-trong-9-thang-dau-nam-2026.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
