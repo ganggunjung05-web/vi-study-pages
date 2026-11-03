@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.02</strong> · 69일째</span>
+    </div>
+    <h1>VND vào nhóm 3 đồng tiền châu Á tăng giá mạnh nhất so với USD, bất chấp áp lực kép</h1>
+    <p class="h1-ko">VND, 이중 압력에도 불구하고 미 달러 대비 가장 큰 폭으로 강세를 보인 아시아 통화 3위권 진입</p>
+    <p class="byline">원문 4,073자 · 읽기 약 5분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>69</b>장 · 단어 <b>1380</b>개 · 표현 <b>690</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-02.html" aria-current="page"><span class="chip-d">11.02</span><span class="chip-t">tỷ giá trung tâm</span></a>
+      <a class="chip" href="2026-11-01.html"><span class="chip-d">11.01</span><span class="chip-t">đột phá chiến lược</span></a>
+      <a class="chip" href="2026-10-31.html"><span class="chip-d">10.31</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-10-30.html"><span class="chip-d">10.30</span><span class="chip-t">nỗ lực</span></a>
+      <a class="chip" href="2026-10-29.html"><span class="chip-d">10.29</span><span class="chip-t">thẩm quyền</span></a>
+      <a class="chip" href="2026-10-28.html"><span class="chip-d">10.28</span><span class="chip-t">điểm đến</span></a>
+      <a class="chip" href="2026-10-27.html"><span class="chip-d">10.27</span><span class="chip-t">cùng kỳ</span></a>
+      <a class="chip" href="2026-10-26.html"><span class="chip-d">10.26</span><span class="chip-t">hội đàm</span></a>
+      <a class="chip" href="2026-10-25.html"><span class="chip-d">10.25</span><span class="chip-t">cùng kỳ</span></a>
+      <a class="chip" href="2026-10-24.html"><span class="chip-d">10.24</span><span class="chip-t">kim ngạch</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Ngày 2/11, tỷ giá trung tâm giảm nhẹ, trong khi giá USD trên thị trường tự do giảm rõ rệt hơn, khiến chênh lệch giữa hai thị trường thu hẹp đáng kể. Từ đầu năm 2026, tỷ giá trung tâm tăng nhưng giá USD thực tế tại ngân hàng và thị trường tự do đều giảm, cho thấy VND tăng giá so với USD. So với 10 đồng tiền châu Á được khảo sát, VND đứng thứ ba về mức tăng giá so với USD, chỉ sau won Hàn Quốc và nhân dân tệ Trung Quốc. Điều này diễn ra dù Việt Nam chịu áp lực kép từ nhập siêu lớn và đồng USD mạnh lên, cùng giá dầu thế giới tăng mạnh. Việc VND tăng giá giúp giảm lạm phát nhập khẩu, giảm gánh nặng nợ ngoại tệ và ổn định kỳ vọng thị trường, nhờ Ngân hàng Nhà nước điều hành linh hoạt lãi suất và duy trì chênh lệch lãi suất có lợi cho VND.</p>
+    <p class="ko">11월 2일 기준환율은 소폭 하락했고, 자유시장 달러 가격은 더 뚜렷하게 하락하면서 두 시장 간 격차가 크게 줄었다. 2026년 초부터 기준환율은 상승했지만 실제 시중은행 및 자유시장 달러 가격은 모두 하락해, VND이 달러 대비 강세를 보이고 있음을 보여준다. 조사 대상 아시아 10개 통화 중 VND은 한국 원화와 중국 위안화에 이어 달러 대비 세 번째로 큰 폭의 강세를 기록했다. 이는 베트남이 대규모 무역적자와 달러 강세, 그리고 국제 유가 급등이라는 이중 압력을 받는 상황에서 나타난 것이다. VND 강세는 수입 인플레이션 완화, 외화부채 부담 경감, 시장 기대 안정화에 기여했으며, 이는 중앙은행이 금리를 유연하게 운영하고 VND에 유리한 금리 격차를 유지한 덕분이다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">tỷ giá trung tâm</span><span class="v-m">기준환율</span></li>
+      <li><span class="v-n">02</span><span class="v-w">ngân hàng thương mại</span><span class="v-m">시중은행</span></li>
+      <li><span class="v-n">03</span><span class="v-w">thị trường tự do</span><span class="v-m">자유시장(암시장)</span></li>
+      <li><span class="v-n">04</span><span class="v-w">chênh lệch</span><span class="v-m">격차</span></li>
+      <li><span class="v-n">05</span><span class="v-w">biến động</span><span class="v-m">변동</span></li>
+      <li><span class="v-n">06</span><span class="v-w">liên ngân hàng</span><span class="v-m">은행 간</span></li>
+      <li><span class="v-n">07</span><span class="v-w">tăng giá</span><span class="v-m">가치 상승</span></li>
+      <li><span class="v-n">08</span><span class="v-w">nhập siêu</span><span class="v-m">무역적자</span></li>
+      <li><span class="v-n">09</span><span class="v-w">lạm phát</span><span class="v-m">인플레이션</span></li>
+      <li><span class="v-n">10</span><span class="v-w">neo cao</span><span class="v-m">고공행진(높게 고정)</span></li>
+      <li><span class="v-n">11</span><span class="v-w">chi phí đẩy</span><span class="v-m">비용 인상형(원가상승형)</span></li>
+      <li><span class="v-n">12</span><span class="v-w">nợ ngoại tệ</span><span class="v-m">외화부채</span></li>
+      <li><span class="v-n">13</span><span class="v-w">kỳ vọng thị trường</span><span class="v-m">시장 기대</span></li>
+      <li><span class="v-n">14</span><span class="v-w">mất giá</span><span class="v-m">가치 하락</span></li>
+      <li><span class="v-n">15</span><span class="v-w">phòng ngừa rủi ro</span><span class="v-m">위험 회피</span></li>
+      <li><span class="v-n">16</span><span class="v-w">thanh khoản</span><span class="v-m">유동성</span></li>
+      <li><span class="v-n">17</span><span class="v-w">bơm ròng</span><span class="v-m">순유동성 공급</span></li>
+      <li><span class="v-n">18</span><span class="v-w">lãi suất chào thầu</span><span class="v-m">입찰 금리</span></li>
+      <li><span class="v-n">19</span><span class="v-w">qua đêm</span><span class="v-m">오버나이트(익일물)</span></li>
+      <li><span class="v-n">20</span><span class="v-w">điểm phần trăm</span><span class="v-m">퍼센트포인트</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">đi ngang</span>
+        <span class="e-m">보합세를 보이다</span>
+        <span class="e-ex">Hầu hết đi ngang so với ngày 30/10.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">ghi nhận mức giảm</span>
+        <span class="e-m">하락폭을 기록하다</span>
+        <span class="e-ex">Trong khi đó, thị trường tự do ghi nhận mức giảm rõ rệt hơn.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">thu hẹp từ ... xuống còn</span>
+        <span class="e-m">~에서 ~로 좁혀지다</span>
+        <span class="e-ex">Chênh lệch giữa giá bán USD trên thị trường tự do và ngân hàng thương mại thu hẹp từ 220 đồng/USD ngày 30/10 xuống còn 60 đồng/USD ngày 2/11.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">diễn biến trái chiều</span>
+        <span class="e-m">엇갈린 양상을 보이다</span>
+        <span class="e-ex">Từ đầu năm 2026 đến nay, tỷ giá trung tâm và giá USD trên thị trường diễn biến trái chiều.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">chịu áp lực kép</span>
+        <span class="e-m">이중 압력을 받다</span>
+        <span class="e-ex">Đáng chú ý, VND tăng giá trong bối cảnh kinh tế Việt Nam chịu áp lực kép từ nhập siêu lớn và đồng USD mạnh lên trên thị trường quốc tế.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">tiến sát</span>
+        <span class="e-m">~에 근접하다</span>
+        <span class="e-ex">Đáng chú ý, đến ngày 2/11, giá dầu Brent tiến sát 110 USD/thùng, tăng gần 68% trong một năm; giá dầu WTI vượt 100 USD/thùng, tăng khoảng 64%.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">đẩy ... lên cao</span>
+        <span class="e-m">~을 끌어올리다</span>
+        <span class="e-ex">Diễn biến này đẩy chi phí nhập khẩu, vận tải và sản xuất lên cao, gây thêm sức ép lên việc kiểm soát lạm phát.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">giảm gánh nặng nợ ngoại tệ</span>
+        <span class="e-m">외화부채 부담을 줄이다</span>
+        <span class="e-ex">Thứ hai, giảm gánh nặng nợ ngoại tệ.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">hạn chế tâm lý lo ngại</span>
+        <span class="e-m">우려 심리를 억제하다</span>
+        <span class="e-ex">Việc VND duy trì đà tăng giá trong bối cảnh nhập siêu lớn, DXY đi lên và giá năng lượng tăng mạnh góp phần hạn chế tâm lý lo ngại VND mất giá, giảm động cơ nắm giữ USD để phòng ngừa rủi ro và củng cố niềm tin vào sự ổn định của thị trường ngoại hối.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">duy trì chênh lệch lãi suất dương</span>
+        <span class="e-m">양(positive)의 금리 격차를 유지하다</span>
+        <span class="e-ex">Việc duy trì chênh lệch lãi suất dương giữa VND và USD góp phần nâng sức hấp dẫn của việc nắm giữ VND, hạn chế động cơ chuyển sang nắm giữ USD và giảm áp lực lên tỷ giá.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/vnd-vao-nhom-3-dong-tien-chau-a-tang-gia-manh-nhat-so-voi-usd-bat-chap-ap-luc-kep.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
