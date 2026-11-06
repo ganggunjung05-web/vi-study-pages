@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.05</strong> · 72일째</span>
+    </div>
+    <h1>Kiến nghị luật hóa cơ chế thí điểm thực hiện dự án nhà ở thương mại</h1>
+    <p class="h1-ko">상업주택 프로젝트 시범 시행 메커니즘의 법제화 건의</p>
+    <p class="byline">원문 5,786자 · 읽기 약 7분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>72</b>장 · 단어 <b>1440</b>개 · 표현 <b>720</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-05.html" aria-current="page"><span class="chip-d">11.05</span><span class="chip-t">hiệp hội</span></a>
+      <a class="chip" href="2026-11-04.html"><span class="chip-d">11.04</span><span class="chip-t">tăng trưởng hai con số</span></a>
+      <a class="chip" href="2026-11-03.html"><span class="chip-d">11.03</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-11-02.html"><span class="chip-d">11.02</span><span class="chip-t">tỷ giá trung tâm</span></a>
+      <a class="chip" href="2026-11-01.html"><span class="chip-d">11.01</span><span class="chip-t">đột phá chiến lược</span></a>
+      <a class="chip" href="2026-10-31.html"><span class="chip-d">10.31</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-10-30.html"><span class="chip-d">10.30</span><span class="chip-t">nỗ lực</span></a>
+      <a class="chip" href="2026-10-29.html"><span class="chip-d">10.29</span><span class="chip-t">thẩm quyền</span></a>
+      <a class="chip" href="2026-10-28.html"><span class="chip-d">10.28</span><span class="chip-t">điểm đến</span></a>
+      <a class="chip" href="2026-10-27.html"><span class="chip-d">10.27</span><span class="chip-t">cùng kỳ</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">HoREA kiến nghị lựa chọn Phương án 1 tại khoản 1 và khoản 4 Điều 57 Dự thảo Luật Đất đai sửa đổi, nhằm luật hóa Nghị quyết số 171/2024/QH15 về thí điểm thực hiện dự án nhà ở thương mại thông qua thỏa thuận nhận chuyển quyền sử dụng đất hoặc đang có quyền sử dụng đất. Hiệp hội dựa trên căn cứ chính trị từ các Nghị quyết 18-NQ/TW và 21-NQ/TW, căn cứ pháp luật từ các Luật Đất đai trước đây, và căn cứ thực tiễn từ kết quả thí điểm. Theo báo cáo của Bộ Nông nghiệp và Môi trường, tính đến 16/4/2026 có 742 khu đất được chấp thuận trong tổng số 2.750 hồ sơ đăng ký, với diện tích 5.686 ha. HoREA ước tính tổng giá trị đầu tư từ các dự án thí điểm có thể đạt 6-10 triệu tỷ đồng. Hiệp hội đề nghị Bộ Nông nghiệp và Môi trường trình Thủ tướng và Ủy ban Thường vụ Quốc hội xem xét luật hóa cơ chế thí điểm này.</p>
+    <p class="ko">HoREA(호찌민시 부동산협회)는 토지법 개정 초안 제57조 제1항 및 제4항에서 방안 1을 선택할 것을 건의하며, 이는 토지사용권 양수 합의 또는 기존 토지사용권 보유를 통한 상업주택 프로젝트 시범 시행에 관한 국회 결의 제171/2024/QH15호를 법제화하기 위한 것이다. 협회는 당 중앙위원회 결의 제18호 및 제21호에서 비롯된 정치적 근거, 기존 토지법들에서 비롯된 법적 근거, 그리고 시범 시행 성과에서 비롯된 실무적 근거를 제시했다. 농업환경부 보고서에 따르면 2026년 4월 16일 기준 전국적으로 2,750건의 시범 프로젝트 등록 서류 중 742개 부지, 면적 5,686ha가 승인되었다. HoREA는 시범 프로젝트들의 총 투자 가치가 600조~1000조 동에 이를 것으로 추산했다. 협회는 농업환경부가 총리와 국회상임위원회에 이 시범 메커니즘의 법제화 필요성을 보고할 것을 건의했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">hiệp hội</span><span class="v-m">협회</span></li>
+      <li><span class="v-n">02</span><span class="v-w">sửa đổi</span><span class="v-m">개정하다</span></li>
+      <li><span class="v-n">03</span><span class="v-w">đề xuất</span><span class="v-m">제안하다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">phương án</span><span class="v-m">방안</span></li>
+      <li><span class="v-n">05</span><span class="v-w">dự án nhà ở thương mại</span><span class="v-m">상업주택 프로젝트</span></li>
+      <li><span class="v-n">06</span><span class="v-w">thỏa thuận</span><span class="v-m">합의하다</span></li>
+      <li><span class="v-n">07</span><span class="v-w">chuyển quyền sử dụng đất</span><span class="v-m">토지사용권 양도</span></li>
+      <li><span class="v-n">08</span><span class="v-w">kiến nghị</span><span class="v-m">건의하다, 제안하다</span></li>
+      <li><span class="v-n">09</span><span class="v-w">luật hóa</span><span class="v-m">법제화하다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">nghị quyết</span><span class="v-m">결의(안)</span></li>
+      <li><span class="v-n">11</span><span class="v-w">chủ trương</span><span class="v-m">방침</span></li>
+      <li><span class="v-n">12</span><span class="v-w">chuyển nhượng</span><span class="v-m">양도하다</span></li>
+      <li><span class="v-n">13</span><span class="v-w">khu đô thị</span><span class="v-m">도시지역</span></li>
+      <li><span class="v-n">14</span><span class="v-w">đấu giá</span><span class="v-m">경매</span></li>
+      <li><span class="v-n">15</span><span class="v-w">đấu thầu</span><span class="v-m">입찰</span></li>
+      <li><span class="v-n">16</span><span class="v-w">minh bạch</span><span class="v-m">투명한</span></li>
+      <li><span class="v-n">17</span><span class="v-w">dự thảo</span><span class="v-m">초안</span></li>
+      <li><span class="v-n">18</span><span class="v-w">hồ sơ đăng ký</span><span class="v-m">등록 서류</span></li>
+      <li><span class="v-n">19</span><span class="v-w">chấp thuận</span><span class="v-m">승인하다</span></li>
+      <li><span class="v-n">20</span><span class="v-w">diện tích</span><span class="v-m">면적</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">thông qua thỏa thuận về nhận chuyển quyền sử dụng đất hoặc đang có quyền sử dụng đất</span>
+        <span class="e-m">토지사용권 양수 합의 또는 기존 토지사용권 보유를 통해</span>
+        <span class="e-ex">đã đề xuất hai phương án về sử dụng đất để thực hiện dự án nhà ở thương mại thông qua thỏa thuận về nhận chuyển quyền sử dụng đất hoặc đang có quyền sử dụng đất, trình Quốc hội xem xét, quyết định.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">trên cơ sở đề xuất</span>
+        <span class="e-m">~을 기초로 제안하여</span>
+        <span class="e-ex">Đối với nội dung này, Hiệp hội kiến nghị lựa chọn P hương án 1 trên cơ sở đề xuất “luật hóa” Nghị quyết số 171/2024/QH15 của Quốc hội quy định về việc thí điểm thực hiện dự án nhà ở thương mại thông qua thỏa thuận về nhận chuyển quyền sử dụng đất hoặc đang có quyền sử dụng đất.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">căn cứ chính trị, căn cứ pháp luật, và căn cứ thực tiễn</span>
+        <span class="e-m">정치적 근거, 법적 근거, 실무적 근거</span>
+        <span class="e-ex">Kiến nghị được dựa trên căn cứ chính trị, căn cứ pháp luật, và căn cứ thực tiễn.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">tiếp tục thực hiện cơ chế tự thỏa thuận giữa người dân và doanh nghiệp</span>
+        <span class="e-m">주민과 기업 간 자율 합의 메커니즘을 계속 시행하다</span>
+        <span class="e-ex">Nghị quyết số 18-NQ/TW của Ban Chấp hành Trung ương Đảng đã chủ trương t iếp tục thực hiện cơ chế tự thỏa thuận giữa người dân và doanh nghiệp trong chuyển nhượng quyền sử dụng đất, để thực hiện các dự án khu đô thị, nhà ở thương mại , nhưng chủ trương này lại không được l uật hóa vào điểm b khoản 1 và khoản 6 Điều 127 Luật Đất đai 2024, mà chỉ cho phép nhà đầu tư &quot;thỏa thuận nhận chuyển quyền sử dụng đất ở hoặc đất ở và đất khác hoặc đang có đất khác không phải là đất ở để thực hiện dự án nhà ở thương mại&quot;.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">phù hợp với quy hoạch</span>
+        <span class="e-m">계획에 부합하는</span>
+        <span class="e-ex">Mặt khác, về c ăn cứ pháp luật, các Luật Đất đai 1993, Luật Đất đai 2003 , và Luật Đất đai 2013 đều cho phép nhà đầu tư nhận chuyển nhượng quyền sử dụng đất &quot;phù hợp với quy hoạch&quot;, để thực hiện các dự án đầu tư, sản xuất, kinh doanh, trong đó có các dự án nhà ở thương mại.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">đạt được những kết quả rất tích cực</span>
+        <span class="e-m">매우 긍정적인 성과를 거두다</span>
+        <span class="e-ex">Ngoài ra, căn cứ thực tiễn, Hiệp hội nhận thấy sau gần 2 năm thực hiện Nghị quyết số 171/2024/QH15 đã đạt được những kết quả rất tích cực.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">đạt 30% tổng số hồ sơ đăng ký dự án thí điểm</span>
+        <span class="e-m">시범 프로젝트 등록 서류 총수의 30%를 차지하다</span>
+        <span class="e-ex">tính đến ngày 16/4/2026, cả nước có 2.750 hồ sơ đăng ký dự án thí điểm và được chấp thuận 742 khu đất thực hiện dự án thí điểm, đạt 30% tổng số hồ sơ đăng ký dự án thí điểm, với tổng diện tích 5.686 ha.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">bị ách tắc trong 10 năm qua</span>
+        <span class="e-m">지난 10년간 정체되다</span>
+        <span class="e-ex">Từ đó dẫn đến hệ quả như Báo cáo số 3686/BC-BNNMT của Bộ Nông nghiệp và Môi trường là có hàng ngàn hồ sơ đăng ký dự án thí điểm bị ách tắc trong 10 năm qua; khiến nhà đầu tư không thể tạo lập được đủ quỹ đất triển khai dự án, nên Quốc hội đã ban hành Nghị quyết số 171/2024/QH15.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">thu hồi đất để phát triển kinh tế - xã hội vì lợi ích quốc gia, công cộng</span>
+        <span class="e-m">국익·공익을 위한 경제사회 발전 목적의 토지 회수</span>
+        <span class="e-ex">Các trường hợp không sử dụng vốn ngân sách nhà nước và thuộc trường hợp thu hồi đất để phát triển kinh tế - xã hội vì lợi ích quốc gia, công cộng mà nhà đầu tư lựa chọn nhận chuyển quyền sử dụng đất, không đề xuất thu hồi đất.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">được cơ quan nhà nước có thẩm quyền chấp thuận chủ trương đầu tư</span>
+        <span class="e-m">권한있는 국가기관으로부터 투자 방침을 승인받다</span>
+        <span class="e-ex">Người đang có quyền sử dụng đất có đề xuất dự án đầu tư nếu thuộc trường hợp thu hồi đất để phát triển kinh tế - xã hội vì lợi ích quốc gia, công cộng mà phù hợp với quy hoạch và có đề nghị chuyển mục đích sử dụng đất mà được cơ quan nhà nước có thẩm quyền chấp thuận chủ trương đầu tư đồng thời chấp thuận nhà đầu tư theo quy định của pháp luật về đầu tư thì được sử dụng đất để thực hiện dự án đầu tư mà Nhà nước không thực hiện thu hồi đất theo quy định của Luật này.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/kien-nghi-luat-hoa-co-che-thi-diem-thuc-hien-du-an-nha-o-thuong-mai.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
