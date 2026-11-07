@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.06</strong> · 73일째</span>
+    </div>
+    <h1>Đại biểu Quốc hội sốt ruột vì vốn ngân sách chờ giải ngân</h1>
+    <p class="h1-ko">국회의원들, 집행을 기다리는 예산 자금에 조바심을 느끼다</p>
+    <p class="byline">원문 6,555자 · 읽기 약 8분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>73</b>장 · 단어 <b>1460</b>개 · 표현 <b>730</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-06.html" aria-current="page"><span class="chip-d">11.06</span><span class="chip-t">tiếp thu</span></a>
+      <a class="chip" href="2026-11-05.html"><span class="chip-d">11.05</span><span class="chip-t">hiệp hội</span></a>
+      <a class="chip" href="2026-11-04.html"><span class="chip-d">11.04</span><span class="chip-t">tăng trưởng hai con số</span></a>
+      <a class="chip" href="2026-11-03.html"><span class="chip-d">11.03</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-11-02.html"><span class="chip-d">11.02</span><span class="chip-t">tỷ giá trung tâm</span></a>
+      <a class="chip" href="2026-11-01.html"><span class="chip-d">11.01</span><span class="chip-t">đột phá chiến lược</span></a>
+      <a class="chip" href="2026-10-31.html"><span class="chip-d">10.31</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-10-30.html"><span class="chip-d">10.30</span><span class="chip-t">nỗ lực</span></a>
+      <a class="chip" href="2026-10-29.html"><span class="chip-d">10.29</span><span class="chip-t">thẩm quyền</span></a>
+      <a class="chip" href="2026-10-28.html"><span class="chip-d">10.28</span><span class="chip-t">điểm đến</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Tại Kỳ họp thứ hai, Quốc hội khóa XVI, các đại biểu góp ý về dự thảo Luật Ngân sách nhà nước (hợp nhất), trong đó quan tâm đến cơ chế phân chia nguồn thu tiền sử dụng đất khi nhà đầu tư ứng trước kinh phí bồi thường, giải phóng mặt bằng. Nhiều đại biểu cho rằng khoản khấu trừ này không làm phát sinh dòng tiền thực tế nhưng địa phương vẫn phải hạch toán và hoàn trả phần ngân sách trung ương, gây khó khăn cho cân đối ngân sách. Vấn đề chuyển nguồn kéo dài qua nhiều năm, dẫn đến vốn chờ dự án, cũng được nêu ra, với số chuyển nguồn từ 2024 sang 2025 chiếm 67% tổng chi ngân sách năm 2024. Đại biểu đề nghị giữ thời hạn chuyển nguồn đến 31/12 năm sau và gắn trách nhiệm trực tiếp với người quyết định chuyển nguồn. Bộ trưởng Bộ Tài chính Ngô Văn Tuấn giải trình, thừa nhận hạn chế trong dự báo và cho biết dự thảo luật đã quy định cụ thể điều kiện, thời hạn chuyển nguồn nhằm tăng cường kỷ luật ngân sách.</p>
+    <p class="ko">제16대 국회 제2차 회기에서 국회의원들은 (통합)국가예산법 초안에 대해 의견을 제시했으며, 투자자가 보상·부지조성 비용을 선지급할 경우 토지사용료 수입을 분배하는 메커니즘에 관심을 보였다. 다수 의원은 이 공제 금액이 실제 현금흐름을 발생시키지 않음에도 지방이 이를 회계처리하고 중앙예산 몫을 상환해야 해 예산 균형에 어려움을 준다고 지적했다. 또한 여러 해에 걸친 이월 문제로 자금이 사업을, 예산이 과제를 기다리는 상황이 나타났으며, 2024년에서 2025년으로의 이월액은 2024년 총지출의 67%에 달했다. 의원들은 이월 기한을 다음 해 12월 31일까지로 유지하고, 이월 결정권자에게 직접 책임을 연계할 것을 제안했다. 응오반뚜언 재정부 장관은 답변에서 예측의 한계를 인정하며, 법안 초안이 예산 규율 강화를 위해 이월 조건과 기한을 구체적으로 규정했다고 밝혔다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">tiếp thu</span><span class="v-m">수렴하다, 받아들이다</span></li>
+      <li><span class="v-n">02</span><span class="v-w">dự thảo</span><span class="v-m">초안</span></li>
+      <li><span class="v-n">03</span><span class="v-w">hợp nhất</span><span class="v-m">통합하다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">đầu tư công</span><span class="v-m">공공투자</span></li>
+      <li><span class="v-n">05</span><span class="v-w">phân chia</span><span class="v-m">분배하다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">tiền sử dụng đất</span><span class="v-m">토지사용료</span></li>
+      <li><span class="v-n">07</span><span class="v-w">tiền thuê đất</span><span class="v-m">토지임대료</span></li>
+      <li><span class="v-n">08</span><span class="v-w">ứng trước</span><span class="v-m">선지급하다</span></li>
+      <li><span class="v-n">09</span><span class="v-w">giải phóng mặt bằng</span><span class="v-m">부지 조성(철거보상)</span></li>
+      <li><span class="v-n">10</span><span class="v-w">khấu trừ</span><span class="v-m">공제하다</span></li>
+      <li><span class="v-n">11</span><span class="v-w">phát sinh</span><span class="v-m">발생하다</span></li>
+      <li><span class="v-n">12</span><span class="v-w">dòng tiền</span><span class="v-m">현금흐름</span></li>
+      <li><span class="v-n">13</span><span class="v-w">hạch toán</span><span class="v-m">회계처리하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">hoàn trả</span><span class="v-m">상환하다</span></li>
+      <li><span class="v-n">15</span><span class="v-w">rà soát</span><span class="v-m">재검토하다</span></li>
+      <li><span class="v-n">16</span><span class="v-w">quyết toán</span><span class="v-m">결산</span></li>
+      <li><span class="v-n">17</span><span class="v-w">chuyển nguồn</span><span class="v-m">예산 이월</span></li>
+      <li><span class="v-n">18</span><span class="v-w">dự toán</span><span class="v-m">예산안</span></li>
+      <li><span class="v-n">19</span><span class="v-w">phân bổ</span><span class="v-m">배정하다</span></li>
+      <li><span class="v-n">20</span><span class="v-w">kỷ cương</span><span class="v-m">기강</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">trách nhiệm giải trình</span>
+        <span class="e-m">설명 책임</span>
+        <span class="e-ex">Chiều 5/11, tiếp tục chương trình Kỳ họp thứ hai, Quốc hội khóa XVI, bên cạnh việc đánh giá cao nỗ lực của cơ quan soạn thảo trong tiếp thu, chỉnh lý dự thảo Luật Ngân sách nhà nước (hợp nhất), các đại biểu quốc hội cho rằng việc hợp nhất Luật Ngân sách nhà nước và Luật Đầu tư công không nên chỉ dừng ở việc tích hợp các quy định pháp luật, mà cần hướng tới sự thống nhất trong tư duy quản trị, quy trình quản lý và trách nhiệm giải trình đối với nguồn lực quốc gia.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">cơ chế phân chia nguồn thu</span>
+        <span class="e-m">수입 분배 메커니즘</span>
+        <span class="e-ex">Một trong những nội dung được đại biểu quan tâm là cơ chế phân chia nguồn thu tiền sử dụng đất, tiền thuê đất đối với trường hợp nhà đầu tư tự nguyện ứng trước kinh phí bồi thường, giải phóng mặt bằng và được khấu trừ vào nghĩa vụ tài chính về đất đai.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">ngân sách trung ương hưởng 15%, ngân sách địa phương hưởng 85%</span>
+        <span class="e-m">중앙예산 15%, 지방예산 85% 비율로 배분</span>
+        <span class="e-ex">Đại biểu Đoàn Thị Lê An (Đoàn đại biểu Quốc hội tỉnh Cao Bằng) cơ bản nhất trí với nguyên tắc phân chia khoản thu theo tỷ lệ ngân sách trung ương hưởng 15%, ngân sách địa phương hưởng 85% đối với địa phương nhận bổ sung cân đối từ ngân sách trung ương.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">không làm phát sinh dòng tiền thực tế</span>
+        <span class="e-m">실제 현금흐름을 발생시키지 않다</span>
+        <span class="e-ex">Vấn đề này, bà Đoàn Thị Lê An cho rằng khoản kinh phí được khấu trừ không làm phát sinh dòng tiền thực tế tương ứng vào ngân sách địa phương.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">quy định chuyển tiếp</span>
+        <span class="e-m">경과규정</span>
+        <span class="e-ex">“Khoản 4 Điều 102 đã có quy định chuyển tiếp, cho phép ngân sách địa phương hưởng 100% đối với khoản thu tương ứng với kinh phí nhà đầu tư thực tế ứng trước trước ngày 1/1/2026 nếu đáp ứng các điều kiện của Luật, Tuy nhiên, quy định này chưa giải quyết đầy đủ các trường hợp phát sinh sau thời điểm trên ”</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">cơ chế ghi thu - ghi chi</span>
+        <span class="e-m">수입-지출 기록 방식</span>
+        <span class="e-ex">Đồng tình với quan điểm này, đại biểu Nguyễn Đặng Ân (Đoàn đại biểu Quốc hội tỉnh Lạng Sơn) cho biết, trong thực tế, các khoản kinh phí nhà đầu tư ứng trước đôi khi được thực hiện theo cơ chế ghi thu - ghi chi ngân sách.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">vốn chờ dự án, kinh phí chờ nhiệm vụ</span>
+        <span class="e-m">자금이 사업을, 예산이 과제를 기다리는 (집행 지연) 상태</span>
+        <span class="e-ex">Một vấn đề khác được nhiều đại biểu đề cập là tình trạng chuyển nguồn kéo dài qua nhiều năm, dẫn đến tình trạng vốn chờ dự án, kinh phí chờ nhiệm vụ, làm giảm hiệu quả sử dụng ngân sách.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">phải bị hủy bỏ và hoàn trả ngân sách</span>
+        <span class="e-m">취소되어 예산으로 반환되어야 한다</span>
+        <span class="e-ex">Quá thời hạn trên, các khoản chưa sử dụng phải bị hủy bỏ và hoàn trả ngân sách.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">gắn trách nhiệm trực tiếp với</span>
+        <span class="e-m">~에 직접 책임을 연계시키다</span>
+        <span class="e-ex">Đáng chú ý, đại biểu đề xuất thay thế quy định về cam kết giải ngân bằng cơ chế gắn trách nhiệm trực tiếp với người quyết định chuyển nguồn.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">tăng cường kỷ luật, kỷ cương ngân sách</span>
+        <span class="e-m">예산 규율과 기강을 강화하다</span>
+        <span class="e-ex">Những khoản không thuộc danh mục này sẽ phải hủy hoặc thu hồi, nhằm tăng cường kỷ luật, kỷ cương ngân sách.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/dai-bieu-quoc-hoi-sot-ruot-vi-von-ngan-sach-cho-giai-ngan.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
