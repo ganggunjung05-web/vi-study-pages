@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.11</strong> · 78일째</span>
+    </div>
+    <h1>Phản ứng của thị trường sau khi hoán đổi và mở kênh mua ngoại tệ</h1>
+    <p class="h1-ko">외환 스와프 및 외화 매입 창구 개설 이후 시장 반응</p>
+    <p class="byline">원문 4,730자 · 읽기 약 6분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>78</b>장 · 단어 <b>1560</b>개 · 표현 <b>780</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-11.html" aria-current="page"><span class="chip-d">11.11</span><span class="chip-t">cung ứng</span></a>
+      <a class="chip" href="2026-11-10.html"><span class="chip-d">11.10</span><span class="chip-t">điểm nghẽn</span></a>
+      <a class="chip" href="2026-11-09.html"><span class="chip-d">11.09</span><span class="chip-t">năng lực</span></a>
+      <a class="chip" href="2026-11-08.html"><span class="chip-d">11.08</span><span class="chip-t">mặt bằng lãi suất</span></a>
+      <a class="chip" href="2026-11-07.html"><span class="chip-d">11.07</span><span class="chip-t">tín hiệu tích cực</span></a>
+      <a class="chip" href="2026-11-06.html"><span class="chip-d">11.06</span><span class="chip-t">tiếp thu</span></a>
+      <a class="chip" href="2026-11-05.html"><span class="chip-d">11.05</span><span class="chip-t">hiệp hội</span></a>
+      <a class="chip" href="2026-11-04.html"><span class="chip-d">11.04</span><span class="chip-t">tăng trưởng hai con số</span></a>
+      <a class="chip" href="2026-11-03.html"><span class="chip-d">11.03</span><span class="chip-t">kim ngạch</span></a>
+      <a class="chip" href="2026-11-02.html"><span class="chip-d">11.02</span><span class="chip-t">tỷ giá trung tâm</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Ngày 9/11, gần 50.000 tỷ đồng đã được cung ứng cho hệ thống ngân hàng qua nghiệp vụ hoán đổi ngoại tệ kỳ hạn 182 ngày, với tỷ giá mua và bán lại được ấn định sẵn. Ngay sau khi công bố, lãi suất hoán đổi ngoại tệ kỳ hạn 6 tháng trên thị trường liên ngân hàng đã giảm về mức tương đương mức chào giao dịch của Ngân hàng Nhà nước. Các ngân hàng thương mại đánh giá việc kéo dài kỳ hạn hoán đổi giúp ổn định thanh khoản trong thời gian dài hơn, bao trùm cả giai đoạn quyết toán cuối năm và Tết Nguyên đán. Từ ngày 11/11, Ngân hàng Nhà nước còn triển khai mua USD giao ngay với giá mua tăng mạnh so với trước, nhằm tận dụng nguồn ngoại tệ dồi dào từ kiều hối và xuất khẩu cuối năm. Trên thị trường, tỷ giá USD/VND tại ngân hàng thương mại và thị trường tự do chỉ tăng nhẹ, trong khi giá mua can thiệp vẫn thấp hơn tỷ giá liên ngân hàng.</p>
+    <p class="ko">11월 9일, 182일 만기 외환 스와프 거래를 통해 약 50조 동이 은행 시스템에 공급되었으며, 매입 및 환매 환율이 사전에 고정되었다. 발표 직후 은행 간 시장의 6개월 만기 외환 스와프 금리는 중앙은행이 제시한 수준으로 하락했다. 시중은행들은 스와프 만기를 연장한 것이 연말 결산기와 설 연휴를 아우르는 장기 유동성 안정에 중요한 의미가 있다고 평가했다. 11월 11일부터 중앙은행은 또한 현물 달러 매입을 시행했는데, 매입가가 이전보다 크게 상승했으며 이는 연말 송금과 수출로 인한 풍부한 외화 자금을 활용하기 위한 것이다. 시장에서는 시중은행과 자유시장의 달러/동 환율이 소폭 상승한 반면, 중앙은행의 개입 매입가는 여전히 은행 간 환율보다 낮았다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">cung ứng</span><span class="v-m">공급하다</span></li>
+      <li><span class="v-n">02</span><span class="v-w">hệ thống ngân hàng</span><span class="v-m">은행 시스템</span></li>
+      <li><span class="v-n">03</span><span class="v-w">hoán đổi ngoại tệ</span><span class="v-m">외환 스와프</span></li>
+      <li><span class="v-n">04</span><span class="v-w">kỳ hạn</span><span class="v-m">만기, 기한</span></li>
+      <li><span class="v-n">05</span><span class="v-w">giao ngay</span><span class="v-m">현물(즉시 인도)</span></li>
+      <li><span class="v-n">06</span><span class="v-w">tỷ giá</span><span class="v-m">환율</span></li>
+      <li><span class="v-n">07</span><span class="v-w">cam kết</span><span class="v-m">약속하다, 확약하다</span></li>
+      <li><span class="v-n">08</span><span class="v-w">lãi suất cho vay</span><span class="v-m">대출 금리</span></li>
+      <li><span class="v-n">09</span><span class="v-w">liên ngân hàng</span><span class="v-m">은행 간</span></li>
+      <li><span class="v-n">10</span><span class="v-w">mặt bằng lãi suất</span><span class="v-m">금리 수준</span></li>
+      <li><span class="v-n">11</span><span class="v-w">thanh khoản</span><span class="v-m">유동성</span></li>
+      <li><span class="v-n">12</span><span class="v-w">đáo hạn</span><span class="v-m">만기 도래</span></li>
+      <li><span class="v-n">13</span><span class="v-w">huy động</span><span class="v-m">조달(자금 모집)</span></li>
+      <li><span class="v-n">14</span><span class="v-w">trạng thái ngoại tệ</span><span class="v-m">외화 포지션</span></li>
+      <li><span class="v-n">15</span><span class="v-w">kiều hối</span><span class="v-m">해외송금</span></li>
+      <li><span class="v-n">16</span><span class="v-w">dự trữ ngoại hối</span><span class="v-m">외환보유고</span></li>
+      <li><span class="v-n">17</span><span class="v-w">cân đối</span><span class="v-m">균형을 맞추다</span></li>
+      <li><span class="v-n">18</span><span class="v-w">chuyển khoản</span><span class="v-m">계좌이체</span></li>
+      <li><span class="v-n">19</span><span class="v-w">chênh lệch</span><span class="v-m">차이, 격차</span></li>
+      <li><span class="v-n">20</span><span class="v-w">giá mua can thiệp</span><span class="v-m">개입 매입가</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">nghiệp vụ hoán đổi ngoại tệ</span>
+        <span class="e-m">외환 스와프 업무</span>
+        <span class="e-ex">Ngân hàng Nhà nước thông báo triển khai nghiệp vụ hoán đổi ngoại tệ với quy mô tối đa 2 tỷ USD, kỳ hạn 182 ngày.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">mua USD giao ngay</span>
+        <span class="e-m">달러 현물 매입</span>
+        <span class="e-ex">Ngân hàng Nhà nước mua USD giao ngay từ các tổ chức tín dụng với tỷ giá 24.399 đồng/USD và cam kết bán lại lượng ngoại tệ tương ứng sau 182 ngày với tỷ giá 24.704 đồng/USD.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">cam kết bán lại</span>
+        <span class="e-m">환매를 약속하다</span>
+        <span class="e-ex">cam kết bán lại lượng ngoại tệ tương ứng sau 182 ngày với tỷ giá 24.704 đồng/USD</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">giảm mặt bằng lãi suất</span>
+        <span class="e-m">금리 수준을 낮추다</span>
+        <span class="e-ex">góp phần ổn định kỳ vọng thị trường và tạo điều kiện giảm mặt bằng lãi suất</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">kéo dài kỳ hạn hoán đổi</span>
+        <span class="e-m">스와프 만기를 연장하다</span>
+        <span class="e-ex">việc kéo dài kỳ hạn hoán đổi lên 6 tháng có ý nghĩa quan trọng đối với thanh khoản hệ thống</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">chi phí huy động thực tế</span>
+        <span class="e-m">실제 자금 조달 비용</span>
+        <span class="e-ex">thấp hơn so với chi phí huy động thực tế của các ngân hàng trên thị trường quốc tế vào thời điểm hiện tại</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">trạng thái ngoại tệ dương</span>
+        <span class="e-m">양(+)의 외화 포지션</span>
+        <span class="e-ex">dành cho các tổ chức tín dụng, chi nhánh ngân hàng nước ngoài có trạng thái ngoại tệ dương và nhu cầu bán ngoại tệ</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">mùa vụ kiều hối</span>
+        <span class="e-m">송금 성수기</span>
+        <span class="e-ex">Khi đến mùa vụ kiều hối và mùa vụ xuất khẩu cuối năm, khi nguồn ngoại tệ dồi dào thì có thể Ngân hàng Nhà nước sẽ mua được ngoại tệ để tăng dự trữ ngoại hối, đồng thời cung thêm nguồn VND cho thị trường</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">giá mua can thiệp</span>
+        <span class="e-m">개입 매입가</span>
+        <span class="e-ex">giá mua can thiệp của Ngân hàng Nhà nước thấp hơn tỷ giá liên ngân hàng khoảng 134 đồng, tương đương 0,52%</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">quy mô tiền đồng đưa vào lưu thông</span>
+        <span class="e-m">유통에 투입되는 동화 규모</span>
+        <span class="e-ex">khả năng mua được ngoại tệ và quy mô tiền đồng đưa vào lưu thông còn phụ thuộc vào điều kiện giao dịch thực tế</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/phan-ung-cua-thi-truong-sau-khi-hoan-doi-va-mo-kenh-mua-ngoai-te.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
