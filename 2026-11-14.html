@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.14</strong> · 81일째</span>
+    </div>
+    <h1>Các quỹ đầu tư rút tiền khỏi chứng khoán Việt Nam, tài sản ròng giảm 8.600 tỷ đồng</h1>
+    <p class="h1-ko">투자펀드, 베트남 주식에서 자금 회수... 순자산 8,600억 동 감소</p>
+    <p class="byline">원문 3,694자 · 읽기 약 5분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>81</b>장 · 단어 <b>1620</b>개 · 표현 <b>810</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-14.html" aria-current="page"><span class="chip-d">11.14</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-11-13.html"><span class="chip-d">11.13</span><span class="chip-t">phê chuẩn</span></a>
+      <a class="chip" href="2026-11-12.html"><span class="chip-d">11.12</span><span class="chip-t">chất vấn</span></a>
+      <a class="chip" href="2026-11-11.html"><span class="chip-d">11.11</span><span class="chip-t">cung ứng</span></a>
+      <a class="chip" href="2026-11-10.html"><span class="chip-d">11.10</span><span class="chip-t">điểm nghẽn</span></a>
+      <a class="chip" href="2026-11-09.html"><span class="chip-d">11.09</span><span class="chip-t">năng lực</span></a>
+      <a class="chip" href="2026-11-08.html"><span class="chip-d">11.08</span><span class="chip-t">mặt bằng lãi suất</span></a>
+      <a class="chip" href="2026-11-07.html"><span class="chip-d">11.07</span><span class="chip-t">tín hiệu tích cực</span></a>
+      <a class="chip" href="2026-11-06.html"><span class="chip-d">11.06</span><span class="chip-t">tiếp thu</span></a>
+      <a class="chip" href="2026-11-05.html"><span class="chip-d">11.05</span><span class="chip-t">hiệp hội</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Trong tháng 10/2026, dòng tiền tại các quỹ đầu tư Việt Nam tiếp tục kém tích cực, đặc biệt là nhóm quỹ cổ phiếu bị rút vốn mạnh nhất. Quỹ mở cổ phiếu bị rút ròng khoảng 2.100 tỷ đồng, trong đó PYN Elite dẫn đầu với 1.347 tỷ đồng. Quỹ đóng cũng bị rút ròng mạnh, trong khi ETF có phần cải thiện hơn. Hiệu suất bình quân của quỹ cổ phiếu âm 2,3% trong tháng, nhưng tính chung 10 tháng đầu năm vẫn âm khoảng 10%. Tổng tài sản ròng của 141 quỹ đạt hơn 239.000 tỷ đồng, giảm 8.600 tỷ đồng so với tháng trước.</p>
+    <p class="ko">2026년 10월 베트남 투자펀드 자금 흐름은 계속 부진했으며, 특히 주식형 펀드가 가장 큰 자금 유출 압력을 받았다. 주식형 개방형 펀드는 약 2,100억 동이 순유출되었고, PYN Elite가 1,347억 동으로 가장 큰 유출 규모를 기록했다. 폐쇄형 펀드도 큰 폭의 순유출을 보였으나, ETF는 다소 개선되는 모습을 보였다. 주식형 펀드의 월 평균 수익률은 -2.3%였지만, 연초 이후 10개월 누적으로는 약 -10%를 기록했다. 141개 펀드의 총 순자산은 23조 9천억 동 이상으로, 전월 대비 8,600억 동 감소했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">dòng tiền</span><span class="v-m">자금 흐름</span></li>
+      <li><span class="v-n">02</span><span class="v-w">quỹ đầu tư</span><span class="v-m">투자펀드</span></li>
+      <li><span class="v-n">03</span><span class="v-w">cổ phiếu</span><span class="v-m">주식</span></li>
+      <li><span class="v-n">04</span><span class="v-w">rút vốn</span><span class="v-m">자금을 회수하다</span></li>
+      <li><span class="v-n">05</span><span class="v-w">đáng chú ý</span><span class="v-m">주목할 만한</span></li>
+      <li><span class="v-n">06</span><span class="v-w">rút ròng</span><span class="v-m">순유출</span></li>
+      <li><span class="v-n">07</span><span class="v-w">quỹ mở</span><span class="v-m">개방형 펀드</span></li>
+      <li><span class="v-n">08</span><span class="v-w">quỹ đóng</span><span class="v-m">폐쇄형 펀드</span></li>
+      <li><span class="v-n">09</span><span class="v-w">quỹ hoán đổi danh mục</span><span class="v-m">상장지수펀드(ETF)</span></li>
+      <li><span class="v-n">10</span><span class="v-w">danh mục</span><span class="v-m">포트폴리오, 종목 구성</span></li>
+      <li><span class="v-n">11</span><span class="v-w">quy mô</span><span class="v-m">규모</span></li>
+      <li><span class="v-n">12</span><span class="v-w">lũy kế</span><span class="v-m">누적</span></li>
+      <li><span class="v-n">13</span><span class="v-w">thị trường trong nước</span><span class="v-m">국내 시장</span></li>
+      <li><span class="v-n">14</span><span class="v-w">điều chỉnh</span><span class="v-m">조정하다</span></li>
+      <li><span class="v-n">15</span><span class="v-w">nhà đầu tư nước ngoài</span><span class="v-m">외국인 투자자</span></li>
+      <li><span class="v-n">16</span><span class="v-w">đảo chiều</span><span class="v-m">방향을 바꾸다, 반전되다</span></li>
+      <li><span class="v-n">17</span><span class="v-w">hút ròng</span><span class="v-m">순유입</span></li>
+      <li><span class="v-n">18</span><span class="v-w">hiệu suất</span><span class="v-m">수익률, 성과</span></li>
+      <li><span class="v-n">19</span><span class="v-w">tài sản ròng</span><span class="v-m">순자산</span></li>
+      <li><span class="v-n">20</span><span class="v-w">tỷ trọng</span><span class="v-m">비중</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">diễn biến kém tích cực</span>
+        <span class="e-m">부진한 흐름을 보이다</span>
+        <span class="e-ex">Dòng tiền tại các quỹ đầu tư tiếp tục diễn biến kém tích cực trong tháng 10/2026, trong đó nhóm quỹ cổ phiếu chịu áp lực rút vốn lớn nhất.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">dẫn đầu danh sách</span>
+        <span class="e-m">목록에서 선두를 차지하다</span>
+        <span class="e-ex">PYN Elite dẫn đầu danh sách các quỹ bị rút vốn, với giá trị rút ròng lên tới 1.347 tỷ đồng trong tháng 10.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">tăng mạnh ... so với tháng trước</span>
+        <span class="e-m">전월 대비 크게 증가하다</span>
+        <span class="e-ex">Ở nhóm quỹ đóng, dòng vốn rút ròng tăng mạnh 81,5% so với tháng trước, lên khoảng 845,3 tỷ đồng.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">ghi nhận mức rút ròng</span>
+        <span class="e-m">순유출 규모를 기록하다</span>
+        <span class="e-ex">VNH ghi nhận mức rút ròng gần 348 tỷ đồng, cao nhất kể từ tháng 10/2025, sau nhiều tháng duy trì quy mô rút vốn không đáng kể.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">có phần tích cực hơn</span>
+        <span class="e-m">다소 긍정적이다</span>
+        <span class="e-ex">Đối với nhóm ETF, diễn biến có phần tích cực hơn khi giá trị rút ròng giảm còn khoảng 418 tỷ đồng.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">chưa đủ để đảo ngược xu hướng</span>
+        <span class="e-m">추세를 뒤집기에는 충분하지 않다</span>
+        <span class="e-ex">Tuy nhiên, diễn biến này chưa đủ để đảo ngược xu hướng rút vốn chung của toàn nhóm quỹ cổ phiếu.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">có sự chọn lọc hơn</span>
+        <span class="e-m">더 선별적이다</span>
+        <span class="e-ex">Sự phân hóa giữa các loại hình quỹ cho thấy quyết định phân bổ vốn của nhà đầu tư đang có sự chọn lọc hơn, thay vì rút vốn đồng loạt khỏi toàn bộ sản phẩm đầu tư cổ phiếu.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">diễn ra đồng thời với</span>
+        <span class="e-m">~와 동시에 일어나다</span>
+        <span class="e-ex">Áp lực rút vốn diễn ra đồng thời với hiệu suất đầu tư kém tích cực, khiến quy mô tài sản ròng của các quỹ tiếp tục đi xuống.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">chuyển sang trạng thái sinh lời dương</span>
+        <span class="e-m">플러스 수익 상태로 전환되다</span>
+        <span class="e-ex">Một số quỹ mở đã chuyển sang trạng thái sinh lời dương, gồm TCGF, VINACAPITAL-VVF và LHCDF.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">đảo chiều mạnh so với</span>
+        <span class="e-m">~에 비해 크게 반전되다</span>
+        <span class="e-ex">Diễn biến này cho thấy những khó khăn của thị trường trong năm nay đã ảnh hưởng đáng kể đến kết quả đầu tư của các quỹ, đặc biệt là các danh mục có tỷ trọng cổ phiếu lớn.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/cac-quy-dau-tu-rut-tien-khoi-chung-khoan-viet-nam-tai-san-rong-giam-8600-ty-dong.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
