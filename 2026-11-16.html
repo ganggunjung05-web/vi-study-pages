@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.16</strong> · 83일째</span>
+    </div>
+    <h1>Bốn điểm sửa đổi cơ bản, bảo đảm người dân tiếp cận được nhà ở</h1>
+    <p class="h1-ko">국민이 주택에 접근할 수 있도록 보장하는 4가지 기본 개정 사항</p>
+    <p class="byline">원문 3,861자 · 읽기 약 5분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>83</b>장 · 단어 <b>1660</b>개 · 표현 <b>830</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-16.html" aria-current="page"><span class="chip-d">11.16</span><span class="chip-t">nhà ở xã hội</span></a>
+      <a class="chip" href="2026-11-15.html"><span class="chip-d">11.15</span><span class="chip-t">bám sát</span></a>
+      <a class="chip" href="2026-11-14.html"><span class="chip-d">11.14</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-11-13.html"><span class="chip-d">11.13</span><span class="chip-t">phê chuẩn</span></a>
+      <a class="chip" href="2026-11-12.html"><span class="chip-d">11.12</span><span class="chip-t">chất vấn</span></a>
+      <a class="chip" href="2026-11-11.html"><span class="chip-d">11.11</span><span class="chip-t">cung ứng</span></a>
+      <a class="chip" href="2026-11-10.html"><span class="chip-d">11.10</span><span class="chip-t">điểm nghẽn</span></a>
+      <a class="chip" href="2026-11-09.html"><span class="chip-d">11.09</span><span class="chip-t">năng lực</span></a>
+      <a class="chip" href="2026-11-08.html"><span class="chip-d">11.08</span><span class="chip-t">mặt bằng lãi suất</span></a>
+      <a class="chip" href="2026-11-07.html"><span class="chip-d">11.07</span><span class="chip-t">tín hiệu tích cực</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Theo Bộ Xây dựng, cả nước đang triển khai 293 dự án nhà ở xã hội với quy mô 363.065 căn, trong đó đã khởi công mới 128 dự án. Từ tháng 6/2026 đến nay có thêm 29 dự án mới được khởi công, với 40% là nhà ở cho thuê. Thứ trưởng Lê Hồng Vinh cho biết các giải pháp hiện nay còn manh mún nên Bộ Xây dựng đang chủ trì sửa đổi Luật Nhà ở với 4 điểm cơ bản: đối tượng thụ hưởng, nguyên tắc hỗ trợ, ưu đãi chủ đầu tư và cách xác định giá. Mục tiêu là bảo đảm người thu nhập thấp, công nhân tiếp cận được nhà ở với giá phù hợp khả năng chi trả.</p>
+    <p class="ko">건설부에 따르면 전국적으로 293개 사회주택 프로젝트(363,065세대 규모)가 추진되고 있으며, 이 중 128개 프로젝트가 신규 착공되었다. 2026년 6월 이후 29개 신규 프로젝트가 착공되었고, 그중 40%가 임대주택이다. 레홍빈 차관은 현재의 해결책들이 산발적이라며, 건설부가 주택법 개정을 주도하여 4가지 기본 사항—수혜 대상, 지원 원칙, 투자자 우대, 가격 산정 방식—을 다룬다고 밝혔다. 목표는 저소득층과 근로자가 지불 능력에 맞는 가격으로 주택에 접근할 수 있도록 보장하는 것이다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">nhà ở xã hội</span><span class="v-m">사회주택(공공임대주택)</span></li>
+      <li><span class="v-n">02</span><span class="v-w">quy mô</span><span class="v-m">규모</span></li>
+      <li><span class="v-n">03</span><span class="v-w">khởi công</span><span class="v-m">착공하다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">lũy kế</span><span class="v-m">누적</span></li>
+      <li><span class="v-n">05</span><span class="v-w">tiếp cận</span><span class="v-m">접근하다</span></li>
+      <li><span class="v-n">06</span><span class="v-w">thuê dài hạn</span><span class="v-m">장기 임대</span></li>
+      <li><span class="v-n">07</span><span class="v-w">Thứ trưởng</span><span class="v-m">차관</span></li>
+      <li><span class="v-n">08</span><span class="v-w">manh mún</span><span class="v-m">산발적인, 단편적인</span></li>
+      <li><span class="v-n">09</span><span class="v-w">tháo gỡ</span><span class="v-m">해결하다, 풀다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">kiến nghị</span><span class="v-m">건의(하다)</span></li>
+      <li><span class="v-n">11</span><span class="v-w">tham mưu</span><span class="v-m">자문하다, 보좌하다</span></li>
+      <li><span class="v-n">12</span><span class="v-w">hoàn thiện</span><span class="v-m">완비하다, 보완하다</span></li>
+      <li><span class="v-n">13</span><span class="v-w">cụ thể hóa</span><span class="v-m">구체화하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">cơ chế</span><span class="v-m">메커니즘, 제도</span></li>
+      <li><span class="v-n">15</span><span class="v-w">xét duyệt</span><span class="v-m">심사 승인</span></li>
+      <li><span class="v-n">16</span><span class="v-w">người có công</span><span class="v-m">유공자</span></li>
+      <li><span class="v-n">17</span><span class="v-w">người khuyết tật</span><span class="v-m">장애인</span></li>
+      <li><span class="v-n">18</span><span class="v-w">hộ nghèo</span><span class="v-m">빈곤 가구</span></li>
+      <li><span class="v-n">19</span><span class="v-w">vay vốn ưu đãi</span><span class="v-m">우대 대출</span></li>
+      <li><span class="v-n">20</span><span class="v-w">đầu cơ</span><span class="v-m">투기</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">mang tính manh mún, sự vụ, sự việc</span>
+        <span class="e-m">산발적이고 사안별로 처리되는 성격을 띠다</span>
+        <span class="e-ex">các giải pháp đang mang tính manh mún, sự vụ, sự việc và đang được tháo gỡ khi có những kiến nghị, đề xuất.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">chủ trì tham mưu để sửa đổi, hoàn thiện Luật Nhà ở</span>
+        <span class="e-m">주택법 개정·보완을 주도적으로 자문하다</span>
+        <span class="e-ex">Hiện Bộ Xây dựng được Chính phủ giao chủ trì tham mưu để sửa đổi, hoàn thiện Luật Nhà ở.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">bảo đảm người dân tiếp cận được nhà ở</span>
+        <span class="e-m">국민이 주택에 접근할 수 있도록 보장하다</span>
+        <span class="e-ex">việc sửa đổi, hoàn thiện Luật Nhà ở gồm 4 điểm cơ bản để bảo đảm người dân tiếp cận được nhà ở.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">thứ tự ưu tiên xét duyệt</span>
+        <span class="e-m">심사 승인의 우선순위</span>
+        <span class="e-ex">đồng thời quy định cụ thể các điều kiện về nhà ở, thu nhập và thứ tự ưu tiên xét duyệt đối với từng loại hình chính sách.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">ưu tiên người có công, người khuyết tật, hộ nghèo</span>
+        <span class="e-m">유공자, 장애인, 빈곤 가구를 우선하다</span>
+        <span class="e-ex">ưu tiên người có công, người khuyết tật, hộ nghèo; hỗ trợ vay vốn ưu đãi.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">tạo lập nguồn vốn không thông qua Quỹ nhà ở hoạt động không vì lợi nhuận</span>
+        <span class="e-m">비영리 주택기금을 통하지 않는 자금 조성</span>
+        <span class="e-ex">Thể chế hóa cơ chế tạo lập nguồn vốn không thông qua Quỹ nhà ở hoạt động không vì lợi nhuận và tài chính công đoàn cùng với các hình thức quy hoạch, bố trí quỹ đất để phát triển nhà ở cho thuê, nhà ở xã hội và các nhà lưu trú công nhân trong khu công nghiệp.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">dành một tỷ lệ diện tích đất hoặc diện tích sàn để kinh doanh dịch vụ, thương mại</span>
+        <span class="e-m">토지 또는 바닥 면적의 일부 비율을 서비스·상업용으로 배정하다</span>
+        <span class="e-ex">Cho phép dành một tỷ lệ diện tích đất hoặc diện tích sàn để kinh doanh dịch vụ, thương mại nhằm bù đắp chi phí, giảm chỉ tiêu giá thành và đảm bảo giá bán, giá cho thuê phù hợp với khả năng chi trả của người dân.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">mỗi đối tượng chỉ được mua, thuê một căn nhà ở xã hội</span>
+        <span class="e-m">한 대상자당 사회주택 한 세대만 구매·임대 가능</span>
+        <span class="e-ex">Quy định cụ thể các điều kiện quản lý giao dịch , mỗi đối tượng chỉ được mua, thuê một căn nhà ở xã hội và quy định thời hạn hạn chế chuyển nhượng trong 5 năm đầu để ngăn ngừa đầu cơ, bảo đảm đúng mục đích an sinh xã hội.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">ngăn ngừa đầu cơ</span>
+        <span class="e-m">투기를 방지하다</span>
+        <span class="e-ex">quy định thời hạn hạn chế chuyển nhượng trong 5 năm đầu để ngăn ngừa đầu cơ, bảo đảm đúng mục đích an sinh xã hội.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">phù hợp với khả năng chi trả</span>
+        <span class="e-m">지불 능력에 맞다</span>
+        <span class="e-ex">Các giải pháp đồng bộ này sẽ bảo đảm mức giá phù hợp với khả năng chi trả của người thu nhập thấp.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/bon-diem-sua-doi-co-ban-bao-dam-nguoi-dan-tiep-can-duoc-nha-o.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
