@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.18</strong> · 85일째</span>
+    </div>
+    <h1>Bắt buộc xác thực danh tính điện tử quốc gia với tài khoản ngân hàng, chứng khoán</h1>
+    <p class="h1-ko">은행·증권 계좌에 국가 전자 신원 인증 의무화</p>
+    <p class="byline">원문 4,003자 · 읽기 약 5분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>85</b>장 · 단어 <b>1700</b>개 · 표현 <b>850</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-18.html" aria-current="page"><span class="chip-d">11.18</span><span class="chip-t">điều hành</span></a>
+      <a class="chip" href="2026-11-17.html"><span class="chip-d">11.17</span><span class="chip-t">đánh giá cao</span></a>
+      <a class="chip" href="2026-11-16.html"><span class="chip-d">11.16</span><span class="chip-t">nhà ở xã hội</span></a>
+      <a class="chip" href="2026-11-15.html"><span class="chip-d">11.15</span><span class="chip-t">bám sát</span></a>
+      <a class="chip" href="2026-11-14.html"><span class="chip-d">11.14</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-11-13.html"><span class="chip-d">11.13</span><span class="chip-t">phê chuẩn</span></a>
+      <a class="chip" href="2026-11-12.html"><span class="chip-d">11.12</span><span class="chip-t">chất vấn</span></a>
+      <a class="chip" href="2026-11-11.html"><span class="chip-d">11.11</span><span class="chip-t">cung ứng</span></a>
+      <a class="chip" href="2026-11-10.html"><span class="chip-d">11.10</span><span class="chip-t">điểm nghẽn</span></a>
+      <a class="chip" href="2026-11-09.html"><span class="chip-d">11.09</span><span class="chip-t">năng lực</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Ngày 18/11, Ủy ban Thường vụ Quốc hội cho ý kiến về việc tiếp thu, chỉnh lý Luật Định danh và xác thực điện tử. Dự thảo luật làm rõ nguyên tắc định danh bắt buộc, tự nguyện, thu thập dữ liệu tối thiểu và không yêu cầu xuất trình lại giấy tờ. Luật quy định danh tính điện tử phải lưu trữ tại Việt Nam và quy định bắt buộc xác thực tài khoản với lĩnh vực rủi ro cao như chứng khoán, ngân hàng, viễn thông, thương mại điện tử. Thường trực Ủy ban Quốc phòng, An ninh và Đối ngoại cơ bản tán thành nội dung tiếp thu, chỉnh lý và đánh giá dự thảo đủ điều kiện trình Quốc hội thông qua. Ủy ban Thường vụ Quốc hội thống nhất dự thảo luật đã đủ điều kiện trình Quốc hội xem xét biểu quyết thông qua.</p>
+    <p class="ko">11월 18일 국회상무위원회는 전자신원인증법의 수렴·수정 사항에 대해 의견을 제시했다. 법률초안은 의무적·자발적 신원인증 원칙, 최소한의 데이터 수집, 서류 재제출 불요 원칙을 명확히 했다. 법은 전자 신원을 베트남 내에 저장하도록 규정하며, 증권·은행·통신·전자상거래 등 고위험 분야에 한해 계좌 인증을 의무화하도록 규정했다. 국방안보대외위원회 상무위는 수렴·수정된 내용에 대체로 찬성하며 법률초안이 국회 심의·통과 조건을 갖췄다고 평가했다. 국회상무위원회는 법률초안이 국회 표결 통과에 제출할 조건을 충분히 갖췄다는 데 합의했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">điều hành</span><span class="v-m">주재하다, 운영하다</span></li>
+      <li><span class="v-n">02</span><span class="v-w">giải trình</span><span class="v-m">설명하다, 해명하다</span></li>
+      <li><span class="v-n">03</span><span class="v-w">tiếp thu</span><span class="v-m">수렴하다, 받아들이다</span></li>
+      <li><span class="v-n">04</span><span class="v-w">chỉnh lý</span><span class="v-m">수정하다, 정리하다</span></li>
+      <li><span class="v-n">05</span><span class="v-w">xác thực điện tử</span><span class="v-m">전자 인증</span></li>
+      <li><span class="v-n">06</span><span class="v-w">rà soát</span><span class="v-m">점검하다, 검토하다</span></li>
+      <li><span class="v-n">07</span><span class="v-w">dự thảo luật</span><span class="v-m">법률 초안</span></li>
+      <li><span class="v-n">08</span><span class="v-w">bố cục</span><span class="v-m">구성, 구조</span></li>
+      <li><span class="v-n">09</span><span class="v-w">nguyên tắc</span><span class="v-m">원칙</span></li>
+      <li><span class="v-n">10</span><span class="v-w">thu thập dữ liệu</span><span class="v-m">데이터 수집</span></li>
+      <li><span class="v-n">11</span><span class="v-w">xuất trình</span><span class="v-m">제시하다, 제출하다</span></li>
+      <li><span class="v-n">12</span><span class="v-w">huy động</span><span class="v-m">동원하다</span></li>
+      <li><span class="v-n">13</span><span class="v-w">nguồn lực</span><span class="v-m">자원</span></li>
+      <li><span class="v-n">14</span><span class="v-w">mã định danh</span><span class="v-m">식별 코드</span></li>
+      <li><span class="v-n">15</span><span class="v-w">cơ sở dữ liệu</span><span class="v-m">데이터베이스</span></li>
+      <li><span class="v-n">16</span><span class="v-w">danh tính điện tử</span><span class="v-m">전자 신원</span></li>
+      <li><span class="v-n">17</span><span class="v-w">lưu trữ</span><span class="v-m">저장하다, 보관하다</span></li>
+      <li><span class="v-n">18</span><span class="v-w">viễn thông</span><span class="v-m">통신</span></li>
+      <li><span class="v-n">19</span><span class="v-w">lộ trình</span><span class="v-m">로드맵, 일정</span></li>
+      <li><span class="v-n">20</span><span class="v-w">tán thành</span><span class="v-m">찬성하다</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">cho ý kiến về việc giải trình, tiếp thu, chỉnh lý đối với</span>
+        <span class="e-m">~에 대한 설명, 수렴, 수정에 관해 의견을 제시하다</span>
+        <span class="e-ex">Ủy ban Thường vụ Quốc hội họp Phiên thứ 8, cho ý kiến về việc giải trình, tiếp thu, chỉnh lý đối với Luật Định danh và xác thực điện tử.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">đảm bảo đồng bộ với pháp luật về</span>
+        <span class="e-m">~에 관한 법률과 일관성을 보장하다</span>
+        <span class="e-ex">cơ quan soạn thảo đã rà soát đảm bảo đồng bộ với pháp luật về dữ liệu, giao dịch điện tử, bảo vệ dữ liệu cá nhân, an ninh mạng, căn cước.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">làm rõ nguyên tắc</span>
+        <span class="e-m">원칙을 명확히 하다</span>
+        <span class="e-ex">Dự thảo luật đã làm rõ nguyên tắc định danh xác thực điện tử bắt buộc, tự nguyện, thu thập dữ liệu tối thiểu, không thu thập lại dữ liệu đã có, không yêu cầu xuất trình giấy tờ đã được định danh điện tử.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">khuyến khích huy động nguồn lực ngoài nhà nước</span>
+        <span class="e-m">민간 자원 동원을 장려하다</span>
+        <span class="e-ex">Đồng thời, khuyến khích huy động nguồn lực ngoài nhà nước trong xây dựng phát triển hoạt động kinh doanh và xác thực điện tử.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">tự động tạo lập danh tính, cấp mã định danh</span>
+        <span class="e-m">자동으로 신원을 생성하고 식별코드를 부여하다</span>
+        <span class="e-ex">Thứ trưởng Bộ Công an cho biết dự thảo Luật tự động tạo lập danh tính, cấp mã định danh khi thông tin trong cơ sở dữ liệu đã đầy đủ chính xác.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">phải được lưu trữ tại Việt Nam</span>
+        <span class="e-m">베트남 내에 저장되어야 한다</span>
+        <span class="e-ex">Luật cũng quy định danh tính điện tử phải được lưu trữ tại Việt Nam, việc định danh không làm hạn chế thay đổi quyền đối với đối tượng được định danh, khai thác thông tin dữ liệu cá nhân phải được chủ thể đồng ý.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">chỉ áp dụng với lĩnh vực có rủi ro cao</span>
+        <span class="e-m">고위험 분야에만 적용하다</span>
+        <span class="e-ex">Ngoài ra, quy định rõ lĩnh vực bắt buộc xác thực tài khoản giao dịch điện tử với danh tính điện tử quốc gia, chỉ áp dụng với lĩnh vực có rủi ro cao như chứng khoán, ngân hàng, viễn thông, thương mại điện tử và giao Chính phủ quy định lộ trình thực hiện cho phù hợp.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">cơ bản tán thành với các nội dung đã được tiếp thu, chỉnh lý</span>
+        <span class="e-m">수렴·수정된 내용에 대체로 찬성하다</span>
+        <span class="e-ex">Chủ nhiệm Ủy ban Quốc phòng, An ninh và Đối ngoại, Thượng tướng Lê Tấn Tới cho biết Thường trực Ủy ban Quốc phòng, An ninh và Đối ngoại cơ bản tán thành với các nội dung đã được tiếp thu, chỉnh lý.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">đủ điều kiện trình Quốc hội xem xét, thông qua</span>
+        <span class="e-m">국회 심의·통과에 제출할 조건을 충분히 갖추다</span>
+        <span class="e-ex">Dự thảo Luật cơ bản bảo đảm chất lượng, đủ điều kiện để trình Quốc hội xem xét, thông qua.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">lược bỏ các lĩnh vực chưa cần thiết</span>
+        <span class="e-m">불필요한 분야를 삭제하다</span>
+        <span class="e-ex">Thường trực Ủy ban đánh giá cao Chính phủ tiếp thu theo hướng lược bỏ các lĩnh vực chưa cần thiết thực hiện xác thực liên kết ngay, đồng thời bổ sung một số lĩnh vực có rủi ro cao hoặc phát sinh nhiệm vụ pháp lý quan trọng.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/bat-buoc-xac-thuc-danh-tinh-dien-tu-quoc-gia-voi-tai-khoan-ngan-hang-chung-khoan.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
