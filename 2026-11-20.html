@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.20</strong> · 87일째</span>
+    </div>
+    <h1>Nhiều giải pháp tạo đơn hàng cho doanh nghiệp nhỏ và vừa</h1>
+    <p class="h1-ko">중소기업에 주문량을 창출하기 위한 다양한 해법</p>
+    <p class="byline">원문 3,030자 · 읽기 약 4분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>87</b>장 · 단어 <b>1740</b>개 · 표현 <b>870</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-20.html" aria-current="page"><span class="chip-d">11.20</span><span class="chip-t">xuất siêu</span></a>
+      <a class="chip" href="2026-11-19.html"><span class="chip-d">11.19</span><span class="chip-t">Hội đồng</span></a>
+      <a class="chip" href="2026-11-18.html"><span class="chip-d">11.18</span><span class="chip-t">điều hành</span></a>
+      <a class="chip" href="2026-11-17.html"><span class="chip-d">11.17</span><span class="chip-t">đánh giá cao</span></a>
+      <a class="chip" href="2026-11-16.html"><span class="chip-d">11.16</span><span class="chip-t">nhà ở xã hội</span></a>
+      <a class="chip" href="2026-11-15.html"><span class="chip-d">11.15</span><span class="chip-t">bám sát</span></a>
+      <a class="chip" href="2026-11-14.html"><span class="chip-d">11.14</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-11-13.html"><span class="chip-d">11.13</span><span class="chip-t">phê chuẩn</span></a>
+      <a class="chip" href="2026-11-12.html"><span class="chip-d">11.12</span><span class="chip-t">chất vấn</span></a>
+      <a class="chip" href="2026-11-11.html"><span class="chip-d">11.11</span><span class="chip-t">cung ứng</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Tổng kim ngạch xuất nhập khẩu năm 2026 dự kiến vượt mốc 1.000 tỷ USD, nhưng xuất khẩu vẫn dựa nhiều vào khu vực FDI trong khi doanh nghiệp nhỏ và vừa chịu sức ép về chi phí vốn. Thủ tướng Lê Minh Hưng khẳng định Chính phủ đã xây dựng nhiều chương trình nâng cao năng lực cho doanh nghiệp, trước hết là cải cách thể chế và thủ tục hành chính để tạo môi trường pháp lý minh bạch. Chính phủ cũng thúc đẩy các chương trình xúc tiến thương mại, hiệp định thương mại tự do và khuyến khích doanh nghiệp FDI chuyển giao công nghệ, sử dụng nhà cung ứng Việt Nam. Ngoài ra, Nhà nước sẽ đóng vai trò chủ thể đặt hàng về khoa học - công nghệ nhằm giúp doanh nghiệp nhỏ và vừa nâng cao năng suất và tham gia sâu hơn vào chuỗi cung ứng.</p>
+    <p class="ko">2026년 총 수출입액은 1000억 달러를 돌파할 것으로 예상되지만, 수출은 여전히 FDI 부문에 크게 의존하고 있으며 중소기업은 자본비용 압박을 받고 있다. 레민흥 총리는 정부가 기업 역량 강화를 위한 여러 프로그램을 마련했으며, 가장 먼저 제도 개혁과 행정절차 개선을 통해 투명한 법적 환경을 조성하겠다고 밝혔다. 정부는 또한 무역촉진 프로그램과 자유무역협정을 추진하고, 외국인투자기업이 기술을 이전하고 베트남 공급업체를 활용하도록 장려하고 있다. 이와 함께 국가가 과학기술 분야의 발주 주체가 되어 중소기업의 생산성 향상과 공급망 참여 확대를 지원할 계획이다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">xuất siêu</span><span class="v-m">무역흑자</span></li>
+      <li><span class="v-n">02</span><span class="v-w">doanh nghiệp nhỏ và vừa</span><span class="v-m">중소기업</span></li>
+      <li><span class="v-n">03</span><span class="v-w">cơ chế</span><span class="v-m">메커니즘, 체계</span></li>
+      <li><span class="v-n">04</span><span class="v-w">đơn hàng</span><span class="v-m">주문(량)</span></li>
+      <li><span class="v-n">05</span><span class="v-w">chuỗi cung ứng</span><span class="v-m">공급망</span></li>
+      <li><span class="v-n">06</span><span class="v-w">tỷ trọng</span><span class="v-m">비중</span></li>
+      <li><span class="v-n">07</span><span class="v-w">thu nhập thực</span><span class="v-m">실질소득</span></li>
+      <li><span class="v-n">08</span><span class="v-w">thể chế</span><span class="v-m">제도</span></li>
+      <li><span class="v-n">09</span><span class="v-w">khuôn khổ</span><span class="v-m">틀, 체계</span></li>
+      <li><span class="v-n">10</span><span class="v-w">chuẩn mực</span><span class="v-m">표준, 규범</span></li>
+      <li><span class="v-n">11</span><span class="v-w">minh bạch</span><span class="v-m">투명한</span></li>
+      <li><span class="v-n">12</span><span class="v-w">rà soát</span><span class="v-m">재검토하다</span></li>
+      <li><span class="v-n">13</span><span class="v-w">đặt hàng</span><span class="v-m">주문하다, 발주하다</span></li>
+      <li><span class="v-n">14</span><span class="v-w">xúc tiến thương mại</span><span class="v-m">무역 촉진</span></li>
+      <li><span class="v-n">15</span><span class="v-w">hiệp định thương mại tự do</span><span class="v-m">자유무역협정</span></li>
+      <li><span class="v-n">16</span><span class="v-w">khuyến khích</span><span class="v-m">장려하다</span></li>
+      <li><span class="v-n">17</span><span class="v-w">cam kết</span><span class="v-m">약속하다, 공약하다</span></li>
+      <li><span class="v-n">18</span><span class="v-w">chuyển giao công nghệ</span><span class="v-m">기술이전</span></li>
+      <li><span class="v-n">19</span><span class="v-w">nhà cung ứng</span><span class="v-m">공급업체</span></li>
+      <li><span class="v-n">20</span><span class="v-w">năng suất</span><span class="v-m">생산성</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">vượt mốc 1.000 tỷ USD</span>
+        <span class="e-m">1000억 달러를 돌파하다</span>
+        <span class="e-ex">Tổng kim ngạch xuất nhập khẩu năm 2026 dự kiến sẽ vượt mốc 1.000 tỷ USD, tháng 10 xuất siêu 7,31 tỷ USD.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">chịu sức ép về chi phí vốn</span>
+        <span class="e-m">자본비용 압박을 받다</span>
+        <span class="e-ex">Tuy nhiên, xuất khẩu vẫn còn dựa nhiều vào khu vực FDI, trong khi doanh nghiệp nhỏ và vừa chịu sức ép về chi phí vốn.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">tham gia sâu hơn vào chuỗi cung ứng</span>
+        <span class="e-m">공급망에 더 깊이 참여하다</span>
+        <span class="e-ex">Chính phủ sẽ ưu tiên những cơ chế nào để doanh nghiệp Việt Nam, nhất là doanh nghiệp nhỏ và vừa có thêm đơn hàng, tham gia sâu hơn vào chuỗi cung ứng và nâng tỷ trọng xuất khẩu, tạo thêm việc làm ổn định và nâng thu nhập thực cho người lao động là vấn đề được đông đảo người dân, doanh nghiệp quan tâm.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">giảm thời gian, chi phí tuân thủ</span>
+        <span class="e-m">준수 시간과 비용을 줄이다</span>
+        <span class="e-ex">Một khuôn khổ thể chế chuẩn mực, đơn giản, minh bạch, dễ thực hiện, cùng với cải cách thủ tục hành chính và điều kiện kinh doanh để giảm thời gian, chi phí tuân thủ sẽ tạo hành lang pháp lý rất thông thoáng hỗ trợ cho các doanh nghiệp Việt Nam phát triển.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">cắt giảm các thủ tục hành chính và điều kiện kinh doanh</span>
+        <span class="e-m">행정절차와 영업조건을 줄이다</span>
+        <span class="e-ex">Chính phủ cũng tập trung chỉ đạo tiếp tục rà soát để đơn giản hóa, cắt giảm các thủ tục hành chính và điều kiện kinh doanh.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">yên tâm đầu tư</span>
+        <span class="e-m">안심하고 투자하다</span>
+        <span class="e-ex">Điểm quan trọng nhất là doanh nghiệp chỉ có thể yên tâm đầu tư trong một môi trường pháp lý mà các quyền và lợi ích hợp pháp của doanh nghiệp được bảo đảm.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">mở rộng thị trường xuất khẩu</span>
+        <span class="e-m">수출시장을 확대하다</span>
+        <span class="e-ex">Các chương trình xúc tiến thương mại, mở rộng thị trường xuất khẩu, các chương trình để thực thi các hiệp định thương mại tự do, khuyến khích việc kết nối giữa các doanh nghiệp FDI và doanh nghiệp Việt Nam.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">tăng cường sử dụng nhà cung ứng</span>
+        <span class="e-m">공급업체 활용을 강화하다</span>
+        <span class="e-ex">tăng cường sử dụng nhà cung ứng là các doanh nghiệp Việt Nam ở trong nước; tăng cường đào tạo nguồn nhân lực chất lượng cao cho các doanh nghiệp tham gia chuỗi cung ứng của Việt Nam.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">chủ thể đặt hàng</span>
+        <span class="e-m">발주 주체</span>
+        <span class="e-ex">Trong lĩnh vực khoa học - công nghệ, Thủ tướng khẳng định, Nhà nước sẽ là chủ thể đặt hàng, chủ động phối hợp với các doanh nghiệp và các viện, trường nghiên cứu để tiến hành cơ chế đặt hàng các công nghệ, sản phẩm có thể áp dụng được cho các doanh nghiệp, nhất là các doanh nghiệp vừa và nhỏ với một chi phí hợp lý để khuyến khích doanh nghiệp tăng cường ứng dụng khoa học - công nghệ.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">nâng cao năng suất</span>
+        <span class="e-m">생산성을 높이다</span>
+        <span class="e-ex">Các hoạt động này nhằm nâng cao năng suất, giảm chi phí, khâu trung gian để tăng cường chất lượng tham gia vào các chuỗi cung ứng và mở rộng thị trường.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/nhieu-giai-phap-tao-don-hang-cho-doanh-nghiep-nho-va-vua.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
