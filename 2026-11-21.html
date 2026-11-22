@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.21</strong> · 88일째</span>
+    </div>
+    <h1>Đảm bảo năng lượng cho mục tiêu tăng trưởng hai con số</h1>
+    <p class="h1-ko">두 자릿수 성장 목표를 위한 에너지 확보</p>
+    <p class="byline">원문 12,027자 · 읽기 약 15분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>88</b>장 · 단어 <b>1760</b>개 · 표현 <b>880</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-21.html" aria-current="page"><span class="chip-d">11.21</span><span class="chip-t">an ninh năng lượng</span></a>
+      <a class="chip" href="2026-11-20.html"><span class="chip-d">11.20</span><span class="chip-t">xuất siêu</span></a>
+      <a class="chip" href="2026-11-19.html"><span class="chip-d">11.19</span><span class="chip-t">Hội đồng</span></a>
+      <a class="chip" href="2026-11-18.html"><span class="chip-d">11.18</span><span class="chip-t">điều hành</span></a>
+      <a class="chip" href="2026-11-17.html"><span class="chip-d">11.17</span><span class="chip-t">đánh giá cao</span></a>
+      <a class="chip" href="2026-11-16.html"><span class="chip-d">11.16</span><span class="chip-t">nhà ở xã hội</span></a>
+      <a class="chip" href="2026-11-15.html"><span class="chip-d">11.15</span><span class="chip-t">bám sát</span></a>
+      <a class="chip" href="2026-11-14.html"><span class="chip-d">11.14</span><span class="chip-t">dòng tiền</span></a>
+      <a class="chip" href="2026-11-13.html"><span class="chip-d">11.13</span><span class="chip-t">phê chuẩn</span></a>
+      <a class="chip" href="2026-11-12.html"><span class="chip-d">11.12</span><span class="chip-t">chất vấn</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Nghị quyết 70-NQ/TW và Quyết định 1501/QĐ-TTg giao EVN giữ vai trò trụ cột bảo đảm điện cho tăng trưởng hai con số, trong khi nhu cầu điện năm 2026 tăng rất cao, có lúc lập kỷ lục công suất cực đại. TS.Cấn Văn Lực cảnh báo hệ số đàn hồi điện tăng lên 1,26-1,28 lần giai đoạn 2026-2030, đòi hỏi điện phải tăng nhanh hơn GDP. Cơ cấu nguồn điện thực tế lệch pha so với quy hoạch, nhiệt điện than vẫn chiếm gần 50% sản lượng trong khi năng lượng tái tạo chỉ đạt 12,6%. Than nhập khẩu, dầu khí vùng nước sâu và vốn đầu tư năng lượng đều gặp điểm nghẽn lớn, buộc EVN, TKV, Petrovietnam và Bộ Công Thương đề xuất nhiều giải pháp đồng bộ về thể chế, giá điện và huy động vốn.</p>
+    <p class="ko">결의안 70-NQ/TW와 결정 1501/QĐ-TTg는 EVN에게 두 자릿수 성장을 위한 전력 공급의 중추 역할을 맡겼으며, 2026년 전력 수요는 매우 빠르게 늘어 한때 최대 출력 기록을 세웠다. TS.껀반륵은 2026-2030년 전력 탄력계수가 1.26~1.28배로 높아져 전력 증가율이 GDP 증가율을 앞질러야 한다고 경고했다. 실제 전원 구성은 계획과 어긋나, 석탄화력이 여전히 생산량의 거의 절반을 차지하는 반면 재생에너지는 12.6%에 그친다. 석탄 수입, 심해 석유가스 개발, 에너지 투자 자금 모두 큰 장벽에 부딪혀 EVN, TKV, 페트로베트남, 산업무역부가 제도, 전기요금, 자금조달 등 다방면의 해법을 제시했다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">an ninh năng lượng</span><span class="v-m">에너지 안보</span></li>
+      <li><span class="v-n">02</span><span class="v-w">trụ cột</span><span class="v-m">기둥, 중추</span></li>
+      <li><span class="v-n">03</span><span class="v-w">phụ tải</span><span class="v-m">전력 부하</span></li>
+      <li><span class="v-n">04</span><span class="v-w">công suất cực đại</span><span class="v-m">최대 출력</span></li>
+      <li><span class="v-n">05</span><span class="v-w">khả dụng</span><span class="v-m">가용성</span></li>
+      <li><span class="v-n">06</span><span class="v-w">tổ máy</span><span class="v-m">발전기 유닛</span></li>
+      <li><span class="v-n">07</span><span class="v-w">tụ bù</span><span class="v-m">보상 콘덴서</span></li>
+      <li><span class="v-n">08</span><span class="v-w">hệ số đàn hồi</span><span class="v-m">탄력계수</span></li>
+      <li><span class="v-n">09</span><span class="v-w">điện khí hóa</span><span class="v-m">전기화</span></li>
+      <li><span class="v-n">10</span><span class="v-w">nhiệt điện than</span><span class="v-m">석탄화력발전</span></li>
+      <li><span class="v-n">11</span><span class="v-w">năng lượng tái tạo</span><span class="v-m">재생에너지</span></li>
+      <li><span class="v-n">12</span><span class="v-w">điện hạt nhân</span><span class="v-m">원자력 발전</span></li>
+      <li><span class="v-n">13</span><span class="v-w">điện gió ngoài khơi</span><span class="v-m">해상풍력</span></li>
+      <li><span class="v-n">14</span><span class="v-w">đấu nối</span><span class="v-m">계통 연계</span></li>
+      <li><span class="v-n">15</span><span class="v-w">giải tỏa công suất</span><span class="v-m">출력 해소</span></li>
+      <li><span class="v-n">16</span><span class="v-w">tín dụng xanh</span><span class="v-m">녹색신용</span></li>
+      <li><span class="v-n">17</span><span class="v-w">điều độ</span><span class="v-m">급전(계통운영)</span></li>
+      <li><span class="v-n">18</span><span class="v-w">mỏ cận biên</span><span class="v-m">한계유전</span></li>
+      <li><span class="v-n">19</span><span class="v-w">thu giữ và lưu trữ carbon</span><span class="v-m">탄소 포집 및 저장</span></li>
+      <li><span class="v-n">20</span><span class="v-w">trái phiếu xanh</span><span class="v-m">녹색채권</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">đi trước một bước</span>
+        <span class="e-m">한 발 앞서다</span>
+        <span class="e-ex">Quán triệt quan điểm điện lực phải đi trước một bước, ông Nguyễn Tài Anh, Phó Tổng giám đốc EVN, cho biết năm 2026 nhu cầu điện tăng rất cao.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">điện thương phẩm</span>
+        <span class="e-m">판매전력량</span>
+        <span class="e-ex">Trong 10 tháng đầu năm 2026, điện thương phẩm tăng 9,84%, lần đầu tiên ở mức xấp xỉ tốc độ tăng trưởng GDP.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">lập kỷ lục</span>
+        <span class="e-m">기록을 세우다</span>
+        <span class="e-ex">Công suất cực đại toàn hệ thống lập kỷ lục 57.537 MW ngày 24/6/2026 (tăng 12,6%), miền Bắc đạt 30.279 MW (tăng 14,3%), tiệm cận giới hạn vận hành an toàn về ổn định điện áp.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">lệch pha</span>
+        <span class="e-m">어긋나다, 위상차가 나다</span>
+        <span class="e-ex">Áp lực cung ứng điện càng trở nên căng thẳng hơn trước thực trạng lệch pha giữa thiết kế quy hoạch và thực thi.</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">khó khả thi</span>
+        <span class="e-m">실현 가능성이 낮다</span>
+        <span class="e-ex">Mục tiêu của Quy hoạch điện 8 điều chỉnh đưa điện than xuống 13% vào năm 2030 là rất khó khả thi khi hiện nay sản lượng than vẫn chiếm gần một nửa hệ thống.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">suy giảm sản lượng tự nhiên</span>
+        <span class="e-m">자연적으로 생산량이 감소하다</span>
+        <span class="e-ex">ông Phạm Gia Minh, Phó Trưởng phòng Ban Thăm dò – Khai thác dầu khí thuộc Tập đoàn Công nghiệp – Năng lượng quốc gia Việt Nam (Petrovietnam), cho biết thách thức lớn khi các bể truyền thống như Cửu Long và Nam Côn Sơn suy giảm sản lượng tự nhiên 10-20%/năm.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">dòng vốn toàn cầu</span>
+        <span class="e-m">글로벌 자본 흐름</span>
+        <span class="e-ex">Bên cạnh bài toán trữ lượng và sản lượng, làn sóng chuyển dịch năng lượng cùng sự phát triển nhanh của các nguồn năng lượng mới cũng đang làm dịch chuyển dòng vốn toàn cầu, tạo áp lực lớn lên việc huy động vốn cho các dự án nhiên liệu hóa thạch.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">khoảng trống thiếu hụt</span>
+        <span class="e-m">부족분, 공백</span>
+        <span class="e-ex">Tuy nhiên, hệ thống ngân hàng thương mại chỉ cung ứng tối đa 4-5 tỷ USD/năm (tương đương 20-25%) qua kênh tín dụng xanh, để lại khoảng trống thiếu hụt 17 tỷ USD mỗi năm.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">rào cản lớn</span>
+        <span class="e-m">큰 장벽</span>
+        <span class="e-ex">Về phía EVN, ông Nguyễn Tài Anh cho biết nhu cầu vốn của EVN giai đoạn 2026-2030 lên tới 830.000 tỷ đồng (166.000 tỷ đồng/năm), nhưng trần hạn mức tín dụng theo Luật Các tổ chức tín dụng đang là rào cản lớn đối với các dự án điện trọng điểm.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">vận hành thương mại</span>
+        <span class="e-m">상업 운전</span>
+        <span class="e-ex">EVN phấn đấu đưa cả 2 tổ máy Nhiệt điện Quảng Trạch I (1.403 MW) vận hành thương mại trong năm 2026 (sau khi phát điện tổ 1 ngày 6/5/2026 và hòa đồng bộ tổ 2 ngày 28/9/2026);</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/dam-bao-nang-luong-cho-muc-tieu-tang-truong-hai-con-so-1308604.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
