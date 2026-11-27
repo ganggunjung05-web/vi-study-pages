@@ -1,0 +1,448 @@
+<title>Tiêu Điểm 아침 노트</title>
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@300;400;500;600&display=swap">
+
+<style>
+:root{
+  --paper:#FBFAF6;
+  --surface:#FFFFFF;
+  --surface-2:#F3F1EB;
+  --ink:#17222B;
+  --ink-2:#4C5A66;
+  --ink-3:#7C8892;
+  --rule:#E0DDD4;
+  --rule-strong:#C9C5B9;
+  --jade:#14654F;
+  --jade-ink:#0E4A3A;
+  --jade-soft:#E6F0EB;
+  --gold:#8A6218;
+  --gold-soft:#F4EEDF;
+  --shadow:0 1px 2px rgba(23,34,43,.06),0 8px 24px rgba(23,34,43,.05);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0F151A;
+    --surface:#151D24;
+    --surface-2:#1C262E;
+    --ink:#E9EEF2;
+    --ink-2:#A6B3BD;
+    --ink-3:#76848F;
+    --rule:#28323B;
+    --rule-strong:#3A4650;
+    --jade:#63C4A6;
+    --jade-ink:#8FD9C1;
+    --jade-soft:#13302A;
+    --gold:#D8AA5E;
+    --gold-soft:#2C2418;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0F151A;
+  --surface:#151D24;
+  --surface-2:#1C262E;
+  --ink:#E9EEF2;
+  --ink-2:#A6B3BD;
+  --ink-3:#76848F;
+  --rule:#28323B;
+  --rule-strong:#3A4650;
+  --jade:#63C4A6;
+  --jade-ink:#8FD9C1;
+  --jade-soft:#13302A;
+  --gold:#D8AA5E;
+  --gold-soft:#2C2418;
+  --shadow:0 1px 2px rgba(0,0,0,.4),0 8px 24px rgba(0,0,0,.28);
+}
+
+*{box-sizing:border-box}
+
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"IBM Plex Sans KR","Be Vietnam Pro",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  font-weight:400;
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+  margin:0;
+  padding:0 20px 96px;
+}
+
+.wrap{max-width:720px;margin:0 auto}
+
+/* ---------- masthead ---------- */
+.masthead{border-top:2px solid var(--ink);padding-top:14px;margin-top:8px}
+.masthead-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:16px;flex-wrap:wrap;
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--ink-3);
+}
+.masthead-row strong{color:var(--jade);font-weight:600}
+
+h1{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-weight:700;
+  font-size:clamp(25px,4.4vw,34px);
+  line-height:1.25;
+  letter-spacing:-.015em;
+  text-wrap:balance;
+  margin:20px 0 10px;
+  color:var(--ink);
+}
+.h1-ko{
+  font-size:clamp(15px,2.4vw,17px);
+  font-weight:400;
+  color:var(--ink-2);
+  margin:0 0 4px;
+  text-wrap:balance;
+  line-height:1.55;
+}
+.byline{
+  font-size:12.5px;color:var(--ink-3);
+  margin:14px 0 0;
+  padding-bottom:22px;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- archive strip ---------- */
+.archive{
+  margin:26px 0 34px;
+  padding:16px 0 18px;
+  border-top:1px solid var(--rule);
+  border-bottom:1px solid var(--rule);
+}
+.archive-head{
+  display:flex;justify-content:space-between;align-items:baseline;
+  gap:12px;flex-wrap:wrap;margin-bottom:12px;
+}
+.archive-label{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--ink-3);margin:0;
+}
+.archive-count{font-size:12.5px;color:var(--ink-2);margin:0}
+.archive-count b{color:var(--jade);font-weight:600;font-variant-numeric:tabular-nums}
+.chips{
+  display:flex;gap:8px;overflow-x:auto;padding-bottom:4px;
+  scrollbar-width:thin;
+}
+.chip{
+  flex:0 0 auto;
+  display:flex;flex-direction:column;gap:2px;
+  padding:8px 13px;
+  border:1px solid var(--rule);
+  border-radius:8px;
+  background:var(--surface);
+  color:var(--ink-2);
+  text-decoration:none;
+  min-width:72px;
+  transition:border-color .15s ease,color .15s ease;
+}
+.chip:hover,.chip:focus-visible{border-color:var(--jade);color:var(--jade)}
+.chip-d{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;
+  color:inherit;
+}
+.chip-t{font-size:10.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:110px}
+.chip.is-current{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.chip.is-current .chip-t{color:var(--jade)}
+
+/* ---------- sections ---------- */
+section{margin:0 0 46px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  margin:0 0 18px;
+  padding-bottom:9px;
+  border-bottom:1px solid var(--rule);
+}
+.sec-head h2{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:16px;font-weight:600;letter-spacing:-.01em;
+  margin:0;color:var(--ink);
+}
+.sec-head .sec-meta{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;letter-spacing:.1em;color:var(--ink-3);
+  margin-left:auto;text-transform:uppercase;
+}
+
+.vi{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:16.5px;
+  line-height:1.78;
+  color:var(--ink);
+  margin:0;
+}
+.vi + .ko{margin-top:18px}
+.ko{
+  font-size:15px;
+  line-height:1.8;
+  color:var(--ink-2);
+  margin:0;
+  padding-left:16px;
+  border-left:2px solid var(--jade-soft);
+}
+
+/* ---------- vocab ---------- */
+.study-bar{
+  display:flex;align-items:center;gap:10px;
+  margin:0 0 16px;
+}
+.toggle{
+  font-family:"IBM Plex Sans KR",sans-serif;
+  font-size:12.5px;font-weight:500;
+  color:var(--ink-2);
+  background:var(--surface);
+  border:1px solid var(--rule);
+  border-radius:999px;
+  padding:6px 14px;
+  cursor:pointer;
+  transition:border-color .15s ease,color .15s ease,background .15s ease;
+}
+.toggle:hover,.toggle:focus-visible{border-color:var(--jade);color:var(--jade)}
+.toggle[aria-pressed="true"]{background:var(--jade-soft);border-color:var(--jade);color:var(--jade)}
+.study-hint{font-size:12px;color:var(--ink-3);margin:0}
+
+ol.vocab{
+  list-style:none;margin:0;padding:0;
+  display:grid;grid-template-columns:1fr;gap:0;
+}
+@media (min-width:640px){
+  ol.vocab{grid-template-columns:1fr 1fr;column-gap:32px}
+}
+ol.vocab li{
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:0 10px;
+  padding:9px 0;
+  border-bottom:1px solid var(--rule);
+  align-items:baseline;
+}
+.v-n{
+  font-family:"IBM Plex Mono",ui-monospace,monospace;
+  font-size:11px;font-weight:500;
+  color:var(--ink-3);
+  font-variant-numeric:tabular-nums;
+}
+.v-w{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;
+  color:var(--ink);
+  line-height:1.4;
+}
+.v-m{
+  grid-column:2;
+  font-size:13.5px;
+  color:var(--jade);
+  line-height:1.5;
+  transition:filter .18s ease,opacity .18s ease;
+}
+body.masked .v-m,body.masked .e-m{
+  filter:blur(5px);
+  opacity:.55;
+  cursor:pointer;
+}
+body.masked .v-m:hover,body.masked .e-m:hover{filter:none;opacity:1}
+
+/* ---------- expressions ---------- */
+ol.expr{list-style:none;margin:0;padding:0}
+ol.expr li{
+  padding:12px 0;
+  border-bottom:1px solid var(--rule);
+  display:grid;
+  grid-template-columns:26px 1fr;
+  gap:2px 10px;
+}
+.e-p{
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:15.5px;font-weight:600;color:var(--ink);
+  line-height:1.45;
+}
+.e-m{grid-column:2;font-size:13.5px;color:var(--gold);line-height:1.5}
+.e-ex{
+  grid-column:2;
+  font-family:"Be Vietnam Pro",sans-serif;
+  font-size:13px;font-style:italic;color:var(--ink-3);
+  line-height:1.6;margin-top:4px;
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:2px solid var(--ink);
+  padding-top:18px;
+  font-size:12.5px;
+  color:var(--ink-3);
+  display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+footer a{color:var(--jade);text-decoration:none;border-bottom:1px solid var(--jade-soft)}
+footer a:hover,footer a:focus-visible{border-bottom-color:var(--jade)}
+
+:focus-visible{outline:2px solid var(--jade);outline-offset:3px;border-radius:3px}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
+</style>
+
+<div class="wrap">
+
+  <header class="masthead">
+    <div class="masthead-row">
+      <span>VnEconomy · Tiêu điểm</span>
+      <span><strong>2026.11.26</strong> · 93일째</span>
+    </div>
+    <h1>Mỹ muốn áp thuế trần 35% với Việt Nam, VN-Index sẽ tăng?</h1>
+    <p class="h1-ko">미국, 베트남에 상한 35% 관세 부과 원해... VN-Index 오를까?</p>
+    <p class="byline">원문 4,538자 · 읽기 약 6분</p>
+  </header>
+
+  <nav class="archive" aria-label="지난 학습자료">
+    <div class="archive-head">
+      <p class="archive-label">지난 자료</p>
+      <p class="archive-count">지금까지 <b>93</b>장 · 단어 <b>1860</b>개 · 표현 <b>930</b>개</p>
+    </div>
+    <div class="chips">
+      <a class="chip is-current" href="2026-11-26.html" aria-current="page"><span class="chip-d">11.26</span><span class="chip-t">kết luận sơ bộ</span></a>
+      <a class="chip" href="2026-11-25.html"><span class="chip-d">11.25</span><span class="chip-t">khung thuế suất</span></a>
+      <a class="chip" href="2026-11-24.html"><span class="chip-d">11.24</span><span class="chip-t">hệ sinh thái</span></a>
+      <a class="chip" href="2026-11-23.html"><span class="chip-d">11.23</span><span class="chip-t">quy hoạch</span></a>
+      <a class="chip" href="2026-11-22.html"><span class="chip-d">11.22</span><span class="chip-t">quản trị</span></a>
+      <a class="chip" href="2026-11-21.html"><span class="chip-d">11.21</span><span class="chip-t">an ninh năng lượng</span></a>
+      <a class="chip" href="2026-11-20.html"><span class="chip-d">11.20</span><span class="chip-t">xuất siêu</span></a>
+      <a class="chip" href="2026-11-19.html"><span class="chip-d">11.19</span><span class="chip-t">Hội đồng</span></a>
+      <a class="chip" href="2026-11-18.html"><span class="chip-d">11.18</span><span class="chip-t">điều hành</span></a>
+      <a class="chip" href="2026-11-17.html"><span class="chip-d">11.17</span><span class="chip-t">đánh giá cao</span></a>
+    </div>
+  </nav>
+
+  <section>
+    <div class="sec-head">
+      <h2>원문 요약</h2>
+      <span class="sec-meta">Tiếng Việt</span>
+    </div>
+    <p class="vi">Mỹ đưa ra kết luận sơ bộ điều tra Mục 301, đề xuất thuế trần 35% với hàng Việt Nam, có thể giảm xuống 20% nếu đạt Hiệp định thương mại đối ứng. Mức thuế này là thuế bổ sung, không cộng thêm 12,5% hiện tại, và nhiều mặt hàng như gỗ, thép, ô tô, bán dẫn đã nằm ngoài phạm vi áp dụng. Việt Nam có thể đưa ra một số cam kết như mua thêm hàng hóa Mỹ, siết quy tắc xuất xứ, cấm nhập hàng lao động cưỡng bức. Dữ liệu lịch sử cho thấy VN-Index thường giảm trong các phiên đầu sau sự kiện thuế quan tiêu cực nhưng có xu hướng phục hồi sau 20-60 phiên. Các ngành như dệt may, giày dép, đóng tàu, xi măng, điện tử có thể chịu tác động phân hóa rõ rệt.</p>
+    <p class="ko">미국이 301조 조사 예비 결론을 내리고 베트남산 상품에 상한 35% 관세를 제안했으며, 상호무역협정을 체결하면 20%로 낮아질 수 있다. 이 세율은 기존 12.5%에 추가되는 것이 아니라 301조 추가 관세 총액이며, 목재·철강·자동차·반도체 등 많은 품목이 이미 적용 범위 밖에 있다. 베트남은 미국산 상품 추가 구매, 원산지 규정 강화, 강제노동 상품 수입 금지 등 몇 가지 약속을 내놓을 가능성이 있다. 과거 데이터에 따르면 VN-Index는 부정적 관세 사건 이후 초기 거래일에는 하락하는 경향이 있지만 20~60거래일 후에는 회복하는 경향을 보인다. 섬유의류, 신발, 조선, 시멘트, 전자 등 업종은 뚜렷한 분화 영향을 받을 수 있다.</p>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 단어</h2>
+      <span class="sec-meta">20 · 본문 등장 순</span>
+    </div>
+    <div class="study-bar">
+      <button class="toggle" id="mask" type="button" aria-pressed="false">뜻 가리기</button>
+      <p class="study-hint">가린 뒤 단어에 손을 올리면 뜻이 보입니다.</p>
+    </div>
+    <ol class="vocab">
+      <li><span class="v-n">01</span><span class="v-w">kết luận sơ bộ</span><span class="v-m">예비 결론</span></li>
+      <li><span class="v-n">02</span><span class="v-w">dư thừa công suất</span><span class="v-m">공급 과잉, 생산능력 과잉</span></li>
+      <li><span class="v-n">03</span><span class="v-w">thuế trần</span><span class="v-m">상한 관세</span></li>
+      <li><span class="v-n">04</span><span class="v-w">điều chỉnh</span><span class="v-m">조정하다</span></li>
+      <li><span class="v-n">05</span><span class="v-w">bổ sung</span><span class="v-m">추가(의)</span></li>
+      <li><span class="v-n">06</span><span class="v-w">bán dẫn</span><span class="v-m">반도체</span></li>
+      <li><span class="v-n">07</span><span class="v-w">miễn</span><span class="v-m">면제되다</span></li>
+      <li><span class="v-n">08</span><span class="v-w">danh mục</span><span class="v-m">목록</span></li>
+      <li><span class="v-n">09</span><span class="v-w">khởi xướng</span><span class="v-m">개시하다</span></li>
+      <li><span class="v-n">10</span><span class="v-w">sở hữu trí tuệ</span><span class="v-m">지적재산권</span></li>
+      <li><span class="v-n">11</span><span class="v-w">cam kết</span><span class="v-m">공약, 약속</span></li>
+      <li><span class="v-n">12</span><span class="v-w">quy tắc xuất xứ</span><span class="v-m">원산지 규정</span></li>
+      <li><span class="v-n">13</span><span class="v-w">bất định</span><span class="v-m">불확실성</span></li>
+      <li><span class="v-n">14</span><span class="v-w">áp thuế</span><span class="v-m">관세를 부과하다</span></li>
+      <li><span class="v-n">15</span><span class="v-w">phân hóa</span><span class="v-m">분화</span></li>
+      <li><span class="v-n">16</span><span class="v-w">đơn hàng</span><span class="v-m">주문</span></li>
+      <li><span class="v-n">17</span><span class="v-w">biên lợi nhuận</span><span class="v-m">이윤 마진</span></li>
+      <li><span class="v-n">18</span><span class="v-w">trung chuyển</span><span class="v-m">환적</span></li>
+      <li><span class="v-n">19</span><span class="v-w">dệt may</span><span class="v-m">섬유의류</span></li>
+      <li><span class="v-n">20</span><span class="v-w">đóng tàu</span><span class="v-m">조선업</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <div class="sec-head">
+      <h2>오늘의 표현</h2>
+      <span class="sec-meta">10 · 본문 등장 순</span>
+    </div>
+    <ol class="expr">
+      <li>
+        <span class="v-n">01</span><span class="e-p">đưa ra kết luận sơ bộ</span>
+        <span class="e-m">예비 결론을 내리다</span>
+        <span class="e-ex">Văn phòng Đại diện Thương mại Mỹ đã đưa ra kết luận sơ bộ trong cuộc điều tra Mục 301 về tình trạng dư thừa công suất mang tính cơ cấu, đồng thời đề xuất mức thuế trần 35% đối với hàng hóa Việt Nam.</span>
+      </li>
+      <li>
+        <span class="v-n">02</span><span class="e-p">nằm ngoài phạm vi</span>
+        <span class="e-m">범위 밖에 있다</span>
+        <span class="e-ex">Tác động thực tế dự kiến sẽ nhỏ hơn mức công bố vì phần lớn hàng hóa của Việt Nam xuất khẩu sang Mỹ như gỗ, thép, ô tô, bán dẫn đã nằm ngoài phạm vi và một phần nông sản, nguyên liệu được miễn.</span>
+      </li>
+      <li>
+        <span class="v-n">03</span><span class="e-p">bác bỏ phần lớn</span>
+        <span class="e-m">대부분을 기각하다</span>
+        <span class="e-ex">Đề xuất thuế mới được đưa ra trong bối cảnh Mỹ chuyển sang sử dụng các công cụ thương mại theo Mục 301 sau khi Tòa án Tối cao Mỹ bác bỏ phần lớn thuế đối ứng theo Đạo luật Quyền hạn Kinh tế Khẩn cấp Quốc tế.</span>
+      </li>
+      <li>
+        <span class="v-n">04</span><span class="e-p">áp lên toàn bộ</span>
+        <span class="e-m">전체에 적용하다</span>
+        <span class="e-ex">Mức thuế dự kiến áp lên toàn bộ hàng Việt Nam, trừ: (1) hàng thuộc Mục 232: thép, nhôm, đồng và sản phẩm phái sinh; ô tô, xe tải và phụ tùng; sản phẩm gỗ; dược phẩm có bằng sáng chế; bán dẫn (chịu thuế 232 riêng);</span>
+      </li>
+      <li>
+        <span class="v-n">05</span><span class="e-p">đưa ra một số cam kết</span>
+        <span class="e-m">몇 가지 약속을 내놓다</span>
+        <span class="e-ex">Chứng khoán ABS cho rằng, Việt Nam có khả năng đưa ra một số cam kết bao gồm: mua thêm hàng hóa Mỹ (máy bay, năng lượng, nông sản), siết quy tắc xuất xứ, cấm nhập hàng bị phân loại lao động cưỡng bức, tăng thực thi các quy định về quyền sở hữu trí tuệ.</span>
+      </li>
+      <li>
+        <span class="v-n">06</span><span class="e-p">chịu áp lực</span>
+        <span class="e-m">압박을 받다</span>
+        <span class="e-ex">Dữ liệu lịch sử trong báo cáo cho thấy thị trường chứng khoán Việt Nam thường chịu áp lực trong những phiên đầu sau các sự kiện thuế quan tiêu cực.</span>
+      </li>
+      <li>
+        <span class="v-n">07</span><span class="e-p">ghi nhận mức giảm bình quân</span>
+        <span class="e-m">평균 하락폭을 기록하다</span>
+        <span class="e-ex">Trong 13 sự kiện liên quan đến thuế quan giai đoạn 2018–2026, chỉ số VN-Index ghi nhận mức giảm bình quân 1,4% sau một phiên và giảm 0,8% sau năm phiên.</span>
+      </li>
+      <li>
+        <span class="v-n">08</span><span class="e-p">phụ thuộc đáng kể vào</span>
+        <span class="e-m">상당히 의존하다</span>
+        <span class="e-ex">Tuy nhiên, diễn biến sau đó phụ thuộc đáng kể vào mức độ bất định của chính sách, khả năng đàm phán và việc các biện pháp thuế có được triển khai thực tế hay không.</span>
+      </li>
+      <li>
+        <span class="v-n">09</span><span class="e-p">phản ứng mạnh hơn với</span>
+        <span class="e-m">~에 더 강하게 반응하다</span>
+        <span class="e-ex">Kinh nghiệm từ các sự kiện trước đây cũng cho thấy thị trường phản ứng mạnh hơn với những biện pháp thuế bất ngờ, có hiệu lực ngay, so với các đề xuất có lộ trình và còn dư địa đàm phán.</span>
+      </li>
+      <li>
+        <span class="v-n">10</span><span class="e-p">tạo ra sự phân hóa rõ rệt</span>
+        <span class="e-m">뚜렷한 분화를 만들다</span>
+        <span class="e-ex">Tác động của thuế quan cũng có thể tạo ra sự phân hóa rõ rệt giữa các nhóm ngành trên thị trường chứng khoán.</span>
+      </li>
+    </ol>
+  </section>
+
+  <footer>
+    <span>자동 생성 · 매일 07:40</span>
+    <a href="https://vneconomy.vn/my-muon-ap-thue-tran-35-voi-viet-nam-vn-index-se-tang.htm" target="_blank" rel="noopener">VnEconomy 원문 보기 →</a>
+  </footer>
+
+</div>
+
+<script>
+(function(){
+  var btn = document.getElementById('mask');
+  var KEY = 'tieudiem-mask';
+  function apply(on){
+    document.body.classList.toggle('masked', on);
+    btn.setAttribute('aria-pressed', on ? 'true' : 'false');
+    btn.textContent = on ? '뜻 보이기' : '뜻 가리기';
+  }
+  var saved = false;
+  try { saved = localStorage.getItem(KEY) === '1'; } catch (e) {}
+  apply(saved);
+  btn.addEventListener('click', function(){
+    var on = !document.body.classList.contains('masked');
+    apply(on);
+    try { localStorage.setItem(KEY, on ? '1' : '0'); } catch (e) {}
+  });
+})();
+</script>
